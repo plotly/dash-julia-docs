@@ -24,10 +24,11 @@ dropdown8 = LoadExampleCode(string(examples_path, "/disabled_options.jl"))
 
 dropdown9 = LoadExampleCode(string(examples_path, "/dynamic_options.jl"))
 
-examples = [dropdown2]
+examples = [dropdown2, dropdown9]
 
 app =  dash()
 dropdown2.callback!(app)
+dropdown9.callback!(app)
 
 app.layout = html_div() do
 

@@ -58,7 +58,7 @@ app.layout = html_div() do
     slider2.source_code,
     slider2.layout
 
-    # html_h3("RangeSlider"),
+    html_h3("RangeSlider")
 
 
 

@@ -23,6 +23,10 @@ slider1 = LoadExampleCode(string(examples_path, "/slider.jl"))
 
 slider2 = LoadExampleCode(string(examples_path, "/slider_with_marks.jl"))
 
+rangeslider1 = LoadExampleCode(string(examples_path, "/rangeslider.jl"))
+
+rangeslider2 = LoadExampleCode(string(examples_path, "/rangeslider_with_marks.jl"))
+
 
 examples = [dropdown1]
 
@@ -56,9 +60,15 @@ app.layout = html_div() do
     slider1.layout,
 
     slider2.source_code,
-    slider2.layout
+    slider2.layout,
 
-    html_h3("RangeSlider")
+    html_a(html_h3("RangeSlider"), href="/dash_core_components/rangeslider"),
+
+    rangeslider1.source_code,
+    rangeslider1.layout,
+
+    rangeslider2.source_code,
+    rangeslider2.layout
 
 
 

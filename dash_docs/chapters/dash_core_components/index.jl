@@ -17,21 +17,21 @@ export examples
 
 examples_path = joinpath(@__DIR__, "examples")
 
-dropdown1 = LoadExampleCode(string(examples_path, "/dropdown_index_example.jl"))
+dropdown_index_example = LoadExampleCode(string(examples_path, "/dropdown_index_example.jl"))
 
-slider1 = LoadExampleCode(string(examples_path, "/slider.jl"))
+slider_index_example = LoadExampleCode(string(examples_path, "/slider_index_example.jl"))
 
-slider2 = LoadExampleCode(string(examples_path, "/slider_with_marks.jl"))
+slider_with_marks = LoadExampleCode(string(examples_path, "/slider_with_marks.jl"))
 
-rangeslider1 = LoadExampleCode(string(examples_path, "/rangeslider.jl"))
+rangeslider_index_example = LoadExampleCode(string(examples_path, "/rangeslider_index_example.jl"))
 
-rangeslider2 = LoadExampleCode(string(examples_path, "/rangeslider_with_marks.jl"))
+rangeslider_with_marks = LoadExampleCode(string(examples_path, "/rangeslider_with_marks.jl"))
 
 
-examples = [dropdown1]
+examples = [dropdown_index_example]
 
 app =  dash()
-dropdown1.callback!(app)
+dropdown_index_example.callback!(app)
 
 n = get_pkg_version("DashCoreComponents")
 
@@ -46,96 +46,28 @@ app.layout = html_div() do
 
     The source is on GitHub at [plotly/dash-core-components](https://github.com/plotly/dash-core-components).
 
-    These docs are using version $n.
-    "),
+    These docs are using version $n."),
 
     html_a(html_h3("Dropdown"), href="/dash_core_components/dropdown"),
 
-    dropdown1.source_code,
-    dropdown1.layout,
+    dropdown_index_example.source_code,
+    dropdown_index_example.layout,
 
     html_a(html_h3("Slider"), href="/dash_core_components/slider"),
 
-    slider1.source_code,
-    slider1.layout,
+    slider_index_example.source_code,
+    slider_index_example.layout,
 
-    slider2.source_code,
-    slider2.layout,
+    slider_with_marks.source_code,
+    slider_with_marks.layout,
 
     html_a(html_h3("RangeSlider"), href="/dash_core_components/rangeslider"),
 
-    rangeslider1.source_code,
-    rangeslider1.layout,
+    rangeslider_index_example.source_code,
+    rangeslider_index_example.layout,
 
-    rangeslider2.source_code,
-    rangeslider2.layout
-
-
-
-    # html_h3("Input"),
-
-
-
-    # html_h3("Textare"),
-
-
-    # html_h3("Checkboxes"),
-
-
-    # html_h3("Radio Items"),
-
-
-    # html_h3("Button"),
-
-
-
-    # html_h3("DatePickerSingle"),
-
-
-
-    # html_h3("DatePickerRange"),
-
-
-
-
-    # html_h3("Markdown"),
-
-
-    # html_h3("Upload Component"),
-
-
-
-
-    # html_h3("Download Component"),
-
-
-
-
-    # html_h3("Tabs"),
-
-
-
-    # html_h3("Graphs"),
-
-
-
-    # html_h3("Confirm Dialog"),
-
-
-
-    # html_h3("Store"),
-
-
-
-    # html_h3("Logout Button"),
-
-
-
-    # html_h3("Loading component"),
-
-
-
-    # html_h3("Location")
+    rangeslider_with_marks.source_code,
+    rangeslider_with_marks.layout
 
 end
 

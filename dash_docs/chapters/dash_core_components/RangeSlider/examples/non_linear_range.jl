@@ -1,6 +1,5 @@
 using Dash, DashHtmlComponents, DashCoreComponents
 
-
 app = dash()
 
 function transform_value(value)

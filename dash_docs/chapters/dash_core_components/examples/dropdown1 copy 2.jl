@@ -1,6 +1,5 @@
 using Dash, DashCoreComponents
 
-
 app = dash()
 
 app.layout = html_div() do

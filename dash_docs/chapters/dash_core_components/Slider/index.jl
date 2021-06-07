@@ -67,8 +67,6 @@ app.layout = html_div() do
     slider6.source_code,
     slider6.layout
 
-
-
 end
 
 end

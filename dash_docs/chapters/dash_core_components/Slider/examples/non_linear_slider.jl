@@ -1,12 +1,10 @@
 using Dash, DashHtmlComponents, DashCoreComponents
 
-
 app = dash()
 
 function transform_value(value)
     10 ^ value
 end
-
 
 app.layout = html_div() do
     dcc_slider(

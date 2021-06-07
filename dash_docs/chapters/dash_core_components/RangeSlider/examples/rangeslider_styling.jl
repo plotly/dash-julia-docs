@@ -1,6 +1,5 @@
 using Dash, DashHtmlComponents, DashCoreComponents
 
-
 app = dash()
 
 # RangeSlider has included=True by default

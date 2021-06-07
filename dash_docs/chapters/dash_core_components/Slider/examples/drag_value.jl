@@ -1,8 +1,6 @@
 using Dash, DashHtmlComponents, DashCoreComponents
 
-
 app = dash()
-
 
 app.layout = html_div() do
     dcc_slider(id="slider-drag",),

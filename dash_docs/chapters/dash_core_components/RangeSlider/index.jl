@@ -17,9 +17,10 @@ rangeslider4 = LoadExampleCode(string(examples_path, "/rangeslider_included_fals
 rangeslider5 = LoadExampleCode(string(examples_path, "/multiple_handles.jl"))
 rangeslider6 = LoadExampleCode(string(examples_path, "/pushable_handles.jl"))
 rangeslider7 = LoadExampleCode(string(examples_path, "/crossing_handles.jl"))
+rangeslider8 = LoadExampleCode(string(examples_path, "/non_linear_range.jl"))
 
 
-examples = [rangeslider1]
+examples = [rangeslider1, rangeslider8]
 
 app =  dash()
 
@@ -72,7 +73,14 @@ app.layout = html_div() do
     dcc_markdown("If `allowCross=false`, the handles will not be allowed to cross over each other"),
 
     rangeslider7.source_code,
-    rangeslider7.layout
+    rangeslider7.layout,
+
+    html_h3("Non-Linear Slider and Updatemode"),
+
+    dcc_markdown("Create a logarithmic slider by setting `marks` to be logarithmic and adjusting the slider's output `value` in the callbacks. The `updatemode` property allows us to determine when we want a callback to be triggered. The following example has `updatemode='drag'` which means a callback is triggered everytime the handle is moved. Contrast the callback output with the first example on this page to see the difference."),
+
+    rangeslider8.source_code,
+    rangeslider8.layout
 
 
 end

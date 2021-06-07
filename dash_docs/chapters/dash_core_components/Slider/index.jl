@@ -16,8 +16,11 @@ slider3 = LoadExampleCode(string(examples_path, "/included_styling_marks.jl"))
 
 slider4 = LoadExampleCode(string(examples_path, "/included_false.jl"))
 
+slider5 = LoadExampleCode(string(examples_path, "/non_linear_slider.jl"))
 
-examples = [slider1]
+slider6 = LoadExampleCode(string(examples_path, "/drag_value.jl"))
+
+examples = [slider1, slider5, slider6]
 
 app =  dash()
 slider1.callback!(app)
@@ -48,7 +51,23 @@ app.layout = html_div() do
     slider3.layout,
 
     slider4.source_code,
-    slider4.layout
+    slider4.layout,
+
+    html_h3("Non-Linear Slider and Updatemode"),
+
+    dcc_markdown("Create a logarithmic slider by setting the labels of the `marks` property to be logarithmic and adjusting the slider's output `value` in the callbacks. The `updatemode` property allows us to determine when we want a callback to be triggered. The following example has `updatemode='drag'` which means a callback is triggered everytime the handle is moved. The default setting is `mouseup` which triggers the callback when you release your mouse from the slider."),
+
+    slider5.source_code,
+    slider5.layout,
+
+    html_h3("Using drag_value"),
+
+    dcc_markdown("Rather than changing the `updatemode` of the slider, you can also use `drag_value` as an input. This makes it possile to react differently to drag and mouseup."),
+
+    slider6.source_code,
+    slider6.layout
+
+
 
 end
 

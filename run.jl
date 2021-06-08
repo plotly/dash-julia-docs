@@ -18,11 +18,11 @@ map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_compone
 # include("dash_docs/chapters/graph_crossfiltering/index.jl");
 # include("dash_docs/chapters/sharing_data/index.jl");
 # include("dash_docs/chapters/faq_gotchas/index.jl");
-# include("dash_docs/chapters/deployment/index.jl");
-include("dash_docs/chapters/dash_core_components/index.jl");
-include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
-include("dash_docs/chapters/dash_core_components/Slider/index.jl");
-include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+# # include("dash_docs/chapters/deployment/index.jl");
+# include("dash_docs/chapters/dash_core_components/index.jl");
+# include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
+# include("dash_docs/chapters/dash_core_components/Slider/index.jl");
+# include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
 include("dash_docs/chapters/dash_core_components/Input/index.jl");
 
 

@@ -1,20 +1,36 @@
-using Dash, DashHtmlComponents, DashCoreComponents
+using Dash
+using DashCoreComponents
+using DashHtmlComponents
 
 app = dash()
 
-app.layout = html_div() do
-    dcc_input(id = "input-types-1", type = "text", value = "Montreal"),
-    dcc_input(id = "input-types-2", type = "text", value = "Canada"),
-    html_div(id = "output-keywords1")
+const ALLOWED_TYPES = [
+    "text", "number", "password", "email", "search",
+    "tel", "url", "range", "hidden",
+]
+
+app.layout = html_div(
+    vcat(
+        [
+            dcc_input(
+                id="input_$i",
+                type=i,
+                placeholder="input type $i",
+            )
+            for i in ALLOWED_TYPES
+        ],
+        [html_div(id="out-all-types")]
+    )
+)
+
+callback!(app,
+    Output("out-all-types", "children"),
+    [Input("input_$i", "value") for i in ALLOWED_TYPES],
+) do vals...
+    return join(
+        string.(Iterators.filter(v->!isnothing(v), vals)),
+        " | "
+        )
 end
 
-callback!(
-    app,
-    Output("output-keywords1", "children"),
-    Input("input-types-1", "value"),
-    Input("input-types-2", "value"),
-) do input_1, input_2
-    return "Input 1 is \"$input_1\" and Input 2 is \"$input_2\""
-end
-
-run_server(app, "0.0.0.0", debug=true)
+run_server(app, debug = true)

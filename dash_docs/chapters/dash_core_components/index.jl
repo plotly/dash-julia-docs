@@ -29,6 +29,8 @@ rangeslider_with_marks = LoadExampleCode(string(examples_path, "/rangeslider_wit
 
 input_index_example = LoadExampleCode(string(examples_path, "/input_index_example.jl"))
 
+textarea_index_example = LoadExampleCode(string(examples_path, "/textarea_index_example.jl"))
+
 examples = [dropdown_index_example]
 
 app =  dash()
@@ -73,7 +75,12 @@ app.layout = html_div() do
     html_a(html_h3("Input"), href="/dash_core_components/input"),
 
     input_index_example.source_code,
-    input_index_example.layout
+    input_index_example.layout,
+
+    html_a(html_h3("Textarea"), href="/dash_core_components/textarea"),
+
+    textarea_index_example.source_code,
+    textarea_index_example.layout
 
 end
 

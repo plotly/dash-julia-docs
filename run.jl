@@ -18,12 +18,13 @@ map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_compone
 # include("dash_docs/chapters/graph_crossfiltering/index.jl");
 # include("dash_docs/chapters/sharing_data/index.jl");
 # include("dash_docs/chapters/faq_gotchas/index.jl");
-# # include("dash_docs/chapters/deployment/index.jl");
-# include("dash_docs/chapters/dash_core_components/index.jl");
+# include("dash_docs/chapters/deployment/index.jl");
+include("dash_docs/chapters/dash_core_components/index.jl");
 # include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
 # include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 # include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-include("dash_docs/chapters/dash_core_components/Input/index.jl");
+# include("dash_docs/chapters/dash_core_components/Input/index.jl");
+include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
 
 
 # for example in chapters_callbacks.examples
@@ -54,7 +55,11 @@ include("dash_docs/chapters/dash_core_components/Input/index.jl");
 #     example.callback!(app)
 # end
 
-for example in chapters_dash_core_components_input.examples
+# for example in chapters_dash_core_components_input.examples
+#     example.callback!(app)
+# end
+
+for example in chapters_dash_core_components_textarea.examples
     example.callback!(app)
 end
 
@@ -138,6 +143,7 @@ callback!(app,
             "/dash_core_components/slider" => chapters_dash_core_components_slider.app.layout
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
             "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
+            "/dash_core_components/textarea" => chapters_dash_core_components_textarea.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

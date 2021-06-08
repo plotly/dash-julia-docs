@@ -3,10 +3,10 @@ using Dash, DashHtmlComponents, DashCoreComponents
 app = dash()
 
 app.layout = html_div() do
-    dcc_input(
+    dcc_textarea(
         placeholder="Enter a value...",
-        type="text",
-        value=""
+        value="This is a TextArea component",
+        style=Dict("width" => "100%")
     )
 end
 

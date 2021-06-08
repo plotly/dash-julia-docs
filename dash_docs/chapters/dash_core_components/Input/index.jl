@@ -10,11 +10,15 @@ examples_path = joinpath(@__DIR__, "examples")
 
 input_types = LoadExampleCode(string(examples_path, "/input_types.jl"))
 
-examples = [input_types]
+debounce = LoadExampleCode(string(examples_path, "/debounce.jl"))
+
+examples = [input_types, debounce]
 
 app =  dash()
 
 input_types.callback!(app)
+debounce.callback!(app)
+
 
 app.layout = html_div() do
 
@@ -23,7 +27,12 @@ app.layout = html_div() do
     html_h3("Supported Input Types"),
 
     input_types.source_code,
-    input_types.layout
+    input_types.layout,
+
+    html_h3("Debounce delays Input processing"),
+
+    debounce.source_code,
+    debounce.layout
 
 end
 

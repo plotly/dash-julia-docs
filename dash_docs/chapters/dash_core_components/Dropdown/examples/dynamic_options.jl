@@ -21,15 +21,8 @@ callback!(
     Output("demo-dropdown-2", "options"),
     Input("demo-dropdown-2", "search_value"),
 ) do search_value
-    if search_value === nothing
-        throw(PreventUpdate())
-        return
-    end
-
-    if search_value === ""
-        throw(PreventUpdate())
-        return
-    end
+    isnothing(search_value) && throw(PreventUpdate())
+    search_value == "" && throw(PreventUpdate())
 
     return [o for o in options if occursin(search_value, o.label)]
 end
@@ -40,15 +33,9 @@ callback!(
     Input("demo-dropdown-3", "search_value"),
     State("demo-dropdown-3", "value")
 ) do search_value, value
-    if search_value === nothing
-        throw(PreventUpdate())
-        return
-    end
-
-    if search_value === ""
-        throw(PreventUpdate())
-        return
-    end
+    isnothing(search_value) && throw(PreventUpdate())
+    search_value == "" && throw(PreventUpdate())
+    
 
     return [o for o in options if occursin(search_value, o.label) || in(o.value, something(value, []))]
 end

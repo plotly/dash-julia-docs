@@ -10,6 +10,25 @@ examples_path = joinpath(@__DIR__, "examples")
 
 simple_datepicker = LoadExampleCode(string(examples_path, "/simple_datepicker.jl"))
 
+datepicker_MMM_format = LoadExampleCode(string(examples_path, "/datepicker_MMM_format.jl"))
+
+datepicker_MDYQ_format = LoadExampleCode(string(examples_path, "/datepicker_MDYQ_format.jl"))
+
+datepicker_MMMMYDD_format = LoadExampleCode(string(examples_path, "/datepicker_MMMMYDD_format.jl"))
+
+datepicker_x_format = LoadExampleCode(string(examples_path, "/datepicker_x_format.jl"))
+
+datepicker_MMM_format_month = LoadExampleCode(string(examples_path, "/datepicker_MMM_format_month.jl"))
+
+datepicker_MDYQ_format_month = LoadExampleCode(string(examples_path, "/datepicker_MDYQ_format_month.jl"))
+
+datepicker_MMMMYDD_format_month = LoadExampleCode(string(examples_path, "/datepicker_MMMMYDD_format_month.jl"))
+
+datepicker_x_format_month = LoadExampleCode(string(examples_path, "/datepicker_x_format_month.jl"))
+
+datepicker_vertical = LoadExampleCode(string(examples_path, "/datepicker_vertical.jl"))
+
+
 examples = [simple_datepicker]
 
 app =  dash()
@@ -121,7 +140,47 @@ app.layout = html_div() do
         )]
     ),
 
-    html_h3("Display Format Examples")
+    html_h3("Display Format Examples"),
+
+    dcc_markdown("You can utilize any permutation of the string tokens shown in the table above to change how selected dates are displayed in the `DatePickerSingle` component."),
+
+    datepicker_MMM_format.source_code,
+    datepicker_MMM_format.layout,
+
+    datepicker_MDYQ_format.source_code,
+    datepicker_MDYQ_format.layout,
+
+    datepicker_MMMMYDD_format.source_code,
+    datepicker_MMMMYDD_format.layout,
+
+    datepicker_x_format.source_code,
+    datepicker_x_format.layout,
+
+    html_h3("Month Format Examples"),
+
+    datepicker_MMM_format_month.source_code,
+    datepicker_MMM_format_month.layout,
+
+    datepicker_MDYQ_format_month.source_code,
+    datepicker_MDYQ_format_month.layout,
+
+    datepicker_MMMMYDD_format_month.source_code,
+    datepicker_MMMMYDD_format_month.layout,
+
+    datepicker_x_format_month.source_code,
+    datepicker_x_format_month.layout,
+
+    html_h3("Vertical Calendar and Placeholder Text"),
+
+    dcc_markdown("""
+
+    The `DatePickerSingle` component can be rendered in two orientations, either horizontally or vertically. If `calendar_orientation` is set to `'vertical'`, it will be rendered vertically and will default to `'horizontal'` if not defined.
+
+    The `placeholder` defines the grey default text defined in the calendar input boxes when no date is selected."""),
+
+    datepicker_vertical.source_code,
+    datepicker_vertical.layout
+
 
 end
 

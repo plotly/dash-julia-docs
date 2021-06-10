@@ -39,6 +39,10 @@ radioitems_vertical = LoadExampleCode(string(examples_path, "/radioitems_vertica
 
 radioitems_horizontal = LoadExampleCode(string(examples_path, "/radioitems_horizontal.jl"))
 
+datepickersingle = LoadExampleCode(string(examples_path, "/datepickersingle.jl"))
+
+datepicker_range = LoadExampleCode(string(examples_path, "/datepicker_range.jl"))
+
 
 examples = [dropdown_index_example]
 
@@ -105,7 +109,17 @@ app.layout = html_div() do
     radioitems_vertical.layout,
 
     radioitems_horizontal.source_code,
-    radioitems_horizontal.layout
+    radioitems_horizontal.layout,
+
+    html_a(html_h3("DatePickerSingle"), href="/dash_core_components/datepickersingle"),
+
+    datepickersingle.source_code,
+    datepickersingle.layout,
+
+    html_a(html_h3("DatePickerRange"), href="/dash_core_components/datepickerrange"),
+
+    datepicker_range.source_code,
+    datepicker_range.layout
 
 end
 

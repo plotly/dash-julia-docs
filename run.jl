@@ -24,7 +24,9 @@ include("dash_docs/chapters/dash_core_components/index.jl");
 # include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 # include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
 # include("dash_docs/chapters/dash_core_components/Input/index.jl");
-include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+# include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+
 
 
 # for example in chapters_callbacks.examples
@@ -59,9 +61,9 @@ include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
 #     example.callback!(app)
 # end
 
-for example in chapters_dash_core_components_textarea.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components_textarea.examples
+#     example.callback!(app)
+# end
 
 header = html_div(
     children = (
@@ -144,6 +146,7 @@ callback!(app,
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
             "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
             "/dash_core_components/textarea" => chapters_dash_core_components_textarea.app.layout
+            "/dash_core_components/checklist" => chapters_dash_core_components_checklist.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

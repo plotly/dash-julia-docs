@@ -31,6 +31,11 @@ input_index_example = LoadExampleCode(string(examples_path, "/input_index_exampl
 
 textarea_index_example = LoadExampleCode(string(examples_path, "/textarea_index_example.jl"))
 
+checkbox_vertical = LoadExampleCode(string(examples_path, "/checkbox_vertical.jl"))
+
+checkbox_horizontal = LoadExampleCode(string(examples_path, "/checkbox_horizontal.jl"))
+
+
 examples = [dropdown_index_example]
 
 app =  dash()
@@ -80,7 +85,15 @@ app.layout = html_div() do
     html_a(html_h3("Textarea"), href="/dash_core_components/textarea"),
 
     textarea_index_example.source_code,
-    textarea_index_example.layout
+    textarea_index_example.layout,
+
+    html_a(html_h3("Checkboxes"), href="/dash_core_components/checklist"),
+
+    checkbox_vertical.source_code,
+    checkbox_vertical.layout,
+
+    checkbox_horizontal.source_code,
+    checkbox_horizontal.layout
 
 end
 

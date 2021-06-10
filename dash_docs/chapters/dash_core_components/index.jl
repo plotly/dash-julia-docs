@@ -35,6 +35,10 @@ checkbox_vertical = LoadExampleCode(string(examples_path, "/checkbox_vertical.jl
 
 checkbox_horizontal = LoadExampleCode(string(examples_path, "/checkbox_horizontal.jl"))
 
+radioitems_vertical = LoadExampleCode(string(examples_path, "/radioitems_vertical.jl"))
+
+radioitems_horizontal = LoadExampleCode(string(examples_path, "/radioitems_horizontal.jl"))
+
 
 examples = [dropdown_index_example]
 
@@ -93,7 +97,15 @@ app.layout = html_div() do
     checkbox_vertical.layout,
 
     checkbox_horizontal.source_code,
-    checkbox_horizontal.layout
+    checkbox_horizontal.layout,
+
+    html_a(html_h3("Radioitems"), href="/dash_core_components/radioitems"),
+
+    radioitems_vertical.source_code,
+    radioitems_vertical.layout,
+
+    radioitems_horizontal.source_code,
+    radioitems_horizontal.layout
 
 end
 

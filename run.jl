@@ -25,7 +25,8 @@ include("dash_docs/chapters/dash_core_components/index.jl");
 # include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
 # include("dash_docs/chapters/dash_core_components/Input/index.jl");
 # include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
-include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+# include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
 
 
 
@@ -147,6 +148,7 @@ callback!(app,
             "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
             "/dash_core_components/textarea" => chapters_dash_core_components_textarea.app.layout
             "/dash_core_components/checklist" => chapters_dash_core_components_checklist.app.layout
+            "/dash_core_components/radioitems" => chapters_dash_core_components_radioitems.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

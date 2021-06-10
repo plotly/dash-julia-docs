@@ -4,7 +4,7 @@ app = dash()
 
 app.layout = html_div() do
     dcc_rangeslider(
-        id="my-range-slider-1",
+        id="my-range-slider-2",
         step=nothing,
         min=0,
         max=10,

@@ -1,4 +1,4 @@
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyJS, UrlDownload
+using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyBase, UrlDownload
 
 
 df1 = DataFrame(urldownload("https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv"))

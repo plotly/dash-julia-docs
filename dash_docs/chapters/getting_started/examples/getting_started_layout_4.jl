@@ -1,4 +1,4 @@
-using DataFrames, CSV, PlotlyJS, RDatasets
+using DataFrames, CSV, PlotlyBase, RDatasets
 using Dash, DashHtmlComponents, DashCoreComponents
 
 

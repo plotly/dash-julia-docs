@@ -28,6 +28,10 @@ datepicker_x_format_month = LoadExampleCode(string(examples_path, "/datepicker_x
 
 datepicker_vertical = LoadExampleCode(string(examples_path, "/datepicker_vertical.jl"))
 
+datepicker_clearable = LoadExampleCode(string(examples_path, "/datepicker_clearable.jl"))
+
+datepicker_rtl = LoadExampleCode(string(examples_path, "/datepicker_rtl.jl"))
+
 
 examples = [simple_datepicker]
 
@@ -36,6 +40,8 @@ app =  dash()
 app.layout = html_div() do
 
     html_h1("DatePickerSingle Examples and Reference"),
+
+    html_h3("Simple DatePickerSingle Example"),
 
     dcc_markdown("""This is a simple example of a `DatePickerSingle` component tied to a callback. You can use either strings in the form `YYYY-MM-DD` or date objects from the `Dates` package to provide dates to Dash components. Strings are preferred because that's the form dates take as callback arguments.
 
@@ -179,7 +185,29 @@ app.layout = html_div() do
     The `placeholder` defines the grey default text defined in the calendar input boxes when no date is selected."""),
 
     datepicker_vertical.source_code,
-    datepicker_vertical.layout
+    datepicker_vertical.layout,
+
+    html_h3("Calendar Clear and Portals"),
+
+    dcc_markdown("""
+
+    When the `clearable` property is set to `true` the component will be rendered with a small 'x' that will remove all selected dates when selected.
+
+    The `DatePickerSingle` component supports two different portal types, one being a full screen portal (`with_full_screen_portal`) and another being a simple screen overlay, like the one shown below (`with_portal`)."""),
+
+    datepicker_clearable.source_code,
+    datepicker_clearable.layout,
+
+    html_h3("Right To Left Calendars and First Day of Week"),
+
+    dcc_markdown("""
+
+    When the `is_RTL` property is set to `true` the calendar will be rendered from right to left.
+
+    The `first_day_of_week` property allows you to define which day of the week will be set as the first day of the week. In the example below, Tuesday is the first day of the week.."""),
+
+    datepicker_rtl.source_code,
+    datepicker_rtl.layout
 
 
 end

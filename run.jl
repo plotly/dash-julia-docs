@@ -20,14 +20,15 @@ map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_compone
 # include("dash_docs/chapters/faq_gotchas/index.jl");
 # include("dash_docs/chapters/deployment/index.jl");
 include("dash_docs/chapters/dash_core_components/index.jl");
-include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
-include("dash_docs/chapters/dash_core_components/Slider/index.jl");
-include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-include("dash_docs/chapters/dash_core_components/Input/index.jl");
-include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
-include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
-include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
+# include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
+# include("dash_docs/chapters/dash_core_components/Slider/index.jl");
+# include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+# include("dash_docs/chapters/dash_core_components/Input/index.jl");
+# include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+# include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+# include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
+include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
 
 
 
@@ -43,31 +44,35 @@ include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 #     example.callback!(app)
 # end
 
-for example in chapters_dash_core_components.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components.examples
+#     example.callback!(app)
+# end
 
-for example in chapters_dash_core_components_dropdown.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components_dropdown.examples
+#     example.callback!(app)
+# end
 
-for example in chapters_dash_core_components_slider.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components_slider.examples
+#     example.callback!(app)
+# end
 
-for example in chapters_dash_core_components_rangeslider.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components_rangeslider.examples
+#     example.callback!(app)
+# end
 
-for example in chapters_dash_core_components_input.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components_input.examples
+#     example.callback!(app)
+# end
 
-for example in chapters_dash_core_components_textarea.examples
-    example.callback!(app)
-end
+# for example in chapters_dash_core_components_textarea.examples
+#     example.callback!(app)
+# end
 
 for example in chapters_dash_core_components_datepickersingle.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_core_components_datepickerrange.examples
     example.callback!(app)
 end
 
@@ -155,6 +160,7 @@ callback!(app,
             "/dash_core_components/checklist" => chapters_dash_core_components_checklist.app.layout
             "/dash_core_components/radioitems" => chapters_dash_core_components_radioitems.app.layout
             "/dash_core_components/datepickersingle" => chapters_dash_core_components_datepickersingle.app.layout
+            "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

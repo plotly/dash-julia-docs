@@ -11,60 +11,60 @@ map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_compone
 
 # Load chapter container Dash apps
 # remove unused includes to speed up load time in development
-# include("dash_docs/chapters/whats_dash/introduction.jl");
-# include("dash_docs/chapters/installation/index.jl");
-# include("dash_docs/chapters/getting_started/index.jl");
-# include("dash_docs/chapters/basic_callbacks/index.jl");
-# include("dash_docs/chapters/graph_crossfiltering/index.jl");
-# include("dash_docs/chapters/sharing_data/index.jl");
-# include("dash_docs/chapters/faq_gotchas/index.jl");
-# include("dash_docs/chapters/deployment/index.jl");
+include("dash_docs/chapters/whats_dash/introduction.jl");
+include("dash_docs/chapters/installation/index.jl");
+include("dash_docs/chapters/getting_started/index.jl");
+include("dash_docs/chapters/basic_callbacks/index.jl");
+include("dash_docs/chapters/graph_crossfiltering/index.jl");
+include("dash_docs/chapters/sharing_data/index.jl");
+include("dash_docs/chapters/faq_gotchas/index.jl");
+include("dash_docs/chapters/deployment/index.jl");
 include("dash_docs/chapters/dash_core_components/index.jl");
-# include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
-# include("dash_docs/chapters/dash_core_components/Slider/index.jl");
-# include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-# include("dash_docs/chapters/dash_core_components/Input/index.jl");
-# include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
-# include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
+include("dash_docs/chapters/dash_core_components/Slider/index.jl");
+include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+include("dash_docs/chapters/dash_core_components/Input/index.jl");
+include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
 include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
 
 
 
-# for example in chapters_callbacks.examples
-#     example.callback!(app)
-# end
+for example in chapters_callbacks.examples
+    example.callback!(app)
+end
 
-# for example in chapters_interactive_graphing.examples
-#     example.callback!(app)
-# end
+for example in chapters_interactive_graphing.examples
+    example.callback!(app)
+end
 
-# for example in chapters_sharing_data.examples
-#     example.callback!(app)
-# end
+for example in chapters_sharing_data.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_dropdown.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_dropdown.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_slider.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_slider.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_rangeslider.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_rangeslider.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_input.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_input.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_textarea.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_textarea.examples
+    example.callback!(app)
+end
 
 header = html_div(
     children = (

@@ -1,4 +1,4 @@
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, UrlDownload, PlotlyJS
+using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, UrlDownload, PlotlyBase
 
 
 df6 = DataFrame(urldownload("https://raw.githubusercontent.com/plotly/datasets/master/country_indicators.csv"))

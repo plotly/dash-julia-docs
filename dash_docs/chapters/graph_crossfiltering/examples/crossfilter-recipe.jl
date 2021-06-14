@@ -1,5 +1,5 @@
 
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyJS
+using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyBase
 
 
 df4 = DataFrame(Dict(("Col $(i)" => rand(30)) for i = 1:6))

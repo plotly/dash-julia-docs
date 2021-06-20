@@ -27,6 +27,8 @@ rangeslider_index_example = LoadExampleCode(string(examples_path, "/rangeslider_
 
 rangeslider_with_marks = LoadExampleCode(string(examples_path, "/rangeslider_with_marks.jl"))
 
+input_index_example = LoadExampleCode(string(examples_path, "/input_index_example.jl"))
+
 
 examples = [dropdown_index_example]
 
@@ -67,7 +69,14 @@ app.layout = html_div() do
     rangeslider_index_example.layout,
 
     rangeslider_with_marks.source_code,
-    rangeslider_with_marks.layout
+    rangeslider_with_marks.layout,
+
+    #Input
+    html_a(html_h3("Input"), href="/dash_core_components/input"),
+
+    input_index_example.source_code,
+    input_index_example.layout
+
 
 end
 

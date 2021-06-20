@@ -41,29 +41,29 @@ radioitems_inline_index_example = LoadExampleCode(string(examples_path, "/radioi
 
 button_index_example = LoadExampleCode(string(examples_path, "/button_index_example.jl"))
 
-datepickersingle_index_example = LoadExampleCode(string(examples_path, "/datepickersingle_index_example.jl"))
+# datepickersingle_index_example = LoadExampleCode(string(examples_path, "/datepickersingle_index_example.jl"))
 
-datepickerrange_index_example = LoadExampleCode(string(examples_path, "/datepickerrange_index_example.jl"))
+# datepickerrange_index_example = LoadExampleCode(string(examples_path, "/datepickerrange_index_example.jl"))
 
-markdown_index_example = LoadExampleCode(string(examples_path, "/markdown_index_example.jl"))
+# markdown_index_example = LoadExampleCode(string(examples_path, "/markdown_index_example.jl"))
 
-upload_index_example = LoadExampleCode(string(examples_path, "/upload_index_example.jl"))
+# upload_index_example = LoadExampleCode(string(examples_path, "/upload_index_example.jl"))
 
-download_index_example = LoadExampleCode(string(examples_path, "/download_index_example.jl"))
+# download_index_example = LoadExampleCode(string(examples_path, "/download_index_example.jl"))
 
-tabs_index_example = LoadExampleCode(string(examples_path, "/tabs_index_example.jl"))
+# tabs_index_example = LoadExampleCode(string(examples_path, "/tabs_index_example.jl"))
 
-graph_index_example = LoadExampleCode(string(examples_path, "/graph_index_example.jl"))
+# graph_index_example = LoadExampleCode(string(examples_path, "/graph_index_example.jl"))
 
-confirm_dialog_index_example = LoadExampleCode(string(examples_path, "/confirm_dialog_index_example.jl"))
+# confirm_dialog_index_example = LoadExampleCode(string(examples_path, "/confirm_dialog_index_example.jl"))
 
-confirm_dialog_clicked_index_example = LoadExampleCode(string(examples_path, "/confirm_dialog_clicked_index_example.jl"))
+# confirm_dialog_clicked_index_example = LoadExampleCode(string(examples_path, "/confirm_dialog_clicked_index_example.jl"))
 
-store_index_example = LoadExampleCode(string(examples_path, "/store_index_example.jl"))
+# store_index_example = LoadExampleCode(string(examples_path, "/store_index_example.jl"))
 
-loading_index_example = LoadExampleCode(string(examples_path, "/loading_index_example.jl"))
+# loading_index_example = LoadExampleCode(string(examples_path, "/loading_index_example.jl"))
 
-location_index_example = LoadExampleCode(string(examples_path, "/location_index_example.jl"))
+# location_index_example = LoadExampleCode(string(examples_path, "/location_index_example.jl"))
 
 
 examples = [dropdown_index_example]

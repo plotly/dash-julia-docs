@@ -45,11 +45,13 @@ datepicker_range = LoadExampleCode(string(examples_path, "/datepicker_range.jl")
 
 markdown = LoadExampleCode(string(examples_path, "/markdown.jl"))
 
+tabs = LoadExampleCode(string(examples_path, "/tabs.jl"))
 
-examples = [dropdown_index_example]
+examples = [tabs]
 
 app =  dash()
-dropdown_index_example.callback!(app)
+
+tabs.callback!(app)
 
 n = get_pkg_version("DashCoreComponents")
 
@@ -126,7 +128,12 @@ app.layout = html_div() do
     html_a(html_h3("Markdown"), href="/dash_core_components/markdown"),
 
     markdown.source_code,
-    markdown.layout
+    markdown.layout,
+
+    html_a(html_h3("Tabs"), href="/dash_core_components/tabs"),
+
+    tabs.source_code,
+    tabs.layout
 
 
 end

@@ -43,6 +43,8 @@ datepickersingle = LoadExampleCode(string(examples_path, "/datepickersingle.jl")
 
 datepicker_range = LoadExampleCode(string(examples_path, "/datepicker_range.jl"))
 
+markdown = LoadExampleCode(string(examples_path, "/markdown.jl"))
+
 
 examples = [dropdown_index_example]
 
@@ -119,7 +121,13 @@ app.layout = html_div() do
     html_a(html_h3("DatePickerRange"), href="/dash_core_components/datepickerrange"),
 
     datepicker_range.source_code,
-    datepicker_range.layout
+    datepicker_range.layout,
+
+    html_a(html_h3("Markdown"), href="/dash_core_components/markdown"),
+
+    markdown.source_code,
+    markdown.layout
+
 
 end
 

@@ -29,6 +29,7 @@ include("dash_docs/chapters/dash_core_components/index.jl");
 # include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
+include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
 
 
 
@@ -161,6 +162,7 @@ callback!(app,
             "/dash_core_components/radioitems" => chapters_dash_core_components_radioitems.app.layout
             "/dash_core_components/datepickersingle" => chapters_dash_core_components_datepickersingle.app.layout
             "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
+            "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

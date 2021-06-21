@@ -4,7 +4,7 @@ include("app.jl");
 using Pkg
 Pkg.develop(path="./dash-user-guide-components")
 
-using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, Match
+using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, DashDaq, Match
 
 # Load Chapter, Example, Header, Section, Syntax components
 map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_components/", join=true)));
@@ -23,6 +23,9 @@ include("dash_docs/chapters/dash_core_components/index.jl");
 include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+include("dash_docs/chapters/dash_core_components/Input/index.jl");
+
+include("dash_docs/chapters/dash_daq/index.jl");
 
 
 
@@ -51,6 +54,14 @@ for example in chapters_dash_core_components_slider.examples
 end
 
 for example in chapters_dash_core_components_rangeslider.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_core_components_input.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq.examples
     example.callback!(app)
 end
 
@@ -133,6 +144,8 @@ callback!(app,
             "/dash_core_components/dropdown" => chapters_dash_core_components_dropdown.app.layout
             "/dash_core_components/slider" => chapters_dash_core_components_slider.app.layout
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
+            "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
+            "/dash_daq" => chapters_dash_daq.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -210,6 +223,11 @@ callback!(app,
                             "Dash Core Components",
                             "/dash_core_components",
                             "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
+                        ),
+                        Chapter(
+                            "Dash DAQ",
+                            "/dash_daq",
+                            "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                         )
                     )
                 ),

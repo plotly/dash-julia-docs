@@ -67,13 +67,14 @@ location_index_example = LoadExampleCode(string(examples_path, "/location_index_
 
 
 examples = [
-    dropdown_index_example, button_index_example, 
+    dropdown_index_example, button_index_example,upload_index_example, 
     download_index_example, tabs_index_example
 ]
 
 app =  dash()
 dropdown_index_example.callback!(app)
 button_index_example.callback!(app)
+upload_index_example.callback!(app)
 download_index_example.callback!(app)
 tabs_index_example.callback!(app)
 
@@ -114,7 +115,7 @@ app.layout = html_div() do
     rangeslider_with_marks.layout,
 
     #Input
-    html_a(html_h3("Input"), href="#"),
+    html_a(html_h3("Input"), href="/dash_core_components/input"),
 
     input_index_example.source_code,
     input_index_example.layout,
@@ -179,8 +180,8 @@ app.layout = html_div() do
     The `dcc_upload` component allows users to upload
      files into your app through drag-and-drop or the system's native file explorer.
     "),
-    # upload_index_example.source_code,
-    # upload_index_example.layout,
+    upload_index_example.source_code,
+    upload_index_example.layout,
 
     #download
     html_a(html_h3("Download"), href="#"),

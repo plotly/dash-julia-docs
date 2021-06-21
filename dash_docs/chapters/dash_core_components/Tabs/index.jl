@@ -41,7 +41,12 @@ app.layout = html_div() do
     you can embed the content directly as the `children` property in the Tab component:"),
 
     method2.source_code,
-    method2.layout
+    method2.layout,
+
+    dcc_markdown("Note that this method has a drawback: it requires that you compute the 
+    children property for each individual tab upfront and send all of the tab's content over 
+    the network *at once*. The callback method allows you to compute the tab's content on the fly 
+    (that is, when the tab is clicked).")
 
 
 end

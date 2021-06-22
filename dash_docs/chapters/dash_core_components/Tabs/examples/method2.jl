@@ -13,7 +13,8 @@ app.layout = html_div() do
                             data = [
                                 (x = ["giraffes", "orangutans", "monkeys"], y = [20, 14, 23], type = "bar", name = "SF"),
                                 (x = ["giraffes", "orangutans", "monkeys"], y = [12, 18, 29], type = "bar", name = "Montreal"),
-                            ]
+                            ],
+                            layout = (title = "Dash Data Visualization", barmode="group")
                         )
                     )
                 ]
@@ -24,9 +25,10 @@ app.layout = html_div() do
                     dcc_graph(
                         figure = (
                             data = [
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [2, 1, 2], type = "bar", name = "SF"),
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [1, 8, 9], type = "bar", name = "Montreal"),
-                            ]
+                                (x = ["giraffes", "orangutans", "monkeys"], y = [2, 14, 23], type = "bar", name = "SF"),
+                                (x = ["giraffes", "orangutans", "monkeys"], y = [12, 18, 29], type = "bar", name = "Montreal"),
+                            ],
+                            layout = (title = "Dash Data Visualization", barmode="group")
                         )
                     )
                 ]
@@ -37,9 +39,10 @@ app.layout = html_div() do
                     dcc_graph(
                         figure = (
                             data = [
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [0, 4, 3], type = "bar", name = "SF"),
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [2, 1, 2], type = "bar", name = "Montreal"),
-                            ]
+                                (x = ["giraffes", "orangutans", "monkeys"], y = [5, 14, 2], type = "bar", name = "SF"),
+                                (x = ["giraffes", "orangutans", "monkeys"], y = [12, 18, 29], type = "bar", name = "Montreal"),
+                            ],
+                            layout = (title = "Dash Data Visualization", barmode="group")
                         )
                     )
                 ]

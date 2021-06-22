@@ -25,6 +25,9 @@ include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
 include("dash_docs/chapters/dash_core_components/Input/index.jl");
 
+include("dash_docs/chapters/dash_html_components/index.jl");
+
+
 include("dash_docs/chapters/dash_daq/index.jl");
 
 
@@ -61,9 +64,14 @@ for example in chapters_dash_core_components_input.examples
     example.callback!(app)
 end
 
+for example in chapters_dash_html_components.examples
+    example.callback!(app)
+end
+
 for example in chapters_dash_daq.examples
     example.callback!(app)
 end
+
 
 header = html_div(
     children = (
@@ -145,7 +153,10 @@ callback!(app,
             "/dash_core_components/slider" => chapters_dash_core_components_slider.app.layout
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
             "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
+            "/dash_html_components" => chapters_dash_html_components.app.layout
+
             "/dash_daq" => chapters_dash_daq.app.layout
+            
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -223,6 +234,11 @@ callback!(app,
                             "Dash Core Components",
                             "/dash_core_components",
                             "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
+                        ),
+                        Chapter(
+                            "Dash HTML Components",
+                            "/dash_html_components",
+                            "The Dash HTML Components library contains a set of components like button, div, form and more."
                         ),
                         Chapter(
                             "Dash DAQ",

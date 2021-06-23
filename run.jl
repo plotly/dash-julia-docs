@@ -4,70 +4,76 @@ include("app.jl");
 using Pkg
 Pkg.develop(path="./dash-user-guide-components")
 
-using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, Match
+using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, DashDaq, Match
 
 # Load Chapter, Example, Header, Section, Syntax components
 map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_components/", join=true)));
 
 # Load chapter container Dash apps
 # remove unused includes to speed up load time in development
-# include("dash_docs/chapters/whats_dash/introduction.jl");
-# include("dash_docs/chapters/installation/index.jl");
-# include("dash_docs/chapters/getting_started/index.jl");
-# include("dash_docs/chapters/basic_callbacks/index.jl");
-# include("dash_docs/chapters/graph_crossfiltering/index.jl");
-# include("dash_docs/chapters/sharing_data/index.jl");
-# include("dash_docs/chapters/faq_gotchas/index.jl");
-# include("dash_docs/chapters/deployment/index.jl");
+include("dash_docs/chapters/whats_dash/introduction.jl");
+include("dash_docs/chapters/installation/index.jl");
+include("dash_docs/chapters/getting_started/index.jl");
+include("dash_docs/chapters/basic_callbacks/index.jl");
+include("dash_docs/chapters/graph_crossfiltering/index.jl");
+include("dash_docs/chapters/sharing_data/index.jl");
+include("dash_docs/chapters/faq_gotchas/index.jl");
+include("dash_docs/chapters/deployment/index.jl");
 include("dash_docs/chapters/dash_core_components/index.jl");
-# include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
-# include("dash_docs/chapters/dash_core_components/Slider/index.jl");
-# include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-# include("dash_docs/chapters/dash_core_components/Input/index.jl");
-# include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
-# include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
-# include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
+include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
+include("dash_docs/chapters/dash_core_components/Slider/index.jl");
+include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+include("dash_docs/chapters/dash_core_components/Input/index.jl");
+include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
 include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
+include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
+include("dash_docs/chapters/dash_core_components/Slider/index.jl");
+include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+include("dash_docs/chapters/dash_core_components/Input/index.jl");
+
+include("dash_docs/chapters/dash_daq/index.jl");
 
 
-# for example in chapters_callbacks.examples
-#     example.callback!(app)
-# end
+for example in chapters_callbacks.examples
+    example.callback!(app)
+end
 
-# for example in chapters_interactive_graphing.examples
-#     example.callback!(app)
-# end
+for example in chapters_interactive_graphing.examples
+    example.callback!(app)
+end
 
-# for example in chapters_sharing_data.examples
-#     example.callback!(app)
-# end
+for example in chapters_sharing_data.examples
+    example.callback!(app)
+end
 
 for example in chapters_dash_core_components.examples
     example.callback!(app)
 end
 
-# for example in chapters_dash_core_components_dropdown.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_dropdown.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_slider.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_slider.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_rangeslider.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_rangeslider.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_input.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_input.examples
+    example.callback!(app)
+end
 
-# for example in chapters_dash_core_components_textarea.examples
-#     example.callback!(app)
-# end
+for example in chapters_dash_core_components_textarea.examples
+    example.callback!(app)
+end
 
 for example in chapters_dash_core_components_datepickersingle.examples
     example.callback!(app)
@@ -78,6 +84,14 @@ for example in chapters_dash_core_components_datepickerrange.examples
 end
 
 for example in chapters_dash_core_components_tabs.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_core_components_input.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq.examples
     example.callback!(app)
 end
 
@@ -168,6 +182,7 @@ callback!(app,
             "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
             "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
             "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
+            "/dash_daq" => chapters_dash_daq.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -245,6 +260,11 @@ callback!(app,
                             "Dash Core Components",
                             "/dash_core_components",
                             "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
+                        ),
+                        Chapter(
+                            "Dash DAQ",
+                            "/dash_daq",
+                            "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                         )
                     )
                 ),

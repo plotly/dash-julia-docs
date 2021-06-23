@@ -30,6 +30,8 @@ include("dash_docs/chapters/dash_html_components/index.jl");
 
 include("dash_docs/chapters/dash_daq/index.jl");
 
+include("dash_docs/chapters/dash_bio/index.jl");
+
 
 
 for example in chapters_callbacks.examples
@@ -69,6 +71,10 @@ for example in chapters_dash_html_components.examples
 end
 
 for example in chapters_dash_daq.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio.examples
     example.callback!(app)
 end
 
@@ -156,6 +162,8 @@ callback!(app,
             "/dash_html_components" => chapters_dash_html_components.app.layout
 
             "/dash_daq" => chapters_dash_daq.app.layout
+
+            "/dash_bio" => chapters_dash_bio.app.layout
             
             _ => html_div() do
                 html_br(),
@@ -244,6 +252,11 @@ callback!(app,
                             "Dash DAQ",
                             "/dash_daq",
                             "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
+                        ),
+                        Chapter(
+                            "Dash Bio",
+                            "/dash_bio",
+                            "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."
                         )
                     )
                 ),

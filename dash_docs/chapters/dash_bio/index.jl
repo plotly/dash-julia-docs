@@ -23,6 +23,12 @@ ideogram_index_example = LoadExampleCode(string(examples_path, "/ideogram_index_
 igv_index_example = LoadExampleCode(string(examples_path, "/igv_index_example.jl"))
 molecule2dviewer_index_example = LoadExampleCode(string(examples_path, "/molecule2dviewer_index_example.jl"))
 molecule3dviewer_index_example = LoadExampleCode(string(examples_path, "/molecule3dviewer_index_example.jl"))
+needleplot_index_example = LoadExampleCode(string(examples_path, "/needleplot_index_example.jl"))
+# nglmoleculeviewer_index_example = LoadExampleCode(string(examples_path, "/nglmoleculeviewer_index_example.jl"))
+oncoprint_index_example = LoadExampleCode(string(examples_path, "/oncoprint_index_example.jl"))
+# sequenceviewer_index_example = LoadExampleCode(string(examples_path, "/sequenceviewer_index_example.jl"))
+# speck_index_example = LoadExampleCode(string(examples_path, "/speck_index_example.jl"))
+# volcanoplot_index_example = LoadExampleCode(string(examples_path, "/volcanoplot_index_example.jl"))
 examples = [
     
 ]
@@ -90,9 +96,55 @@ app.layout = html_div() do
     dcc_markdown("A 3D visualization of biomolecular structures."),
 
     molecule3dviewer_index_example.source_code,
-    molecule3dviewer_index_example.layout
-    
+    molecule3dviewer_index_example.layout,
 
+    html_a(html_h3("NeedlePlot"), href="#"),
+
+    dcc_markdown("A combination of a bar chart and a scatter plot, for data that 
+    are both categorical and continuous."),
+
+    needleplot_index_example.source_code,
+    needleplot_index_example.layout,
+    
+    # html_a(html_h3("NglMoleculeViewer"), href="#"),
+
+    # dcc_markdown("A comprehensive 3D molecule visualizer for visualizing multiple 
+    # molecules and chains in a variety of representations."),
+
+    # nglmoleculeviewer_index_example.source_code,
+    # nglmoleculeviewer_index_example.layout,
+
+    html_a(html_h3("OncoPrint"), href="#"),
+
+    dcc_markdown("A chart that can be used to visualize 
+    multiple genomic alternations with an interactive heatmap."),
+
+    oncoprint_index_example.source_code,
+    oncoprint_index_example.layout
+
+    # html_a(html_h3("SequenceViewer"), href="#"),
+
+    # dcc_markdown("A sequence viewer."),
+
+    # sequenceviewer_index_example.source_code,
+    # sequenceviewer_index_example.layout,
+
+    # html_a(html_h3("Speck"), href="#"),
+
+    # dcc_markdown("A 3D WebGL molecule viewer."),
+
+    # speck_index_example.source_code,
+    # speck_index_example.layout,
+
+    
+    # html_a(html_h3("VolcanoPlot"), href="#"),
+
+    # dcc_markdown("A graph that can be used to identify clinically meaningful markers in genomic experiments."),
+
+    # volcanoplot_index_example.source_code,
+    # volcanoplot_index_example.layout
+    
+    
 
 end
 

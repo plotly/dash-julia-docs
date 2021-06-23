@@ -55,11 +55,25 @@ git-tree-sha1 = "fc7632ba6b4f1c085620870142114f428f51eff0"
 uuid = "03207cf0-e2b3-4b91-9ca8-690cf0fb507e"
 version = "0.1.0"
 
+[[DashBio]]
+deps = ["Dash"]
+path = "C:\\Users\\manoos\\.julia\\dev\\dash-bio"
+uuid = "1b08a953-4be3-4667-9a23-39d4b6b31131"
+version = "0.7.0"
+
 [[DashCoreComponents]]
 deps = ["DashBase"]
 git-tree-sha1 = "4f4935719119350b1f4c464341ef64743920ea74"
 uuid = "1b08a953-4be3-4667-9a23-9da06441d987"
 version = "1.16.0"
+
+[[DashDaq]]
+deps = ["Dash"]
+git-tree-sha1 = "32bc1349d40d014de57c95d93b705ebdc6a040e4"
+repo-rev = "master"
+repo-url = "C:\\Users\\manoos\\.julia\\dev\\DashDaq.jl"
+uuid = "1b08a953-4be3-4667-9a23-a540cca008f6"
+version = "0.5.0"
 
 [[DashHtmlComponents]]
 deps = ["DashBase"]

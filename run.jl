@@ -31,12 +31,7 @@ include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
 include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
-include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
-include("dash_docs/chapters/dash_core_components/Slider/index.jl");
-include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-include("dash_docs/chapters/dash_core_components/Input/index.jl");
 
-include("dash_docs/chapters/dash_daq/index.jl");
 
 
 for example in chapters_callbacks.examples
@@ -88,10 +83,6 @@ for example in chapters_dash_core_components_tabs.examples
 end
 
 for example in chapters_dash_core_components_input.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_daq.examples
     example.callback!(app)
 end
 
@@ -182,7 +173,6 @@ callback!(app,
             "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
             "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
             "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
-            "/dash_daq" => chapters_dash_daq.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -260,11 +250,6 @@ callback!(app,
                             "Dash Core Components",
                             "/dash_core_components",
                             "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
-                        ),
-                        Chapter(
-                            "Dash DAQ",
-                            "/dash_daq",
-                            "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                         )
                     )
                 ),

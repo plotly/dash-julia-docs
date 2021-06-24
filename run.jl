@@ -23,19 +23,6 @@ include("dash_docs/chapters/dash_core_components/index.jl");
 include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-include("dash_docs/chapters/dash_core_components/Input/index.jl");
-include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
-include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
-include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
-include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
-include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
-include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
-include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
-include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
-include("dash_docs/chapters/dash_core_components/Slider/index.jl");
-include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-include("dash_docs/chapters/dash_core_components/Input/index.jl");
-
 include("dash_docs/chapters/dash_daq/index.jl");
 
 
@@ -64,30 +51,6 @@ for example in chapters_dash_core_components_slider.examples
 end
 
 for example in chapters_dash_core_components_rangeslider.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_core_components_input.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_core_components_textarea.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_core_components_datepickersingle.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_core_components_datepickerrange.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_core_components_tabs.examples
-    example.callback!(app)
-end
-
-for example in chapters_dash_core_components_input.examples
     example.callback!(app)
 end
 
@@ -174,14 +137,6 @@ callback!(app,
             "/dash_core_components/dropdown" => chapters_dash_core_components_dropdown.app.layout
             "/dash_core_components/slider" => chapters_dash_core_components_slider.app.layout
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
-            "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
-            "/dash_core_components/textarea" => chapters_dash_core_components_textarea.app.layout
-            "/dash_core_components/checklist" => chapters_dash_core_components_checklist.app.layout
-            "/dash_core_components/radioitems" => chapters_dash_core_components_radioitems.app.layout
-            "/dash_core_components/datepickersingle" => chapters_dash_core_components_datepickersingle.app.layout
-            "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
-            "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
-            "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
             "/dash_daq" => chapters_dash_daq.app.layout
             _ => html_div() do
                 html_br(),

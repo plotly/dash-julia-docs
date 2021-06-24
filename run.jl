@@ -4,7 +4,7 @@ include("app.jl");
 using Pkg
 Pkg.develop(path="./dash-user-guide-components")
 
-using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, DashDaq, Match
+using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, Match
 
 # Load Chapter, Example, Header, Section, Syntax components
 map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_components/", join=true)));
@@ -23,9 +23,6 @@ include("dash_docs/chapters/dash_core_components/index.jl");
 include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
-
-include("dash_docs/chapters/dash_daq/index.jl");
-
 
 for example in chapters_callbacks.examples
     example.callback!(app)

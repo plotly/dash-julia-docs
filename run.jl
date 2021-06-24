@@ -32,6 +32,8 @@ include("dash_docs/chapters/dash_daq/index.jl");
 
 include("dash_docs/chapters/dash_bio/index.jl");
 
+include("dash_docs/chapters/dash_data_table/index.jl");
+
 
 
 for example in chapters_callbacks.examples
@@ -75,6 +77,10 @@ for example in chapters_dash_daq.examples
 end
 
 for example in chapters_dash_bio.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_data_table.examples
     example.callback!(app)
 end
 
@@ -164,6 +170,8 @@ callback!(app,
             "/dash_daq" => chapters_dash_daq.app.layout
 
             "/dash_bio" => chapters_dash_bio.app.layout
+
+            "/dash_data_table" => chapters_dash_data_table.app.layout
             
             _ => html_div() do
                 html_br(),
@@ -257,6 +265,11 @@ callback!(app,
                             "Dash Bio",
                             "/dash_bio",
                             "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."
+                        ),
+                        Chapter(
+                            "Dash Data Table",
+                            "/dash_data_table",
+                            "The Dash Data Table library is used to generate interactive tables."
                         )
                     )
                 ),

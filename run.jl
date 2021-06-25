@@ -31,8 +31,7 @@ include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
 include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
-
-
+include("dash_docs/chapters/dash_html_components/index.jl");
 
 for example in chapters_callbacks.examples
     example.callback!(app)
@@ -86,6 +85,9 @@ for example in chapters_dash_core_components_input.examples
     example.callback!(app)
 end
 
+for example in chapters_dash_html_components.examples
+    example.callback!(app)
+end
 
 header = html_div(
     children = (
@@ -174,6 +176,7 @@ callback!(app,
             "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
             "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
             "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
+            "/dash_html_components" => chapters_dash_html_components.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -251,7 +254,12 @@ callback!(app,
                             "Dash Core Components",
                             "/dash_core_components",
                             "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
-                        )
+                        ),
+                        Chapter(
+                            "Dash HTML Components",
+                            "/dash_html_components",
+                            "The Dash HTML Components library contains a set of components like button, div, form and more."
+                        ),
                     )
                 ),
                 Section(

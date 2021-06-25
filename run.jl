@@ -25,6 +25,7 @@ include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
 
 
+include("dash_docs/chapters/dash_html_components/index.jl");
 
 for example in chapters_callbacks.examples
     example.callback!(app)
@@ -51,6 +52,10 @@ for example in chapters_dash_core_components_slider.examples
 end
 
 for example in chapters_dash_core_components_rangeslider.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_html_components.examples
     example.callback!(app)
 end
 
@@ -133,6 +138,7 @@ callback!(app,
             "/dash_core_components/dropdown" => chapters_dash_core_components_dropdown.app.layout
             "/dash_core_components/slider" => chapters_dash_core_components_slider.app.layout
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
+            "/dash_html_components" => chapters_dash_html_components.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -210,7 +216,12 @@ callback!(app,
                             "Dash Core Components",
                             "/dash_core_components",
                             "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
-                        )
+                        ),
+                        Chapter(
+                            "Dash HTML Components",
+                            "/dash_html_components",
+                            "The Dash HTML Components library contains a set of components like button, div, form and more."
+                        ),
                     )
                 ),
                 Section(

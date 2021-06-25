@@ -127,7 +127,7 @@ app.layout = html_div() do
     textarea_index_example.layout,
     
     #checkboxes
-    html_a(html_h3("CheckBoxes"), href="/dash_core_components/checkboxes"),
+    html_a(html_h3("CheckBoxes"), href="/dash_core_components/checklist"),
 
     checkboxes_index_example.source_code,
     checkboxes_index_example.layout,

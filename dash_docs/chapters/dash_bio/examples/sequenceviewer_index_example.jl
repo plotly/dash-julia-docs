@@ -1,18 +1,15 @@
-using Dash, DashBio
-using StringEncodings, HTTP, JSON
+using Dash, DashBio, DashBioUtils
 
-req = HTTP.request("GET", "https://raw.githubusercontent.com/plotly/dash-bio-docs-files/master/sequence_viewer_P01308.fasta")
-data = decode(req.body, "UTF-8")
+data ="https://raw.githubusercontent.com/plotly/dash-bio-docs-files/master/sequence_viewer_P01308.fasta"
 
-mdata = JSON.parse(data)
-
+seq  = DashBioUtils.read_fasta(data, is_datafile = false)[1]["sequence"]
 
 app = dash()
 
 
-app.layout = dashbio_needleplot(
-  id="my-dashbio-needleplot",
-  mutationData=mdata
+app.layout =  dashbio_sequenceviewer(
+  id="my-dashbio-sequenceviewer",
+  sequence=seq
 )
 
 run_server(app, "0.0.0.0", debug=true)

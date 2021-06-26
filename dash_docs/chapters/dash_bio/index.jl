@@ -24,10 +24,10 @@ igv_index_example = LoadExampleCode(string(examples_path, "/igv_index_example.jl
 molecule2dviewer_index_example = LoadExampleCode(string(examples_path, "/molecule2dviewer_index_example.jl"))
 molecule3dviewer_index_example = LoadExampleCode(string(examples_path, "/molecule3dviewer_index_example.jl"))
 needleplot_index_example = LoadExampleCode(string(examples_path, "/needleplot_index_example.jl"))
-# nglmoleculeviewer_index_example = LoadExampleCode(string(examples_path, "/nglmoleculeviewer_index_example.jl"))
+nglmoleculeviewer_index_example = LoadExampleCode(string(examples_path, "/nglmoleculeviewer_index_example.jl"))
 oncoprint_index_example = LoadExampleCode(string(examples_path, "/oncoprint_index_example.jl"))
-# sequenceviewer_index_example = LoadExampleCode(string(examples_path, "/sequenceviewer_index_example.jl"))
-# speck_index_example = LoadExampleCode(string(examples_path, "/speck_index_example.jl"))
+sequenceviewer_index_example = LoadExampleCode(string(examples_path, "/sequenceviewer_index_example.jl"))
+speck_index_example = LoadExampleCode(string(examples_path, "/speck_index_example.jl"))
 # volcanoplot_index_example = LoadExampleCode(string(examples_path, "/volcanoplot_index_example.jl"))
 examples = [
     
@@ -106,13 +106,13 @@ app.layout = html_div() do
     needleplot_index_example.source_code,
     needleplot_index_example.layout,
     
-    # html_a(html_h3("NglMoleculeViewer"), href="#"),
+    html_a(html_h3("NglMoleculeViewer"), href="#"),
 
-    # dcc_markdown("A comprehensive 3D molecule visualizer for visualizing multiple 
-    # molecules and chains in a variety of representations."),
+    dcc_markdown("A comprehensive 3D molecule visualizer for visualizing multiple 
+    molecules and chains in a variety of representations."),
 
-    # nglmoleculeviewer_index_example.source_code,
-    # nglmoleculeviewer_index_example.layout,
+    nglmoleculeviewer_index_example.source_code,
+    nglmoleculeviewer_index_example.layout,
 
     html_a(html_h3("OncoPrint"), href="#"),
 
@@ -120,21 +120,21 @@ app.layout = html_div() do
     multiple genomic alternations with an interactive heatmap."),
 
     oncoprint_index_example.source_code,
-    oncoprint_index_example.layout
+    oncoprint_index_example.layout,
 
-    # html_a(html_h3("SequenceViewer"), href="#"),
+    html_a(html_h3("SequenceViewer"), href="#"),
 
-    # dcc_markdown("A sequence viewer."),
+    dcc_markdown("A sequence viewer."),
 
-    # sequenceviewer_index_example.source_code,
-    # sequenceviewer_index_example.layout,
+    sequenceviewer_index_example.source_code,
+    sequenceviewer_index_example.layout,
 
-    # html_a(html_h3("Speck"), href="#"),
+    html_a(html_h3("Speck"), href="#"),
 
-    # dcc_markdown("A 3D WebGL molecule viewer."),
+    dcc_markdown("A 3D WebGL molecule viewer."),
 
-    # speck_index_example.source_code,
-    # speck_index_example.layout,
+    speck_index_example.source_code,
+    speck_index_example.layout
 
     
     # html_a(html_h3("VolcanoPlot"), href="#"),

@@ -1,22 +1,12 @@
-using Dash, DashBio
-using StringEncodings, HTTP, JSON
+using Dash, DashBio, DashBioUtils
 
-data_path = "https://raw.githubusercontent.com/plotly/dash-bio-docs-files/master"
-data = decode(req.body, "UTF-8")
-
-mdata = JSON.parse(data)
+data_path = "https://raw.githubusercontent.com/plotly/dash-bio-docs-files/master/"
 
 
 app = dash()
-
-
-app.layout =  dashbio.NglMoleculeViewer(
-  id="my-dashbio-nglmoleculeviewer",
-  data=[ngl_parser.get_data(data_path=data_path,
-  pdb_id='1BNA',
-  color='red',
-  reset_view=False,
-  local=False)]
+app.layout = dashbio_nglmoleculeviewer(
+  id="nglmoleculeviewer",
+  data=[DashBioUtils.get_data(data_path, "1BNA", "red", reset_view=true, loc=false)]
 )
 
 run_server(app, "0.0.0.0", debug=true)

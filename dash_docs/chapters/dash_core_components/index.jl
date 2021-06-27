@@ -184,7 +184,7 @@ app.layout = html_div() do
     upload_index_example.layout,
 
     #download
-    html_a(html_h3("Download"), href="#"),
+    html_a(html_h3("Download"), href="/dash_core_components/download"),
     
     dcc_markdown(
         "The `dcc_download` component allows users to download 

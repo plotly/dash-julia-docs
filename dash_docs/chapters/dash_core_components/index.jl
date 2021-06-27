@@ -174,7 +174,7 @@ app.layout = html_div() do
     markdown_index_example.layout,
 
     #upload
-    html_a(html_h3("Upload"), href="#"),
+    html_a(html_h3("Upload"), href="/dash_core_components/upload"),
     
     dcc_markdown("
     The `dcc_upload` component allows users to upload

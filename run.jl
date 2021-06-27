@@ -32,6 +32,7 @@ include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
 include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
+include("dash_docs/chapters/dash_core_components/Upload/index.jl");
 
 include("dash_docs/chapters/dash_html_components/index.jl");
 
@@ -80,6 +81,10 @@ for example in chapters_dash_core_components_datepickerrange.examples
 end
 
 for example in chapters_dash_core_components_tabs.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_core_components_upload.examples
     example.callback!(app)
 end
 
@@ -175,6 +180,9 @@ callback!(app,
             "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
             "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
             "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
+            "/dash_core_components/upload" => chapters_dash_core_components_upload.app.layout
+
+
             "/dash_html_components" => chapters_dash_html_components.app.layout
             _ => html_div() do
                 html_br(),

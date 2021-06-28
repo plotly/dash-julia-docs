@@ -207,7 +207,7 @@ app.layout = html_div() do
     graph_index_example.layout,
 
     #confirm_dialog
-    html_a(html_h3("ConfirmDialog"), href="#"),
+    html_a(html_h3("ConfirmDialog"), href="/dash_core_components/confirmdialog"),
     
     dcc_markdown("
     The `dcc_confirmdialog` component send a dialog to the browser 
@@ -215,6 +215,8 @@ app.layout = html_div() do
     "),
     confirm_dialog_index_example.source_code,
     confirm_dialog_index_example.layout,
+    
+    html_a(html_h3("ConfirmDialogProvider"), href="/dash_core_components/confirmprovider"),
 
     dcc_markdown(
         "There is also a `dcc_confirmdialogprovider`, it will automatically 

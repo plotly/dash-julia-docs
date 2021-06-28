@@ -35,6 +35,8 @@ include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
 include("dash_docs/chapters/dash_core_components/Upload/index.jl");
 include("dash_docs/chapters/dash_core_components/Download/index.jl");
 include("dash_docs/chapters/dash_core_components/Graph/index.jl");
+include("dash_docs/chapters/dash_core_components/ConfirmDialog/index.jl");
+include("dash_docs/chapters/dash_core_components/ConfirmDialogProvider/index.jl");
 
 include("dash_docs/chapters/dash_html_components/index.jl");
 
@@ -95,6 +97,14 @@ for example in chapters_dash_core_components_download.examples
 end
 
 for example in chapters_dash_core_components_graph.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_core_components_confirmdialog.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_core_components_confirmprovider.examples
     example.callback!(app)
 end
 
@@ -193,6 +203,8 @@ callback!(app,
             "/dash_core_components/upload" => chapters_dash_core_components_upload.app.layout
             "/dash_core_components/download" => chapters_dash_core_components_download.app.layout
             "/dash_core_components/graph" => chapters_dash_core_components_graph.app.layout
+            "/dash_core_components/confirmdialog" => chapters_dash_core_components_confirmdialog.app.layout
+            "/dash_core_components/confirmprovider" => chapters_dash_core_components_confirmprovider.app.layout
 
 
             "/dash_html_components" => chapters_dash_html_components.app.layout

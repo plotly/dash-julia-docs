@@ -27,11 +27,6 @@ git-tree-sha1 = "ecdec412a9abc8db54c0efc5548c64dfce072058"
 uuid = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
 version = "0.5.10"
 
-[[Blink]]
-deps = ["Base64", "BinDeps", "Distributed", "JSExpr", "JSON", "Lazy", "Logging", "MacroTools", "Mustache", "Mux", "Reexport", "Sockets", "WebIO", "WebSockets"]
-git-tree-sha1 = "08d0b679fd7caa49e2bca9214b131289e19808c0"
-uuid = "ad839575-38b3-5650-b840-f874b8c74a25"
-version = "0.12.5"
 
 [[CSV]]
 deps = ["Dates", "Mmap", "Parsers", "PooledArrays", "SentinelArrays", "Tables", "Unicode"]
@@ -123,11 +118,6 @@ git-tree-sha1 = "93dc7fa58ce249c507e9a5b59b347ff623f32f76"
 uuid = "1b08a953-4be3-4667-9a23-f0e2ba4deb9a"
 version = "4.11.3"
 
-[[DashUserGuideComponents]]
-deps = ["Dash"]
-path = "../../../Downloads/code/work/active-julia-docs/dash-julia-docs/dash-user-guide-components"
-uuid = "1b08a953-4be3-4667-9a23-e667f8ac7b1d"
-version = "0.0.4"
 
 [[DataAPI]]
 git-tree-sha1 = "dfb3b7e89e395be1e25c2ad6d7690dc29cc53b1d"
@@ -250,11 +240,6 @@ git-tree-sha1 = "642a199af8b68253517b80bd3bfd17eb4e84df6e"
 uuid = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
 version = "1.3.0"
 
-[[JSExpr]]
-deps = ["JSON", "MacroTools", "Observables", "WebIO"]
-git-tree-sha1 = "bd6c034156b1e7295450a219c4340e32e50b08b1"
-uuid = "97c1335a-c9c5-57fe-bc5d-ec35cebe8660"
-version = "0.5.3"
 
 [[JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
@@ -414,11 +399,6 @@ git-tree-sha1 = "f20d4669281187c9e9d75820f8ec95e88131fc1e"
 uuid = "a03496cd-edff-5a9b-9e67-9cda94a718b5"
 version = "0.5.3"
 
-[[PlotlyJS]]
-deps = ["Blink", "DelimitedFiles", "JSExpr", "JSON", "Markdown", "Pkg", "PlotlyBase", "REPL", "Reexport", "Requires", "WebIO"]
-git-tree-sha1 = "b859551864853bb2c317d0937e94bd19d749396b"
-uuid = "f0f68f2c-4968-5e81-91da-67840de0976a"
-version = "0.14.1"
 
 [[PooledArrays]]
 deps = ["DataAPI", "Future"]
@@ -581,11 +561,6 @@ git-tree-sha1 = "05f86730c7a53c9da603bd506a4fc9ad0851171c"
 uuid = "856ac37a-3032-4c1c-9122-f86d88358c8b"
 version = "1.0.0"
 
-[[WebIO]]
-deps = ["AssetRegistry", "Base64", "BinaryProvider", "Distributed", "FunctionalCollections", "JSON", "Logging", "Observables", "Pkg", "Random", "Requires", "Sockets", "UUIDs", "WebSockets", "Widgets"]
-git-tree-sha1 = "5a677b666629f761920c524bb2086c06a96d8ab6"
-uuid = "0f1e0344-ec1d-5b48-a673-e5cf874b6c29"
-version = "0.8.93"
 
 [[WebSockets]]
 deps = ["Base64", "Dates", "HTTP", "Logging", "Sockets"]

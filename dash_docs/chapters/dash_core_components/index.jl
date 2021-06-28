@@ -201,7 +201,7 @@ app.layout = html_div() do
     tabs_index_example.layout,
 
     #graphs
-    html_a(html_h3("Graph"), href="#"),
+    html_a(html_h3("Graph"), href="/dash_core_components/graph"),
 
     graph_index_example.source_code,
     graph_index_example.layout,

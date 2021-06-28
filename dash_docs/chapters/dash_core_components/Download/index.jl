@@ -27,18 +27,20 @@ app.layout = html_div() do
     download_text.source_code,
     download_text.layout,
 
-    dcc_h3(
-      "dcc.Download Component Properties"
+    html_h3(
+      "dcc_download Component Properties"
     ),
 
     dcc_markdown(
-      ```julia
-      Access this documentation in your Julia terminal     with:
-      help?> dcc_download
-
-      Our recommended IDE for writing Dash apps is Dash Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/), which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
-      ```
-    )
+     " 
+      Access this documentation in your Julia terminal with:
+     ``` 
+        help?> dcc_download
+     ```
+      Our recommended IDE for writing Dash apps is Dash Enterprise's 
+        [Data Science Workspaces](https://plotly.com/dash/workspaces/), which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
+      "
+    ),
     dcc_markdown(
       "examples/`id` (String; optional): The ID of this component, used to identify dash components in callbacks.
 

@@ -227,7 +227,7 @@ app.layout = html_div() do
     confirm_dialog_clicked_index_example.layout,
 
     #store
-    html_a(html_h3("Store"), href="#"),
+    html_a(html_h3("Store"), href="/dash_core_components/store"),
     
     dcc_markdown(
         "The store component can be used to keep data in the visitor's browser. The data is scoped to the user accessing the page.

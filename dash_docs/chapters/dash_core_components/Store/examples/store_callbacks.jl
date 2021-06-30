@@ -8,7 +8,7 @@ app = dash()
 
 df = CSV.read(download("https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv"), DataFrame)
 
-countries = df[!,"country"]
+countries = Set(df[!,"country"])
 
 
 app.layout = html_div([
@@ -24,23 +24,28 @@ app.layout = html_div([
         dcc_graph(id="memory-graph"),
         DashTable.dash_datatable(
             id="memory-table",
-            columns=[Dict(pairs(NamedTuple(eachrow(df)[j]))) for j in 1:nrow(df)]
+            columns=[Dict("name" =>i, "id" => i) for i in names(df)]
         ),
     ])
 ])
 
-run_server(app, "0.0.0.0", debug=true)
-@app.callback(Output("memory-output", "data"),
-              Input("memory-countries", "value"))
-def filter_countries(countries_selected)=>
-    if not countries_selected=>
+
+callback!(app,
+  Output("memory-output", "data"),
+  Input("memory-countries", "value")) do countries_selected
+
+    
+    if countries_selected isa Nothing
         # Return all the rows on initial load/no country selected.
-        return df.to_dict("records")
+        return [Dict(pairs(NamedTuple(eachrow(df)[j]))) for j in 1:nrow(df)]
+    end
+    return [Dict(pairs(NamedTuple(eachrow(df)[j]))) for j in 1:2]
+    # filtered = df.query("country in @countries_selected")
 
-    filtered = df.query("country in @countries_selected")
+    # return filtered.to_dict("records")
 
-    return filtered.to_dict("records")
-
+end
+run_server(app, "0.0.0.0", debug=true)
 
 @app.callback(Output("memory-table", "data"),
               Input("memory-output", "data"))
@@ -51,18 +56,16 @@ def on_data_set_table(data)=>
     return data
 
 
-@app.callback(Output("memory-graph", "figure"),
+callback(app, Output("memory-graph", "figure"),
               Input("memory-output", "data"),
-              Input("memory-field", "value"))
-def on_data_set_graph(data, field)=>
-    if data is None=>
-        raise PreventUpdate
+              Input("memory-field", "value")) do data, field)
+    if data isa Nothing
+        throw(PreventUpdate())
+    end
 
-    aggregation = collections.defaultdict(
-        lambda=> collections.defaultdict(list)
-    )
+    aggregation = DefaultDict("lambda" => DefaultDict(Array))
 
-    for row in data=>
+    for row in data 
 
         a = aggregation[row["country"]]
 
@@ -71,11 +74,13 @@ def on_data_set_graph(data, field)=>
 
         a["x"].append(row[field])
         a["y"].append(row["year"])
+    end
 
     return Dict(
         "data"=> [x for x in aggregation.values()]
     )
+  
 
-
+end 
 if __name__ == "__main__"=>
     app.run_server(debug=True, threaded=True, port=10450)

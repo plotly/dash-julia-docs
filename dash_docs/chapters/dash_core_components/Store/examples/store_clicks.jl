@@ -4,7 +4,7 @@ using Dash, DashHtmlComponents, DashCoreComponents
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 
-app = dash(external_stylesheets=external_stylesheets)
+global app = dash(external_stylesheets=external_stylesheets)
 
 app.layout = html_div([
     # The memory store reverts to the default on every page refresh

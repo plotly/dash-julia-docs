@@ -109,9 +109,9 @@ app.layout = html_div() do
     html_h3("Full elements reference:"),
     html_ul(
     [
-      html_li(html_a(html_h6("html_a"), href="#")),
-      html_li(html_a(html_h6("html_abbr"), href="#")),
-      html_li(html_a(html_h6("html_acronym"), href="#")),
+      html_li(html_a(html_h6("html_a"), href="/dash_html_components/a")),
+      html_li(html_a(html_h6("html_abbr"), href="/dash_html_components/abbr")),
+      html_li(html_a(html_h6("html_acronym"), href="/dash_html_components/acronym")),
       html_li(html_a(html_h6("html_address"), href="#")),
       html_li(html_a(html_h6("html_area"), href="#")),
       html_li(html_a(html_h6("html_article"), href="#")),

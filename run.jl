@@ -40,6 +40,9 @@ include("dash_docs/chapters/dash_core_components/ConfirmDialogProvider/index.jl"
 include("dash_docs/chapters/dash_core_components/Store/index.jl");
 
 include("dash_docs/chapters/dash_html_components/index.jl");
+include("dash_docs/chapters/dash_html_components/A/index.jl");
+include("dash_docs/chapters/dash_html_components/Abbr/index.jl");
+include("dash_docs/chapters/dash_html_components/Acronym/index.jl");
 
 for example in chapters_callbacks.examples
     example.callback!(app)
@@ -115,6 +118,18 @@ end
 
 
 for example in chapters_dash_html_components.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_html_components_a.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_html_components_abbr.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_html_components_acronym.examples
     example.callback!(app)
 end
 
@@ -214,6 +229,9 @@ callback!(app,
 
 
             "/dash_html_components" => chapters_dash_html_components.app.layout
+            "/dash_html_components/a" => chapters_dash_html_components_a.app.layout
+            "/dash_html_components/abbr" => chapters_dash_html_components_abbr.app.layout
+            "/dash_html_components/acronym" => chapters_dash_html_components_acronym.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

@@ -7,10 +7,11 @@ function LoadExampleCode(filename, wd = nothing)
   return cd(wd) do
 
     parsed_exprs = ParseExampleExpr(Base.parse_input_line(example_file_as_string; filename = filename))
+
     return (
         layout = html_div(
             className = "example-container",
-            children = eval(parsed_exprs.layout),
+            children = parsed_exprs.layout,
             style = Dict("marginBottom" => "10px"),
         ),
         source_code = html_div(
@@ -20,43 +21,55 @@ function LoadExampleCode(filename, wd = nothing)
             className = "code-container",
             style = Dict("borderLeft" => "thin lightgrey solid"),
         ),
-        callback! = eval(parsed_exprs.callback!)
-    )
+        callback! = eval(parsed_exprs.func)
+       )
   end
 
 end
+const top_level_eval = Set([:using, :import, :const])
 
-function ParseExampleExpr(expr)
-  layout = nothing
-  callback_funcs = Expr(:block)
-  for code_block in expr.args
+function ProcessArgs(args)
+  result = []
+  for code_block in args
     if code_block isa Expr
-        #skip app = ....
-        if code_block.head == :(=) && code_block.args[1] == :app
-          continue
-        end
-        #skip run_server
         if code_block.head == :call && code_block.args[1] == :run_server
           continue
         end
-
-        #skip and save layout
+        if code_block.head in top_level_eval
+          eval(code_block)
+          continue
+        end
+        if code_block.head == :(=) && code_block.args[1] == :app
+          continue
+        end
         if code_block.head == :(=) && code_block.args[1] == :(app.layout)
-          layout = code_block.args[2]
+
+          push!(result,
+            Expr(:(=),
+              :layout,
+              code_block.args[2]
+            )
+          )
           continue
         end
-
-        #skip and append to list callback
-        if is_callback(code_block)
-          push!(callback_funcs.args, code_block)
-          continue
-        end
-
-        eval(code_block)
-
     end
+    push!(result, code_block)
   end
-  return (layout = layout, callback! = Expr(:function, :(app,), callback_funcs))
+  return result
+end
+
+function ParseExampleExpr(expr)
+  callback_funcs = Expr(:block)
+  result = Expr(:block)
+  result.args = ProcessArgs(expr.args)
+  layout_get = Expr(:block,
+    :(app = dash()),
+    result.args...,
+    :(return layout)
+  )
+
+  layout = eval(layout_get)
+  return (layout = layout, func = Expr(:function, :(app,), result))
 end
 
 is_callbackcall(expr) = expr.head == :call && expr.args[1] == :callback!

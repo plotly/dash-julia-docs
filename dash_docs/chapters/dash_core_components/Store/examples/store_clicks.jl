@@ -12,7 +12,7 @@ app.layout = html_div([
     # The local store will take the initial data
     # only the first time the page is loaded
     # and keep it until it is cleared.
-    # dcc_store(id="local", storage_type="local"),
+    dcc_store(id="local", storage_type="local"),
     # Same as the local store but will lose the data
     # when the browser/tab closes.
     dcc_store(id="session", storage_type="session"),
@@ -59,7 +59,7 @@ for store in ("memory", "local", "session")
     end
     data = (;data...,clicks = data[Symbol("clicks")]+1)
     return data
-  end 
+  end
 
   #  # output the stored clicks in the table cell.
   callback!(app, Output(string(store, "-clicks"), "children"),
@@ -74,14 +74,14 @@ for store in ("memory", "local", "session")
     if ts isa Nothing
       throw(PreventUpdate())
     end
-    
+
     data = (typeof(data) == Nothing) ? NamedTuple() : data
     if haskey(data, Symbol("clicks"))
       return data[Symbol("clicks")]
     else
       return 0
     end
-  end   
+  end
 end
 
 

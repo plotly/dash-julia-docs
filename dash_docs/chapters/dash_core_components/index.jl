@@ -121,13 +121,13 @@ app.layout = html_div() do
     input_index_example.layout,
 
     #TextArea
-    html_a(html_h3("TextArea"), href="#"),
+    html_a(html_h3("TextArea"), href="/dash_core_components/textarea"),
 
     textarea_index_example.source_code,
     textarea_index_example.layout,
     
     #checkboxes
-    html_a(html_h3("CheckBoxes"), href="#"),
+    html_a(html_h3("CheckBoxes"), href="/dash_core_components/checklist"),
 
     checkboxes_index_example.source_code,
     checkboxes_index_example.layout,
@@ -136,7 +136,7 @@ app.layout = html_div() do
     checkboxes_inline_index_example.layout,
 
     #radioitems
-    html_a(html_h3("RadioItems"), href="#"),
+    html_a(html_h3("RadioItems"), href="/dash_core_components/radioitems"),
 
     radioitems_index_example.source_code,
     radioitems_index_example.layout,
@@ -156,19 +156,19 @@ app.layout = html_div() do
     button_index_example.layout,
 
     #datepickersingle
-    html_a(html_h3("DatePickerSingle"), href="#"),
+    html_a(html_h3("DatePickerSingle"), href="/dash_core_components/datepickersingle"),
 
     datepickersingle_index_example.source_code,
     datepickersingle_index_example.layout,
 
     #datepickerrange
-    html_a(html_h3("DatePickerRange"), href="#"),
+    html_a(html_h3("DatePickerRange"), href="/dash_core_components/datepickerrange"),
 
     datepickerrange_index_example.source_code,
     datepickerrange_index_example.layout,
 
     #markdown
-    html_a(html_h3("Markdown"), href="#"),
+    html_a(html_h3("Markdown"), href="/dash_core_components/markdown"),
 
     markdown_index_example.source_code,
     markdown_index_example.layout,
@@ -194,7 +194,7 @@ app.layout = html_div() do
     download_index_example.layout,
 
     #tabs
-    html_a(html_h3("Tabs"), href="#"),
+    html_a(html_h3("Tabs"), href="/dash_core_components/tabs"),
     
     dcc_markdown("The Tabs and Tab components can be used to create tabbed sections in your app."),
     tabs_index_example.source_code,

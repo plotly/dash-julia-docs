@@ -1,6 +1,6 @@
 module chapters_dash_core_components_input
 
-using Dash, DashHtmlComponents, DashCoreComponents, Chain, Pkg
+using Dash, DashHtmlComponents, DashCoreComponents
 
 include("../../../utils.jl")
 
@@ -8,29 +8,31 @@ export examples
 
 examples_path = joinpath(@__DIR__, "examples")
 
-default = LoadExampleCode(string(examples_path, "/default.jl"))
+input_types = LoadExampleCode(string(examples_path, "/input_types.jl"))
 
+debounce = LoadExampleCode(string(examples_path, "/debounce.jl"))
 
-examples = [default]
+examples = [input_types, debounce]
 
 app =  dash()
 
-default.callback!(app)
+input_types.callback!(app)
+debounce.callback!(app)
+
 
 app.layout = html_div() do
 
     html_h1("Input Examples and Reference"),
 
-    dcc_markdown("
-    For production Dash apps, the Dash Core Components styling & layout should be managed with Dash Enterprise [Design Kit](https://plotly.com/dash/design-kit).
-    "),
+    html_h3("Supported Input Types"),
 
-    html_h3("Default Input"),
+    input_types.source_code,
+    input_types.layout,
 
-    html_div("An example of a default input without any extra properties."),
+    html_h3("Debounce delays Input processing"),
 
-    default.source_code,
-    default.layout
+    debounce.source_code,
+    debounce.layout
 
 end
 

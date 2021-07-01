@@ -49,11 +49,8 @@ app.layout = html_div() do
 
     dcc_markdown("
     Dash is a web application framework that provides pure Julia abstraction around HTML, CSS, and JavaScript.
-
     Dash DAQ comprises a robust set of controls that make it simpler to integrate data acquisition and controls into your Dash applications.
-
     The source is on GitHub at [plotly/dash-daq](https://github.com/plotly/dash-daq).
-
     These docs are using version $n."),
 
     html_a(html_h3("BooleanSwitch"), href="#"),

@@ -1,6 +1,6 @@
 module chapters_dash_core_components_dropdown
 
-using Dash, DashHtmlComponents, DashCoreComponents, Chain, Pkg
+using Dash, DashHtmlComponents, DashCoreComponents
 
 include("../../../utils.jl")
 

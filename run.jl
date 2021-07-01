@@ -19,11 +19,19 @@ include("dash_docs/chapters/graph_crossfiltering/index.jl");
 include("dash_docs/chapters/sharing_data/index.jl");
 include("dash_docs/chapters/faq_gotchas/index.jl");
 include("dash_docs/chapters/deployment/index.jl");
+
 include("dash_docs/chapters/dash_core_components/index.jl");
 include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Slider/index.jl");
 include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
 include("dash_docs/chapters/dash_core_components/Input/index.jl");
+include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
+include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
+include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
+include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
+include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
 
 include("dash_docs/chapters/dash_html_components/index.jl");
 
@@ -35,6 +43,7 @@ include("dash_docs/chapters/dash_bio/index.jl");
 include("dash_docs/chapters/dash_data_table/index.jl");
 
 
+include("dash_docs/chapters/dash_daq/index.jl");
 
 for example in chapters_callbacks.examples
     example.callback!(app)
@@ -165,8 +174,14 @@ callback!(app,
             "/dash_core_components/slider" => chapters_dash_core_components_slider.app.layout
             "/dash_core_components/rangeslider" => chapters_dash_core_components_rangeslider.app.layout
             "/dash_core_components/input" => chapters_dash_core_components_input.app.layout
+            "/dash_core_components/textarea" => chapters_dash_core_components_textarea.app.layout
+            "/dash_core_components/checklist" => chapters_dash_core_components_checklist.app.layout
+            "/dash_core_components/radioitems" => chapters_dash_core_components_radioitems.app.layout
+            "/dash_core_components/datepickersingle" => chapters_dash_core_components_datepickersingle.app.layout
+            "/dash_core_components/datepickerrange" => chapters_dash_core_components_datepickerrange.app.layout
+            "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
+            "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
             "/dash_html_components" => chapters_dash_html_components.app.layout
-
             "/dash_daq" => chapters_dash_daq.app.layout
 
             "/dash_bio" => chapters_dash_bio.app.layout

@@ -1,6 +1,6 @@
 module chapters_dash_html_components
 
-using Dash, DashHtmlComponents, DashCoreComponents, DashDaq, Chain, Pkg
+using Dash, DashHtmlComponents, DashCoreComponents, Chain, Pkg
 
 function get_pkg_version(name::AbstractString)
     @chain Pkg.dependencies() begin

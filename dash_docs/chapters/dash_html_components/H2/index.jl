@@ -1,5 +1,5 @@
 
-module chapters_dash_html_components_a
+module chapters_dash_html_components_h2
 
 using Dash, DashHtmlComponents
 

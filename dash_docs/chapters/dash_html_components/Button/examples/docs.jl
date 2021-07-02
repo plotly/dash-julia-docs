@@ -4,13 +4,9 @@ app = dash()
 
 app.layout = dcc_markdown(
   """
-  # html_command
+  # html_br
 ### Reference & Documentation
-A `Command` component. `Command` is a wrapper for the `<command>` HTML5 element.
-
-OBSOLETE: `<command>` is included for completeness, but should be avoided as it is not supported by any modern browsers.
-
-For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/command](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/command)
+A `Br` component. `Br` is a wrapper for the `<br>` HTML5 element. For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
 #### Keyword arguments:
 
 * `children` (a list of or a singular dash component, String or Number; optional): The children of this component.
@@ -18,18 +14,14 @@ For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/H
 * `accessKey` (String; optional): Keyboard shortcut to activate or add focus to the element.
 
 * `aria-*` (String; optional): A wildcard aria attribute.
-* `checked` (a value equal to: 'checked', 'CHECKED' | Boolean; optional): Indicates whether the element should be checked on page load.
-
 * `className` (String; optional): Often used with CSS to style elements with common properties.
 * `contentEditable` (String; optional): Indicates whether the element's content is editable.
 * `contextMenu` (String; optional): Defines the ID of a `<menu>` element which will serve as the element's context menu.
 * `data-*` (String; optional): A wildcard data attribute.
 * `dir` (String; optional): Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left).
-* `disabled` (a value equal to: 'disabled', 'DISABLED' | Boolean; optional): Indicates whether the user can interact with the element.
 
 * `draggable` (String; optional): Defines whether the element can be dragged.
 * `hidden` (a value equal to: "hidden", "HIDDEN" | Boolean; optional): Prevents rendering of given element, while keeping child elements, e.g. script elements, active.
-* `icon` (String; optional): Specifies a picture which represents the command.
 * `key` (String; optional): A unique identifier for the component, used to improve performance by React.js while rendering components See [https://reactjs.org/docs/lists-and-keys.html](https://reactjs.org/docs/lists-and-keys.html) for more info.
 * `lang` (String; optional): Defines the language used in the element.
 * `loading_state` (Dict; optional): Object that holds the loading state object coming from dash-renderer. loading_state is a Dict with keys:
@@ -39,17 +31,14 @@ For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/H
     
 * `n_clicks` (Number; default 0): An integer that represents the number of times that this element has been clicked on.
 * `n_clicks_timestamp` (Number; default -1): An integer that represents the time (in ms since 1970) at which n_clicks changed. This can be used to tell which button was changed most recently.
-* `radioGroup` (String; optional)
-
 * `role` (String; optional): The ARIA role attribute.
 * `spellCheck` (String; optional): Indicates whether spell checking is allowed for the element.
 * `style` (Dict; optional): Defines CSS styles which will override styles previously set.
 * `tabIndex` (String; optional): Overrides the browser's default tab order and follows the one specified instead.
 * `title` (String; optional): Text to be displayed in a tooltip when hovering over the element.
-* `type` (String; optional): Defines the type of the element.
-
 """
-  
+
+
 )
 
 run_server(app, "0.0.0.0", debug=true)

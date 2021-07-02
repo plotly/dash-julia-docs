@@ -96,6 +96,8 @@ include("dash_docs/chapters/dash_html_components/H1/index.jl");
 include("dash_docs/chapters/dash_html_components/H2/index.jl");
 include("dash_docs/chapters/dash_html_components/H3/index.jl");
 include("dash_docs/chapters/dash_html_components/H4/index.jl");
+include("dash_docs/chapters/dash_html_components/H5/index.jl");
+include("dash_docs/chapters/dash_html_components/H6/index.jl");
 include("dash_docs/chapters/dash_html_components/Header/index.jl");
 include("dash_docs/chapters/dash_html_components/Hgroup/index.jl");
 include("dash_docs/chapters/dash_html_components/Hr/index.jl");
@@ -173,12 +175,6 @@ include("dash_docs/chapters/dash_html_components/Var/index.jl");
 include("dash_docs/chapters/dash_html_components/Video/index.jl");
 include("dash_docs/chapters/dash_html_components/Wbr/index.jl");
 include("dash_docs/chapters/dash_html_components/Xmp/index.jl");
-
-
-
-
-
-
 
 
 for example in chapters_callbacks.examples
@@ -462,6 +458,13 @@ for example in chapters_dash_html_components_h4.examples
     example.callback!(app)
 end
 
+for example in chapters_dash_html_components_h5.examples
+    example.callback!(app)
+end
+for example in chapters_dash_html_components_h6.examples
+    example.callback!(app)
+end
+
 for example in chapters_dash_html_components_hgroup.examples
     example.callback!(app)
 end
@@ -522,7 +525,7 @@ for example in chapters_dash_html_components_main.examples
     example.callback!(app)
 end
 
-for example in chapters_dash_html_components_mapei.examples
+for example in chapters_dash_html_components_mapel.examples
     example.callback!(app)
 end
 
@@ -750,7 +753,7 @@ for example in chapters_dash_html_components_u.examples
     example.callback!(app)
 end
 
-for example in chapters_dash_html_components_ui.examples
+for example in chapters_dash_html_components_ul.examples
     example.callback!(app)
 end
 
@@ -891,7 +894,7 @@ callback!(app,
             "/dash_html_components/cite" => chapters_dash_html_components_cite.app.layout
             "/dash_html_components/code" => chapters_dash_html_components_code.app.layout
             "/dash_html_components/col" => chapters_dash_html_components_col.app.layout
-            "/dash_html_components/colgroup" => chapters_dash_html_components_colgroupm.app.layout
+            "/dash_html_components/colgroup" => chapters_dash_html_components_colgroup.app.layout
             "/dash_html_components/command" => chapters_dash_html_components_command.app.layout
             "/dash_html_components/content" => chapters_dash_html_components_content.app.layout
             "/dash_html_components/data" => chapters_dash_html_components_data.app.layout
@@ -919,6 +922,8 @@ callback!(app,
             "/dash_html_components/h2" => chapters_dash_html_components_h2.app.layout
             "/dash_html_components/h3" => chapters_dash_html_components_h3.app.layout
             "/dash_html_components/h4" => chapters_dash_html_components_h4.app.layout
+            "/dash_html_components/h5" => chapters_dash_html_components_h5.app.layout
+            "/dash_html_components/h6" => chapters_dash_html_components_h6.app.layout
             "/dash_html_components/header" => chapters_dash_html_components_header.app.layout
             "/dash_html_components/hgroup" => chapters_dash_html_components_hgroup.app.layout
             "/dash_html_components/hr" => chapters_dash_html_components_hr.app.layout

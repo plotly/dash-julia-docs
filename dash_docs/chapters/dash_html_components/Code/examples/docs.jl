@@ -4,7 +4,7 @@ app = dash()
 
 app.layout = dcc_markdown(
   "
-  # html_a
+  # html_code
 ### Reference & Documentation
 An A component. A is a wrapper for the `<a>` HTML5 element. For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 

@@ -1,5 +1,5 @@
 
-module chapters_dash_html_components_address
+module chapters_dash_html_components_h5
 
 using Dash, DashHtmlComponents
 

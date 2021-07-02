@@ -1,5 +1,5 @@
 
-module chapters_dash_html_components_mape1
+module chapters_dash_html_components_mapel
 using Dash, DashHtmlComponents
 
 include("../../../utils.jl")

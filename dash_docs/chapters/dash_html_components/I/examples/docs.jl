@@ -4,9 +4,9 @@ app = dash()
 
 app.layout = dcc_markdown(
   """
-  # html_br
+ # html_i
 ### Reference & Documentation
-A `Br` component. `Br` is a wrapper for the `<br>` HTML5 element. For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
+An `I` component. `I` is a wrapper for the `<i>` HTML5 element. For detailed attribute info see: [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i)
 #### Keyword arguments:
 
 * `children` (a list of or a singular dash component, String or Number; optional): The children of this component.
@@ -36,9 +36,8 @@ A `Br` component. `Br` is a wrapper for the `<br>` HTML5 element. For detailed a
 * `style` (Dict; optional): Defines CSS styles which will override styles previously set.
 * `tabIndex` (String; optional): Overrides the browser's default tab order and follows the one specified instead.
 * `title` (String; optional): Text to be displayed in a tooltip when hovering over the element.
-"""
-
-
+  """
+  
 )
 
 run_server(app, "0.0.0.0", debug=true)

@@ -42,6 +42,9 @@ include("dash_docs/chapters/dash_bio/index.jl");
 
 include("dash_docs/chapters/dash_data_table/index.jl");
 
+
+include("dash_docs/chapters/dash_daq/index.jl");
+
 for example in chapters_callbacks.examples
     example.callback!(app)
 end

@@ -51,7 +51,7 @@ app.layout = html_div() do
     dcc_markdown(
       "# User Guide
 ### Reference
-A comprehensive list of all of the DataTable properties.
+A comprehensive list of all of the DataTable properties with examples.
 
 ### DataTable Height
 How to set the height of the DataTable. Examples include how to set the height with vertical scroll, pagination, virtualization, and fixed headers.

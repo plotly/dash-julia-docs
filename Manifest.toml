@@ -92,9 +92,7 @@ version = "0.7.0"
 
 [[DashBioUtils]]
 deps = ["FASTX", "GZip", "Glob", "HTTP", "StatsBase", "StringEncodings"]
-git-tree-sha1 = "a26ac7f51b4800845cb50a787d83b46eff545ae9"
-repo-rev = "master"
-repo-url = "https://github.com/plotly/DashBioUtils.jl.git"
+git-tree-sha1 = "edb0ba263d535e371c40144058c4214836f05867"
 uuid = "adab0d11-1453-4a42-9046-4ba7b121fa95"
 version = "0.1.0"
 

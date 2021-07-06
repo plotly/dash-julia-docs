@@ -1,4 +1,4 @@
-using Dash, DashBio
+using Dash, DashBio, DashHtmlComponents, DashCoreComponents
 
 external_stylesheets = ["https =>//codepen.io/chriddyp/pen/bWLwgP.css"]
 app = dash(external_stylesheets=external_stylesheets)

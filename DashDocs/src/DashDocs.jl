@@ -6,4 +6,7 @@ register_example("hello-slider", test_fname)
 
 @eval_toplevel
 
+
+const df1 = DataFrame(urldownload("https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv"))
+
 end # module

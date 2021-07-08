@@ -5,12 +5,13 @@ using Pkg
 Pkg.develop(path="./dash-user-guide-components")
 
 using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, DashDaq, Match
-
+st_time = time()
 # Load Chapter, Example, Header, Section, Syntax components
 map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_components/", join=true)));
 st_time = time()
 # Load chapter container Dash apps
 # remove unused includes to speed up load time in development
+<<<<<<< Updated upstream
 #=include("dash_docs/chapters/whats_dash/introduction.jl");
 include("dash_docs/chapters/installation/index.jl");
 include("dash_docs/chapters/getting_started/index.jl");=#
@@ -33,11 +34,38 @@ include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
 include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
 include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
 include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
+=======
+@time include("dash_docs/chapters/whats_dash/introduction.jl");
+@time include("dash_docs/chapters/installation/index.jl");
+@time include("dash_docs/chapters/getting_started/index.jl");
+@time include("dash_docs/chapters/basic_callbacks/index.jl");
+@time include("dash_docs/chapters/graph_crossfiltering/index.jl");
+@time include("dash_docs/chapters/sharing_data/index.jl");
+@time include("dash_docs/chapters/faq_gotchas/index.jl");
+@time include("dash_docs/chapters/deployment/index.jl");
+>>>>>>> Stashed changes
 
-include("dash_docs/chapters/dash_html_components/index.jl");
+@time include("dash_docs/chapters/dash_core_components/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Dropdown/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Slider/index.jl");
+@time include("dash_docs/chapters/dash_core_components/RangeSlider/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Input/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Textarea/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Checklist/index.jl");
+@time include("dash_docs/chapters/dash_core_components/RadioItems/index.jl");
+@time include("dash_docs/chapters/dash_core_components/DatePickerSingle/index.jl");
+@time include("dash_docs/chapters/dash_core_components/DatePickerRange/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Markdown/index.jl");
+@time include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
 
+<<<<<<< Updated upstream
 include("dash_docs/chapters/dash_daq/index.jl");=#
+=======
+@time include("dash_docs/chapters/dash_html_components/index.jl");
+>>>>>>> Stashed changes
 
+@time include("dash_docs/chapters/dash_daq/index.jl");
+println(time() - st_time, " s")
 for example in chapters_callbacks.examples
     example.callback!(app)
 end

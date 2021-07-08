@@ -8,14 +8,15 @@ using Dash, DashCoreComponents, DashHtmlComponents, DashUserGuideComponents, Das
 
 # Load Chapter, Example, Header, Section, Syntax components
 map(include, filter(x->occursin(r".jl$", x), readdir("dash_docs/reusable_components/", join=true)));
-
+st_time = time()
 # Load chapter container Dash apps
 # remove unused includes to speed up load time in development
-include("dash_docs/chapters/whats_dash/introduction.jl");
+#=include("dash_docs/chapters/whats_dash/introduction.jl");
 include("dash_docs/chapters/installation/index.jl");
-include("dash_docs/chapters/getting_started/index.jl");
+include("dash_docs/chapters/getting_started/index.jl");=#
 include("dash_docs/chapters/basic_callbacks/index.jl");
-include("dash_docs/chapters/graph_crossfiltering/index.jl");
+println("first ", time() - st_time, " s")
+#=include("dash_docs/chapters/graph_crossfiltering/index.jl");
 include("dash_docs/chapters/sharing_data/index.jl");
 include("dash_docs/chapters/faq_gotchas/index.jl");
 include("dash_docs/chapters/deployment/index.jl");
@@ -35,13 +36,13 @@ include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
 
 include("dash_docs/chapters/dash_html_components/index.jl");
 
-include("dash_docs/chapters/dash_daq/index.jl");
+include("dash_docs/chapters/dash_daq/index.jl");=#
 
 for example in chapters_callbacks.examples
     example.callback!(app)
 end
 
-for example in chapters_interactive_graphing.examples
+#=for example in chapters_interactive_graphing.examples
     example.callback!(app)
 end
 
@@ -91,7 +92,7 @@ end
 
 for example in chapters_dash_daq.examples
     example.callback!(app)
-end
+end=#
 
 header = html_div(
     children = (
@@ -160,11 +161,11 @@ callback!(app,
     Output("pagemenu", "dummy2"),
     Input("url", "pathname")) do pathname
        get_content(pathname) = @match pathname begin
-            "/introduction" => chapters_whats_dash.app.layout
+    #=        "/introduction" => chapters_whats_dash.app.layout
             "/installation" => chapters_installation.app.layout
-            "/getting-started" => chapters_getting_started.app.layout
+            "/getting-started" => chapters_getting_started.app.layout=#
             "/basic-callbacks" => chapters_callbacks.app.layout
-            "/interactive-graphing" => chapters_interactive_graphing.app.layout
+            #="/interactive-graphing" => chapters_interactive_graphing.app.layout
             "/sharing-data-between-callbacks" => chapters_sharing_data.app.layout
             "/deployment" => chapters_deployment.app.layout
             "/faqs" => chapters_faq_gotchas.app.layout
@@ -181,7 +182,7 @@ callback!(app,
             "/dash_core_components/markdown" => chapters_dash_core_components_markdown.app.layout
             "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
             "/dash_html_components" => chapters_dash_html_components.app.layout
-            "/dash_daq" => chapters_dash_daq.app.layout
+            "/dash_daq" => chapters_dash_daq.app.layout=#
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),
@@ -294,7 +295,8 @@ callback!(
     Input("chapter", "children")
 )
 
-port = parse(Int64, ENV["PORT"])
+println("second ", time() - st_time, " s")
+port = parse(Int64, get(ENV, "PORT", "8050"))
 
 print("Binding to PORT $(port)...")
 

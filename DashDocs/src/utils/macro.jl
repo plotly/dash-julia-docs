@@ -1,5 +1,4 @@
 macro eval_toplevel()
-    println("dddd")
     result = Expr(:block)
     result.args = TOP_LEVEL
     return esc(result)
@@ -21,13 +20,33 @@ macro source_str(name)
 end
 macro layout_str(name)
     return :(
-        html_div(
-            EXAMPLES_REGISTRY[$name].layout(),
-            className = "example-container",
-            style = Dict("marginBottom" => "10px"),
-        )
+            EXAMPLES_REGISTRY[$name].layout()
     )
 end
 
-macro doc_chapter(name, url, body)
+macro pkgver_str(name)
+    for pkg in values(Pkg.dependencies())
+        pkg.name == name && return pkg.version
+    end
+    error("Package $name don't found")
+end
+
+macro doc_chapter(url, body)
+    base_dir = joinpath(dirname(string(__source__.file)), "examples")
+    local layout::Expr
+    for arg in body.args
+        !isa(arg, Expr) && continue
+        if arg.head == :macrocall
+            if arg.args[1] == Symbol("@example")
+                register_example(string(arg.args[3]), joinpath(base_dir, string(arg.args[4])))
+            end
+            if arg.args[1] == Symbol("@layout")
+                layout = arg.args[3]
+            end
+        end
+    end
+
+    return esc(:(
+         CHAPTERS[$url] = function () $(layout) end
+        ))
 end

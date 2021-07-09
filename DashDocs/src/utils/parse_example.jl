@@ -1,7 +1,3 @@
-macro parse_example_source(name)
-    println(__source__)
-end
-
 
 const top_level_exprs = Set([:using, :import, :const])
 # pull up and return top level calls from Expr
@@ -12,6 +8,35 @@ function top_level_popout!(e::Expr)
     result = e.args[top_inds]
     deleteat!(e.args, top_inds)
     return result
+end
+
+function check_is_download(right::Expr)
+    (right.head != :call || right.args[1] != :DataFrame || !isa(right.args[2], Expr)) && return nothing
+    (right.args[2].head != :call || right.args[2].args[1] != :urldownload) && return nothing
+    return string(right.args[2].args[2])
+end
+function check_is_rdataset(right::Expr)
+    (right.head != :call || right.args[1] != :dataset) && return nothing
+    return join(string.(right.args[2:end]), "|")
+end
+function check_dataset(right::Expr)
+    downlad_name = check_is_download(right)
+    return isnothing(downlad_name) ? check_is_rdataset(right) : downlad_name
+end
+function datasets_popout!(e::Expr)
+    for arg in e.args
+        !isa(arg, Expr) && continue
+        arg.head != :(=) && continue
+        (!isa(arg.args[1], Symbol)  || !isa(arg.args[2], Expr)) && continue
+        var = arg.args[1]
+        right = arg.args[2]
+        url = check_dataset(right)
+        isnothing(url) && continue
+        if !haskey(DATASETS, url)
+            DATASETS[url] = eval(right)
+        end
+        arg.args[2] = :(copy(DATASETS[$url]))
+    end
 end
 
 is_callbackcall(expr) = expr.head == :call && expr.args[1] == :callback!
@@ -42,7 +67,14 @@ function make_layout_function(e::Expr)
             push!(fbody.args,
               Expr(:(=),
                 :layout,
-                arg.args[2]
+                :(
+                    html_div(
+                        $(arg.args[2]),
+                        className = "example-container",
+                        style = Dict("marginBottom" => "10px"),
+                    )
+                )
+
               )
             )
             continue
@@ -78,6 +110,7 @@ end
 #split example expression into top_level part, layout making function and callbacks register function
 function split_example_expr!(example::Expr)
     top_level = top_level_popout!(example)
+    datasets_popout!(example)
     layout = make_layout_function(example)
     callbacks = make_callbacks_function(example)
     return (

@@ -76,7 +76,7 @@ uuid = "1b08a953-4be3-4667-9a23-a540cca008f6"
 version = "0.5.0"
 
 [[DashDocs]]
-deps = ["CSV", "Chain", "Dash", "DashBio", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DataFrames", "HTTP", "JSON3", "Match", "Pkg", "PlotlyBase", "Printf", "RDatasets", "UrlDownload"]
+deps = ["Base64", "CSV", "Chain", "Dash", "DashBio", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DataFrames", "Dates", "HTTP", "JSON3", "Match", "Pkg", "PlotlyBase", "Printf", "RDatasets", "UrlDownload"]
 path = "DashDocs"
 uuid = "3ff4e7a0-4b43-48cc-8faa-634f7f222ac1"
 version = "0.1.0"

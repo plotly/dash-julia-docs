@@ -4,6 +4,7 @@ authors = ["Alexandr Romanenko <waralex@gmail.com>"]
 version = "0.1.0"
 
 [deps]
+Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 Chain = "8be319e6-bccf-4806-a6f7-6fae938471bc"
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"
@@ -12,7 +13,9 @@ DashCoreComponents = "1b08a953-4be3-4667-9a23-9da06441d987"
 DashDaq = "1b08a953-4be3-4667-9a23-a540cca008f6"
 DashHtmlComponents = "1b08a953-4be3-4667-9a23-24100242a84a"
 DashTable = "1b08a953-4be3-4667-9a23-f0e2ba4deb9a"
+DashUserGuideComponents = "1b08a953-4be3-4667-9a23-e667f8ac7b1d"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
 Match = "7eb4fadd-790c-5f42-8a69-bfa0b872bfbf"

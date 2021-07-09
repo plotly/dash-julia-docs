@@ -6,3 +6,6 @@ end
 const EXAMPLES_REGISTRY = Dict{String, ExampleData}()
 
 const TOP_LEVEL = []
+
+const DATASETS = Dict{String, DataFrame}()
+const CHAPTERS = Dict{String, Function}()

@@ -86,7 +86,12 @@ function default_page()
                     "Dash DAQ",
                     "/dash_daq",
                     "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
-                )
+                ),
+                Chapter(
+                            "Dash Bio",
+                            "/dash_bio",
+                            "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."
+                        )
             )
         ),
         Section(

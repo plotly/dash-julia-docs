@@ -109,7 +109,7 @@ uuid = "1b08a953-4be3-4667-9a23-a540cca008f6"
 version = "0.5.0"
 
 [[DashDocs]]
-deps = ["Base64", "CSV", "Chain", "Dash", "DashBio", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DataFrames", "Dates", "HTTP", "JSON3", "Match", "Pkg", "PlotlyBase", "Printf", "RDatasets", "UrlDownload"]
+deps = ["Base64", "CSV", "Chain", "Dash", "DashBio", "DashBioUtils", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DataFrames", "Dates", "HTTP", "JSON", "JSON3", "Match", "Pkg", "PlotlyBase", "Printf", "RDatasets", "StringEncodings", "UrlDownload"]
 path = "DashDocs"
 uuid = "3ff4e7a0-4b43-48cc-8faa-634f7f222ac1"
 version = "0.1.0"
@@ -304,6 +304,12 @@ uuid = "29816b5a-b9ab-546f-933c-edad1886dfa8"
 
 [[Libdl]]
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+
+[[Libiconv_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
+git-tree-sha1 = "42b62845d70a619f063a7da093d995ec8e15e778"
+uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
+version = "1.16.1+1"
 
 [[LinearAlgebra]]
 deps = ["Libdl"]

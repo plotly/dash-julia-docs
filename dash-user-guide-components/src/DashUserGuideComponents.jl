@@ -10,9 +10,7 @@ include("dugc_sidebar.jl")
 
 function __init__()
     #In precompilation steps path is different, so I use this temporary hardcoded solution
-    resources_path = realpath( joinpath(".", "dash-user-guide-components", "deps"))
-    println(resources_path)
-    println(realpath(resources_path))
+    resources_path =  abspath(joinpath(".", "dash-user-guide-components", "deps"))
     DashBase.register_package(
         DashBase.ResourcePkg(
             "dash_user_guide_components",

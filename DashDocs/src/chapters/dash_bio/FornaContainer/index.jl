@@ -1,35 +1,14 @@
-module chapters_dash_bio_fornacontainer
-using Dash, DashHtmlComponents, DashCoreComponents, Chain, Pkg
+@doc_chapter "/dash_bio/forna_container" begin
 
-include("../../../utils.jl")
+@example fornacontainer_default "default.jl"
+@example fornacontainer_colorscheme "color_scheme.jl"
+@example fornacontainer_customcolor "custom_color.jl"
+@example fornacontainer_diasblezoompzn "diasble_zoom_pzn.jl"
+@example fornacontainer_filcolor "fil_color.jl"
+@example fornacontainer_heightwidth "height_width.jl"
+@example fornacontainer_lableinterval "lable_interval.jl"
 
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-fornacontainer_default = LoadExampleCode(string(examples_path, "/default.jl"))
-
-fornacontainer_colorscheme = LoadExampleCode(string(examples_path, "/color_scheme.jl"))
-
-fornacontainer_customcolor = LoadExampleCode(string(examples_path, "/custom_color.jl"))
-
-fornacontainer_diasblezoompzn = LoadExampleCode(string(examples_path, "/diasble_zoom_pzn.jl"))
-
-fornacontainer_filcolor = LoadExampleCode(string(examples_path, "/fil_color.jl"))
-
-fornacontainer_heightwidth = LoadExampleCode(string(examples_path, "/height_width.jl"))
-
-fornacontainer_lableinterval = LoadExampleCode(string(examples_path, "/lable_interval.jl"))
-
-examples = [
-  fornacontainer_default
-]
-
-app =  dash()
-
-fornacontainer_default.callback!(app)
-
-app.layout = html_div() do
+@layout html_div() do
 
     html_h1("FornaContainer Examples and Reference"),
 
@@ -38,61 +17,61 @@ app.layout = html_div() do
     dcc_markdown("""
     An example of a default FornaContainer component without any extra properties.
     """),
-    fornacontainer_default.source_code,
-    fornacontainer_default.layout,
+    source"fornacontainer_default",
+    layout"fornacontainer_default",
 
     html_h3("Height/Width"),
 
     dcc_markdown("""
     Change the size of the canvas component that holds the container.
     """),
-    fornacontainer_heightwidth.source_code,
-    fornacontainer_heightwidth.layout,
+    source"fornacontainer_heightwidth",
+    layout"fornacontainer_heightwidth",
 
     html_h3("Disable Zoom And Pan"),
 
     dcc_markdown("""
     Specify whether zoom and pan interactions should be disabled.
     """),
-    fornacontainer_diasblezoompzn.source_code,
-    fornacontainer_diasblezoompzn.layout,
+    source"fornacontainer_diasblezoompzn",
+    layout"fornacontainer_diasblezoompzn",
 
     html_h3("Label Interval"),
 
     dcc_markdown("""
     Specify the interval at which the sequence positions should be labelled.
     """),
-    fornacontainer_lableinterval.source_code,
-    fornacontainer_lableinterval.layout,
+    source"fornacontainer_lableinterval",
+    layout"fornacontainer_lableinterval",
 
     html_h3("Fill Color For All Nodes"),
 
     dcc_markdown("""
     Change the color of all of the nucleotides in all sequences shown.
     """),
-    fornacontainer_filcolor.source_code,
-    fornacontainer_filcolor.layout,
+    source"fornacontainer_filcolor",
+    layout"fornacontainer_filcolor",
 
     html_h3("Color Scheme"),
 
     dcc_markdown("""
     Change the parameter according to which the structure is colored.
     """),
-    fornacontainer_colorscheme.source_code,
-    fornacontainer_colorscheme.layout,
+    source"fornacontainer_colorscheme",
+    layout"fornacontainer_colorscheme",
 
     html_h3("Custom Color Schemes For Different Sequences"),
 
     dcc_markdown("""
     Specify color schemes to be applied to all sequences in the container, or sequence-specific color schemes.
     """),
-    fornacontainer_customcolor.source_code,
-    fornacontainer_customcolor.layout,
+    source"fornacontainer_customcolor",
+    layout"fornacontainer_customcolor",
 
     html_h3("Forna Container Properties"),
     dcc_markdown("""
     Access this documentation in your Julia REPL with:
-    ```julia    
+    ```julia
     ?help dashbio_fornacontainer
     ```
     Our recommended IDE for writing Dash apps is Dash
@@ -111,9 +90,9 @@ app.layout = html_div() do
     `customColors` is a Dict with keys:
 
     * `colorValues` (Dict with Strings as keys and values of type Dict with Strings as keys and values of type String | Number; optional): A Dictionary which contains keys, each of which are either an empty String ('') or the name of a molecule that has been defined in the name prop in the options for a sequence in the sequences property. The value corresponding to the key that is an empty String (if that key exists) is a "default" color scheme that will be applied first, and can be overridden by the color schemes defined for molecule-specific keys. The aforementioned color schemes each take the form of a Dictionary in which the keys are the nucleotide positions and the values are either a) Numbers to be normalized with respect to the scale defined in domain (so that their color will be calculated), or b) direct String representations of colors.
-    
+
     * `domain` (list of Numbers; optional): The limits for the color scale. This is used with the range specified in range to calculate the color of a given nucleotide, based on the Number that it is assigned.
-    
+
     * `range` (list of Strings; optional): The range of colors that will be used in conjunction with the domain prop.
 
     `height` (Number; default 500): The height (in px) of the container in which the molecules will be displayed.
@@ -125,7 +104,7 @@ app.layout = html_div() do
     `sequences` is a list of Dicts with keys:
 
     * `options` (Dict; optional): Additional options to be applied to the rendering of the RNA molecule. options is a Dict with keys:
-    
+
         * `applyForce` (Bool; optional): Indicate whether the force-directed layout will be applied to the displayed molecule. Enabling this option allows users to change the layout of the molecule by selecting and dragging the individual nucleotide nodes. True by default.
 
         * `avoidOthers` (Bool; optional): Whether or not this molecule should "avoid" other molecules in the map.

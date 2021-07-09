@@ -1,32 +1,12 @@
-module chapters_dash_bio_alignmentchart
-using Dash, DashHtmlComponents, DashCoreComponents, Chain, Pkg
+@doc_chapter "/dash_bio/alignment_chart" begin
 
-include("../../../utils.jl")
+@example alignmentchart_default "default.jl"
+@example alignmentchart_colorscales "color_scales.jl"
+@example alignmentchart_consensussequence "consensus_sequence.jl"
+@example alignmentchart_showhide "show_hide.jl"
+@example alignmentchart_tilesize "tile_size.jl"
 
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-alignmentchart_default = LoadExampleCode(string(examples_path, "/default.jl"))
-
-alignmentchart_colorscales = LoadExampleCode(string(examples_path, "/color_scales.jl"))
-
-alignmentchart_consensussequence = LoadExampleCode(string(examples_path, "/consensus_sequence.jl"))
-
-alignmentchart_showhide = LoadExampleCode(string(examples_path, "/show_hide.jl"))
-
-alignmentchart_tilesize = LoadExampleCode(string(examples_path, "/tile_size.jl"))
-
-
-examples = [
-  alignmentchart_default
-]
-
-app =  dash()
-
-alignmentchart_default.callback!(app)
-
-app.layout = html_div() do
+@layout html_div() do
 
     html_h1("AlignmentChart Examples and Reference"),
 
@@ -35,45 +15,45 @@ app.layout = html_div() do
     dcc_markdown("""
     An example of a default AlignmentChart component without any extra properties.
     """),
-    alignmentchart_default.source_code,
-    alignmentchart_default.layout,
+    source"alignmentchart_default",
+    layout"alignmentchart_default",
 
     html_h3("Color Scales"),
 
     dcc_markdown("""
     Change the colors used for the heatmap.
     """),
-    alignmentchart_colorscales.source_code,
-    alignmentchart_colorscales.layout,
+    source"alignmentchart_colorscales",
+    layout"alignmentchart_colorscales",
 
     html_h3("Show/Hide Barplots"),
 
     dcc_markdown("""
     Enable or disable the secondary bar plots for gaps and conservation.
     """),
-    alignmentchart_showhide.source_code,
-    alignmentchart_showhide.layout,
+    source"alignmentchart_showhide",
+    layout"alignmentchart_showhide",
 
     html_h3("Tile Size"),
 
     dcc_markdown("""
     Change the height and/or width of the tiles.
     """),
-    alignmentchart_tilesize.source_code,
-    alignmentchart_tilesize.layout,
+    source"alignmentchart_tilesize",
+    layout"alignmentchart_tilesize",
 
     html_h3("Consensus Sequence"),
 
     dcc_markdown("""
     Toggle the display of the consensus sequence at the bottom of the heatmap.
     """),
-    alignmentchart_consensussequence.source_code,
-    alignmentchart_consensussequence.layout,
+    source"alignmentchart_consensussequence",
+    layout"alignmentchart_consensussequence",
 
     html_h3("Alignment Chart Properties"),
     dcc_markdown("""
     Access this documentation in your Julia REPL with:
-    ```julia    
+    ```julia
     ?help dashbio_alignmentchart
     ```
     Our recommended IDE for writing Dash apps is Dash

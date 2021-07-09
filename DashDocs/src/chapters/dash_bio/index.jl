@@ -1,43 +1,23 @@
-module chapters_dash_bio
+include("AlignmentChart/index.jl")
+include("FornaContainer/index.jl")
+@doc_chapter "/dash_bio" begin
 
-using Dash, DashHtmlComponents, DashCoreComponents, DashBio, Chain, Pkg
+@example alignmentchart_index_example "alignmentchart_index_example.jl"
+@example fornacontainer_index_example "fornacontainer_index_example.jl"
+@example ideogram_index_example "ideogram_index_example.jl"
+@example igv_index_example "igv_index_example.jl"
+@example molecule2dviewer_index_example "molecule2dviewer_index_example.jl"
+@example molecule3dviewer_index_example "molecule3dviewer_index_example.jl"
+@example needleplot_index_example "needleplot_index_example.jl"
+@example nglmoleculeviewer_index_example "nglmoleculeviewer_index_example.jl"
+@example oncoprint_index_example "oncoprint_index_example.jl"
+@example sequenceviewer_index_example "sequenceviewer_index_example.jl"
+@example speck_index_example "speck_index_example.jl"
+# @example volcanoplot_index_example "volcanoplot_index_example.jl"
 
-function get_pkg_version(name::AbstractString)
-    @chain Pkg.dependencies() begin
-        values
-        [x for x in _ if x.name == name]
-        only
-        _.version
-    end
-end
 
-include("../../utils.jl")
 
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-alignmentchart_index_example = LoadExampleCode(string(examples_path, "/alignmentchart_index_example.jl"))
-fornacontainer_index_example = LoadExampleCode(string(examples_path, "/fornacontainer_index_example.jl"))
-ideogram_index_example = LoadExampleCode(string(examples_path, "/ideogram_index_example.jl"))
-igv_index_example = LoadExampleCode(string(examples_path, "/igv_index_example.jl"))
-molecule2dviewer_index_example = LoadExampleCode(string(examples_path, "/molecule2dviewer_index_example.jl"))
-molecule3dviewer_index_example = LoadExampleCode(string(examples_path, "/molecule3dviewer_index_example.jl"))
-needleplot_index_example = LoadExampleCode(string(examples_path, "/needleplot_index_example.jl"))
-nglmoleculeviewer_index_example = LoadExampleCode(string(examples_path, "/nglmoleculeviewer_index_example.jl"))
-oncoprint_index_example = LoadExampleCode(string(examples_path, "/oncoprint_index_example.jl"))
-sequenceviewer_index_example = LoadExampleCode(string(examples_path, "/sequenceviewer_index_example.jl"))
-speck_index_example = LoadExampleCode(string(examples_path, "/speck_index_example.jl"))
-# volcanoplot_index_example = LoadExampleCode(string(examples_path, "/volcanoplot_index_example.jl"))
-examples = [
-    
-]
-
-app =  dash()
-
-n = get_pkg_version("DashBio")
-
-app.layout = html_div() do
+@layout html_div() do
 
     html_h1("Dash Bio"),
 
@@ -53,7 +33,7 @@ app.layout = html_div() do
 
       The source can be found on GitHub at [plotly/dash-bio](https://github.com/plotly/dash-bio).
 
-      These docs are using Dash Bio version $n.
+      These docs are using Dash Bio version $(pkgver"DashBio").
       """
     ),
 
@@ -61,92 +41,92 @@ app.layout = html_div() do
 
     dcc_markdown("An alignment chart."),
 
-    alignmentchart_index_example.source_code,
-    alignmentchart_index_example.layout,
+    source"alignmentchart_index_example",
+    layout"alignmentchart_index_example",
 
     html_a(html_h3("FornaContainer"), href="dash_bio/forna_container"),
 
     dcc_markdown("A secondary structure visualization for RNA molecules."),
 
-    fornacontainer_index_example.source_code,
-    fornacontainer_index_example.layout,
+    source"fornacontainer_index_example",
+    layout"fornacontainer_index_example",
 
     html_a(html_h3("Ideogram"), href="#"),
 
     dcc_markdown("A visual representation and analysis tool for chromosome bands."),
 
-    ideogram_index_example.source_code,
-    ideogram_index_example.layout,
+    source"ideogram_index_example",
+    layout"ideogram_index_example",
 
     html_a(html_h3("Igv"), href="#"),
 
-    dcc_markdown("A high performance genomics visualization tool for real-time exploration 
+    dcc_markdown("A high performance genomics visualization tool for real-time exploration
     of large scale genomic data features."),
 
-    igv_index_example.source_code,
-    igv_index_example.layout,
+    source"igv_index_example",
+    layout"igv_index_example",
 
     html_a(html_h3("Molecule2dViewer"), href="#"),
 
     dcc_markdown("A 2D rendering of molecular structures."),
 
-    molecule2dviewer_index_example.source_code,
-    molecule2dviewer_index_example.layout,
+    source"molecule2dviewer_index_example",
+    layout"molecule2dviewer_index_example",
 
     html_a(html_h3("Molecule3dViewer"), href="#"),
 
     dcc_markdown("A 3D visualization of biomolecular structures."),
 
-    molecule3dviewer_index_example.source_code,
-    molecule3dviewer_index_example.layout,
+    source"molecule3dviewer_index_example",
+    layout"molecule3dviewer_index_example",
 
     html_a(html_h3("NeedlePlot"), href="#"),
 
-    dcc_markdown("A combination of a bar chart and a scatter plot, for data that 
+    dcc_markdown("A combination of a bar chart and a scatter plot, for data that
     are both categorical and continuous."),
 
-    needleplot_index_example.source_code,
-    needleplot_index_example.layout,
-    
+    source"needleplot_index_example",
+    layout"needleplot_index_example",
+
     html_a(html_h3("NglMoleculeViewer"), href="#"),
 
-    dcc_markdown("A comprehensive 3D molecule visualizer for visualizing multiple 
+    dcc_markdown("A comprehensive 3D molecule visualizer for visualizing multiple
     molecules and chains in a variety of representations."),
 
-    nglmoleculeviewer_index_example.source_code,
-    nglmoleculeviewer_index_example.layout,
+    source"nglmoleculeviewer_index_example",
+    layout"nglmoleculeviewer_index_example",
 
     html_a(html_h3("OncoPrint"), href="#"),
 
-    dcc_markdown("A chart that can be used to visualize 
+    dcc_markdown("A chart that can be used to visualize
     multiple genomic alternations with an interactive heatmap."),
 
-    oncoprint_index_example.source_code,
-    oncoprint_index_example.layout,
+    source"oncoprint_index_example",
+    layout"oncoprint_index_example",
 
     html_a(html_h3("SequenceViewer"), href="#"),
 
     dcc_markdown("A sequence viewer."),
 
-    sequenceviewer_index_example.source_code,
-    sequenceviewer_index_example.layout,
+    source"sequenceviewer_index_example",
+    layout"sequenceviewer_index_example",
 
     html_a(html_h3("Speck"), href="#"),
 
     dcc_markdown("A 3D WebGL molecule viewer."),
 
-    speck_index_example.source_code,
-    speck_index_example.layout
+    source"speck_index_example",
+    layout"speck_index_example"
 
-    
+
     # html_a(html_h3("VolcanoPlot"), href="#"),
 
     # dcc_markdown("A graph that can be used to identify clinically meaningful markers in genomic experiments."),
 
-    # volcanoplot_index_example.source_code,
-    # volcanoplot_index_example.layout
-    
-    
+    # source"volcanoplot_index_example",
+    # layout"volcanoplot_index_example"
+
+
 
 end
 

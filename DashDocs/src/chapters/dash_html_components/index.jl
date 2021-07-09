@@ -1,34 +1,10 @@
-module chapters_dash_html_components
+@doc_chapter "/dash_html_components" begin
 
-using Dash, DashHtmlComponents, DashCoreComponents, DashDaq, Chain, Pkg
+@example div_index_example "div_index_example.jl"
+@example markdown_index_example "markdown_index_example.jl"
+@example style_index_example "style_index_example.jl"
 
-function get_pkg_version(name::AbstractString)
-    @chain Pkg.dependencies() begin
-        values
-        [x for x in _ if x.name == name]
-        only
-        _.version
-    end
-end
-
-include("../../utils.jl")
-
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-div_index_example = LoadExampleCode(string(examples_path, "/div_index_example.jl"))
-markdown_index_example = LoadExampleCode(string(examples_path, "/markdown_index_example.jl"))
-style_index_example = LoadExampleCode(string(examples_path, "/style_index_example.jl"))
-
-examples = [
-    div_index_example
-]
-app =  dash()
-
-n = get_pkg_version("DashHtmlComponents")
-
-app.layout = html_div() do
+@layout html_div() do
 
     html_h1("Dash HTML Components"),
 
@@ -40,14 +16,14 @@ app.layout = html_div() do
     The source for this library is on GitHub: [plotly/dash-html-components](https://github.com/plotly/dash-html-components).
 
     For production Dash apps, styling and layout of Dash HTML Components should be managed with Dash Enterprise Design Kit.
-    
-    These docs are using version $n.
+
+    These docs are using version $(pkgver"DashHtmlComponents").
 
     Here is an example of a simple HTML structure:.
 
     "),
-    div_index_example.source_code,
-    
+    source"div_index_example",
+
     dcc_markdown("which gets converted (behind the scenes) into the following HTML in your web-app:
     "),
     dcc_markdown("
@@ -62,11 +38,11 @@ app.layout = html_div() do
     ```
     "),
     dcc_markdown("
-    If you're not comfortable with HTML, don't worry! You can get 95% of the way there with just 
+    If you're not comfortable with HTML, don't worry! You can get 95% of the way there with just
     a few elements and attributes. Dash's [core component library](https://dash-julia.plotly.com/dash_core_components) also supports [Markdown](https://commonmark.org/help/).
     "),
-    markdown_index_example.source_code,
-    markdown_index_example.layout,
+    source"markdown_index_example",
+    layout"markdown_index_example",
 
     dcc_markdown("
     If you're using HTML components, then you also have access to properties like `style`, `class`, and `id`. All of these attributes are available in the Julia classes.
@@ -80,7 +56,7 @@ app.layout = html_div() do
 
     Let's take a look at an example.
     "),
-    style_index_example.source_code,
+    source"style_index_example",
     dcc_markdown("
     That Dash code will render this HTML markup:
     "),
@@ -101,11 +77,11 @@ app.layout = html_div() do
     "),
 
     dcc_markdown("
-    Note: If you need to directly render a string of raw, unescaped HTML, you can use the 
-    `DangerouslySetInnerHTML component` which is provided by the 
+    Note: If you need to directly render a string of raw, unescaped HTML, you can use the
+    `DangerouslySetInnerHTML component` which is provided by the
     [dash-dangerously-set-inner-html](https://github.com/plotly/dash-dangerously-set-inner-html) library.`
     "),
-    
+
     html_h3("Full elements reference:"),
     html_ul(
     [
@@ -120,7 +96,7 @@ app.layout = html_div() do
       html_li(html_a(html_h6("html_b"), href="#")),
       html_li(html_a(html_h6("html_base"), href="#")),
       html_li(html_a(html_h6("html_basefont"), href="#")),
-      html_li(html_a(html_h6("html_bdi"), href="#")),      
+      html_li(html_a(html_h6("html_bdi"), href="#")),
       html_li(html_a(html_h6("html_bdo"), href="#")),
       html_li(html_a(html_h6("html_big"), href="#")),
       html_li(html_a(html_h6("html_blink"), href="#")),
@@ -238,7 +214,7 @@ app.layout = html_div() do
       html_li(html_a(html_h6("html_var"), href="#")),
       html_li(html_a(html_h6("html_video"), href="#")),
       html_li(html_a(html_h6("html_wbr"), href="#")),
-      html_li(html_a(html_h6("html_xmp"), href="#"))  
+      html_li(html_a(html_h6("html_xmp"), href="#"))
     ]
   )
 

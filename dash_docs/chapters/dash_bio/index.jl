@@ -42,27 +42,29 @@ app.layout = html_div() do
     html_h1("Dash Bio"),
 
     dcc_markdown(
-      "
-      pip install dash-bio==0.7.0
+      """
+      ```
+      pkg> add DashBio
+      ```
 
-      Dash is a web application framework that provides pure Python abstraction around HTML, CSS, and JavaScript.
+      Dash is a web application framework that provides pure Julia abstraction around HTML, CSS, and JavaScript.
 
       Dash Bio is a suite of bioinformatics components that make it simpler to analyze and visualize bioinformatics data and interact with them in a Dash application.
 
       The source can be found on GitHub at [plotly/dash-bio](https://github.com/plotly/dash-bio).
 
       These docs are using Dash Bio version $n.
-      "
+      """
     ),
 
-    html_a(html_h3("AlignmentChart"), href="#"),
+    html_a(html_h3("AlignmentChart"), href="/dash_bio/alignment_chart"),
 
     dcc_markdown("An alignment chart."),
 
     alignmentchart_index_example.source_code,
     alignmentchart_index_example.layout,
 
-    html_a(html_h3("FornaContainer"), href="#"),
+    html_a(html_h3("FornaContainer"), href="dash_bio/forna_container"),
 
     dcc_markdown("A secondary structure visualization for RNA molecules."),
 

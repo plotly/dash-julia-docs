@@ -31,6 +31,8 @@ include("dash_docs/chapters/dash_html_components/index.jl");
 include("dash_docs/chapters/dash_daq/index.jl");
 
 include("dash_docs/chapters/dash_bio/index.jl");
+include("dash_docs/chapters/dash_bio/AlignmentChart/index.jl");
+include("dash_docs/chapters/dash_bio/FornaContainer/index.jl");
 
 
 
@@ -75,6 +77,14 @@ for example in chapters_dash_daq.examples
 end
 
 for example in chapters_dash_bio.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_alignmentchart.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_fornacontainer.examples
     example.callback!(app)
 end
 
@@ -164,6 +174,8 @@ callback!(app,
             "/dash_daq" => chapters_dash_daq.app.layout
 
             "/dash_bio" => chapters_dash_bio.app.layout
+            "/dash_bio/alignment_chart" => chapters_dash_bio_alignmentchart.app.layout
+            "/dash_bio/forna_container" => chapters_dash_bio_fornacontainer.app.layout
             
             _ => html_div() do
                 html_br(),

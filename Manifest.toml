@@ -86,7 +86,7 @@ version = "0.1.0"
 
 [[DashBio]]
 deps = ["Dash"]
-path = "C:\\Users\\manoos\\.julia\\dev\\dash-bio"
+git-tree-sha1 = "197b5151988b56298c48a68159c4925118e6918f"
 uuid = "1b08a953-4be3-4667-9a23-39d4b6b31131"
 version = "0.7.0"
 
@@ -104,9 +104,7 @@ version = "1.16.0"
 
 [[DashDaq]]
 deps = ["Dash"]
-git-tree-sha1 = "32bc1349d40d014de57c95d93b705ebdc6a040e4"
-repo-rev = "master"
-repo-url = "C:\\Users\\manoos\\.julia\\dev\\DashDaq.jl"
+git-tree-sha1 = "74484bb5f2193fc7379b295f81e6563624e9b8ee"
 uuid = "1b08a953-4be3-4667-9a23-a540cca008f6"
 version = "0.5.0"
 

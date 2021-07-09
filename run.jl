@@ -2,5 +2,5 @@ using DashDocs
 using Dash
 app = DashDocs.make_app()
 
-
-run_server(app, "0.0.0.0")
+port = haskey(ENV, "PORT") ? parse(Int64, ENV["PORT"]) : 8050
+run_server(app, "0.0.0.0", port)

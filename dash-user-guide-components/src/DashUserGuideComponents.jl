@@ -9,6 +9,9 @@ include("dugc_pagemenu.jl")
 include("dugc_sidebar.jl")
 
 function __init__()
+    println(resources_path)
+    println(realpath(resources_path))
+
     DashBase.register_package(
         DashBase.ResourcePkg(
             "dash_user_guide_components",

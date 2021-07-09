@@ -2,7 +2,9 @@
 module DashUserGuideComponents
 using Dash
 
-const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
+#const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
+#In precompilation steps path is different, so I use this temporary hardcoded solution
+const resources_path = realpath( joinpath(".", "dash-user-guide-components", "deps"))
 const version = "0.0.4"
 
 include("dugc_pagemenu.jl")
@@ -11,7 +13,6 @@ include("dugc_sidebar.jl")
 function __init__()
     println(resources_path)
     println(realpath(resources_path))
-
     DashBase.register_package(
         DashBase.ResourcePkg(
             "dash_user_guide_components",

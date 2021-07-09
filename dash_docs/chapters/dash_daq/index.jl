@@ -53,21 +53,21 @@ app.layout = html_div() do
     The source is on GitHub at [plotly/dash-daq](https://github.com/plotly/dash-daq).
     These docs are using version $n."),
 
-    html_a(html_h3("BooleanSwitch"), href="#"),
+    html_a(html_h3("BooleanSwitch"), href="dash_daq/boolean_switch"),
 
     dcc_markdown("A switch component that toggles between on and off."),
 
     booleanswitch_index_example.source_code,
     booleanswitch_index_example.layout,
 
-    html_a(html_h3("ColorPicker"), href="#"),
+    html_a(html_h3("ColorPicker"), href="dash_daq/color_picker"),
 
     dcc_markdown("A color picker."),
 
     colorpicker_index_example.source_code,
     colorpicker_index_example.layout,
 
-    html_a(html_h3("Gauge"), href="#"),
+    html_a(html_h3("Gauge"), href="dash_daq/gauge"),
 
     dcc_markdown("A gauge component that points to some value between some range."),
 
@@ -167,7 +167,7 @@ app.layout = html_div() do
     toggleswitch_index_example.source_code,
     toggleswitch_index_example.layout,
 
-    html_a(html_h3("DarkThemeProvider"), href="#"),
+    html_a(html_h3("DarkThemeProvider"), href="dash_daq/dark_theme_provider"),
 
     dcc_markdown("A component placed at the root of the component tree to 
     make all components match the dark theme."),

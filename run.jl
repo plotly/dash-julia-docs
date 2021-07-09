@@ -36,6 +36,10 @@ include("dash_docs/chapters/dash_core_components/Tabs/index.jl");
 include("dash_docs/chapters/dash_html_components/index.jl");
 
 include("dash_docs/chapters/dash_daq/index.jl");
+include("dash_docs/chapters/dash_daq/BooleanSwitch/index.jl");
+include("dash_docs/chapters/dash_daq/ColorPicker/index.jl");
+include("dash_docs/chapters/dash_daq/DarkThemeProvider/index.jl");
+include("dash_docs/chapters/dash_daq/Gauge/index.jl");
 
 for example in chapters_callbacks.examples
     example.callback!(app)
@@ -90,6 +94,22 @@ for example in chapters_dash_html_components.examples
 end
 
 for example in chapters_dash_daq.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_booleanswitch.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_colorpicker.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_darkthemeprovider.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_gauge.examples
     example.callback!(app)
 end
 
@@ -182,6 +202,10 @@ callback!(app,
             "/dash_core_components/tabs" => chapters_dash_core_components_tabs.app.layout
             "/dash_html_components" => chapters_dash_html_components.app.layout
             "/dash_daq" => chapters_dash_daq.app.layout
+            "/dash_daq/boolean_switch" => chapters_dash_daq_colorpicker.app.layout
+            "/dash_daq/color_picker" => chapters_dash_daq_colorpicker.app.layout
+            "/dash_daq/dark_theme_provider" => chapters_dash_daq_darkthemeprovider.app.layout
+            "/dash_daq/gauge" => chapters_dash_daq_gauge.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

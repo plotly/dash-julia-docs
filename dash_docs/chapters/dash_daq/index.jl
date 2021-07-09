@@ -74,56 +74,56 @@ app.layout = html_div() do
     gauge_index_example.source_code,
     gauge_index_example.layout,
 
-    html_a(html_h3("GraduatedBar"), href="#"),
+    html_a(html_h3("GraduatedBar"), href="dash_daq/graduated_bar"),
 
     dcc_markdown("A graduated bar component that displays a value within some range as a percentage."),
 
     graduatedbar_index_example.source_code,
     graduatedbar_index_example.layout,
 
-    html_a(html_h3("Indicator"), href="#"),
+    html_a(html_h3("Indicator"), href="dash_daq/indicator"),
 
     dcc_markdown("A boolean indicator LED."),
 
     indicator_index_example.source_code,
     indicator_index_example.layout,
 
-    html_a(html_h3("Joystick"), href="#"),
+    html_a(html_h3("Joystick"), href="dash_daq/joystick"),
 
     dcc_markdown("A joystick that can be used to apply direction and force."),
 
     joystick_index_example.source_code,
     joystick_index_example.layout,
 
-    html_a(html_h3("Knob"), href="#"),
+    html_a(html_h3("Knob"), href="dash_daq/knob"),
 
     dcc_markdown("A knob component that can be turned to a value between some range."),
 
     knob_index_example.source_code,
     knob_index_example.layout,
 
-    html_a(html_h3("LEDDisplay"), href="#"),
+    html_a(html_h3("LEDDisplay"), href="dash_daq/leddisplay"),
 
     dcc_markdown("A 7-segment LED display component."),
 
     leddisplay_index_example.source_code,
     leddisplay_index_example.layout,
 
-    html_a(html_h3("NumericInput"), href="#"),
+    html_a(html_h3("NumericInput"), href="dash_daq/numeric_input"),
 
     dcc_markdown("A numeric input component that can be set to a value between some range."),
 
     numericinput_index_example.source_code,
     numericinput_index_example.layout,
     
-    html_a(html_h3("PowerButton"), href="#"),
+    html_a(html_h3("PowerButton"), href="dash_daq/power_button"),
 
     dcc_markdown("A power button component that can be turned on or off."),
 
     powerbutton_index_example.source_code,
     powerbutton_index_example.layout,
 
-    html_a(html_h3("PrecisionInput"), href="#"),
+    html_a(html_h3("PrecisionInput"), href="dash_daq/precision_input"),
 
     dcc_markdown("A numeric input component that converts an input value to the desired precision.
     "),
@@ -131,7 +131,7 @@ app.layout = html_div() do
     precisioninput_index_example.source_code,
     precisioninput_index_example.layout,
 
-    html_a(html_h3("Slider"), href="#"),
+    html_a(html_h3("Slider"), href="dash_daq/slider"),
 
     dcc_markdown("A slider component with support for a target value.
     "),
@@ -139,28 +139,28 @@ app.layout = html_div() do
     slider_index_example.source_code,
     slider_index_example.layout,
 
-    html_a(html_h3("StopButton"), href="#"),
+    html_a(html_h3("StopButton"), href="dash_daq/stop_button"),
 
     dcc_markdown("A stop button."),
 
     stopbutton_index_example.source_code,
     stopbutton_index_example.layout,
 
-    html_a(html_h3("Tank"), href="#"),
+    html_a(html_h3("Tank"), href="dash_daq/tank"),
 
     dcc_markdown("A tank component that fills to a value between some range."),
 
     tank_index_example.source_code,
     tank_index_example.layout,
 
-    html_a(html_h3("Thermometer"), href="#"),
+    html_a(html_h3("Thermometer"), href="dash_daq/thermometer"),
 
     dcc_markdown("A thermometer component that fills to a value between some range."),
 
     thermometer_index_example.source_code,
     thermometer_index_example.layout,
 
-    html_a(html_h3("ToggleSwitch"), href="#"),
+    html_a(html_h3("ToggleSwitch"), href="dash_daq/toggle_switch"),
 
     dcc_markdown("A switch component that toggles between two values."),
 

@@ -40,7 +40,19 @@ include("dash_docs/chapters/dash_daq/BooleanSwitch/index.jl");
 include("dash_docs/chapters/dash_daq/ColorPicker/index.jl");
 include("dash_docs/chapters/dash_daq/DarkThemeProvider/index.jl");
 include("dash_docs/chapters/dash_daq/Gauge/index.jl");
-
+include("dash_docs/chapters/dash_daq/GraduatedBar/index.jl");
+include("dash_docs/chapters/dash_daq/Indicator/index.jl");
+include("dash_docs/chapters/dash_daq/Joystick/index.jl");
+include("dash_docs/chapters/dash_daq/Knob/index.jl");
+include("dash_docs/chapters/dash_daq/LEDDisplay/index.jl");
+include("dash_docs/chapters/dash_daq/NumericInput/index.jl");
+include("dash_docs/chapters/dash_daq/PowerButton/index.jl");
+include("dash_docs/chapters/dash_daq/PrecisionInput/index.jl");
+include("dash_docs/chapters/dash_daq/Slider/index.jl");
+include("dash_docs/chapters/dash_daq/StopButton/index.jl");
+include("dash_docs/chapters/dash_daq/Tank/index.jl");
+include("dash_docs/chapters/dash_daq/Thermometer/index.jl");
+include("dash_docs/chapters/dash_daq/ToggleSwitch/index.jl");
 for example in chapters_callbacks.examples
     example.callback!(app)
 end
@@ -113,6 +125,57 @@ for example in chapters_dash_daq_gauge.examples
     example.callback!(app)
 end
 
+for example in chapters_dash_daq_graduatebar.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_indicator.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_joystick.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_knob.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_leddisplay.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_numericinput.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_powerbutton.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_precisioninput.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_slider.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_stopbutton.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_tank.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_thermometer.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_daq_toggleswitch.examples
+    example.callback!(app)
+end
 header = html_div(
     children = (
         html_div(
@@ -206,6 +269,19 @@ callback!(app,
             "/dash_daq/color_picker" => chapters_dash_daq_colorpicker.app.layout
             "/dash_daq/dark_theme_provider" => chapters_dash_daq_darkthemeprovider.app.layout
             "/dash_daq/gauge" => chapters_dash_daq_gauge.app.layout
+            "/dash_daq/graduated_bar" => chapters_dash_daq_graduatebar.app.layout
+            "/dash_daq/indicator" => chapters_dash_daq_indicator.app.layout
+            "/dash_daq/joystick" => chapters_dash_daq_joystick.app.layout
+            "/dash_daq/knob" => chapters_dash_daq_knob.app.layout
+            "/dash_daq/leddisplay" => chapters_dash_daq_leddisplay.app.layout
+            "/dash_daq/numeric_input" => chapters_dash_daq_numericinput.app.layout
+            "/dash_daq/power_button" => chapters_dash_daq_powerbutton.app.layout
+            "/dash_daq/precision_input" => chapters_dash_daq_precisioninput.app.layout
+            "/dash_daq/slider" => chapters_dash_daq_slider.app.layout
+            "/dash_daq/stop_button" => chapters_dash_daq_stopbutton.app.layout
+            "/dash_daq/tank" => chapters_dash_daq_tank.app.layout
+            "/dash_daq/thermometer" => chapters_dash_daq_thermometer.app.layout
+            "/dash_daq/toggle_switch" => chapters_dash_daq_toggleswitch.app.layout
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

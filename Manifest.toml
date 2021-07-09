@@ -58,8 +58,6 @@ version = "0.1.0"
 [[DashBio]]
 deps = ["Dash"]
 git-tree-sha1 = "197b5151988b56298c48a68159c4925118e6918f"
-repo-rev = "master"
-repo-url = "https://github.com/plotly/DashBio.jl.git"
 uuid = "1b08a953-4be3-4667-9a23-39d4b6b31131"
 version = "0.7.0"
 

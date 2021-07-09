@@ -1,6 +1,6 @@
 module DashDocs
-using DashCoreComponents, DashHtmlComponents, Dash, DataFrames, CSV, UrlDownload, Pkg, RDatasets
 using DashUserGuideComponents
+using DashCoreComponents, DashHtmlComponents, Dash, DataFrames, CSV, UrlDownload, Pkg, RDatasets
 include("utils/_utils.jl")
 include("reusable_components/_reusable_components.jl")
 

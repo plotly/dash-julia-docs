@@ -1,5 +1,6 @@
-using DashDocs
+using DashUserGuideComponents
 using Dash
+using DashDocs
 app = DashDocs.make_app()
 
 port = haskey(ENV, "PORT") ? parse(Int64, ENV["PORT"]) : 8050

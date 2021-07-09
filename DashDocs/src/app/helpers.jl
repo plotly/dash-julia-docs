@@ -29,7 +29,7 @@ function base_app()
         </body>
     </html>"
 
-    assets_path = realpath(joinpath(@__DIR__, "..", "..", "assets"))
+    assets_path =  "./assets"
     app = dash(assets_folder = assets_path, meta_tags = [Dict(["name"=>"description", "content" => "Dash for Julia User Guide and Documentation. Dash is a framework for building analytical web apps in Julia, R, and Python."])], index_string = index_string, suppress_callback_exceptions = true)
 
     app.title = "Dash for Julia User Guide and Documentation | Plotly"

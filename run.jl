@@ -33,6 +33,15 @@ include("dash_docs/chapters/dash_daq/index.jl");
 include("dash_docs/chapters/dash_bio/index.jl");
 include("dash_docs/chapters/dash_bio/AlignmentChart/index.jl");
 include("dash_docs/chapters/dash_bio/FornaContainer/index.jl");
+include("dash_docs/chapters/dash_bio/Ideogram/index.jl");
+include("dash_docs/chapters/dash_bio/Igv/index.jl");
+include("dash_docs/chapters/dash_bio/Molecule2dViewer/index.jl");
+include("dash_docs/chapters/dash_bio/Molecule3dViewer/index.jl");
+include("dash_docs/chapters/dash_bio/NeedlePlot/index.jl");
+include("dash_docs/chapters/dash_bio/NglMoleculeViewer/index.jl");
+include("dash_docs/chapters/dash_bio/OncoPrint/index.jl");
+include("dash_docs/chapters/dash_bio/SequenceViewer/index.jl");
+include("dash_docs/chapters/dash_bio/Speck/index.jl");
 
 
 
@@ -88,6 +97,41 @@ for example in chapters_dash_bio_fornacontainer.examples
     example.callback!(app)
 end
 
+for example in chapters_dash_bio_ideogram.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_igv.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_molecule2dviewer.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_molecule3dviewer.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_needleplot.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_nglmoleculeviewer.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_oncoprint.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_sequenceviewer.examples
+    example.callback!(app)
+end
+
+for example in chapters_dash_bio_speck.examples
+    example.callback!(app)
+end
 
 header = html_div(
     children = (
@@ -176,7 +220,15 @@ callback!(app,
             "/dash_bio" => chapters_dash_bio.app.layout
             "/dash_bio/alignment_chart" => chapters_dash_bio_alignmentchart.app.layout
             "/dash_bio/forna_container" => chapters_dash_bio_fornacontainer.app.layout
-            
+            "/dash_bio/ideogram" => chapters_dash_bio_ideogram.app.layout
+            "/dash_bio/igv" => chapters_dash_bio_igv.app.layout
+            "/dash_bio/molecule2dviewer" => chapters_dash_bio_molecule2dviewer.app.layout
+            "/dash_bio/molecule3dviewer" => chapters_dash_bio_molecule3dviewer.app.layout
+            "/dash_bio/needle_plot" => chapters_dash_bio_needleplot.app.layout
+            "/dash_bio/ngl_molecule_viewer" => chapters_dash_bio_nglmoleculeviewer.app.layout            
+            "/dash_bio/onco_print" => chapters_dash_bio_oncoprint.app.layout  
+            "/dash_bio/sequence_viewer" => chapters_dash_bio_sequenceviewer.app.layout                      
+            "/dash_bio/speck" => chapters_dash_bio_speck.app.layout                      
             _ => html_div() do
                 html_br(),
                 html_h1("Dash for Julia User Guide"),

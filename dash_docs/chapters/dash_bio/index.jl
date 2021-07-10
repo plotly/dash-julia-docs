@@ -71,14 +71,14 @@ app.layout = html_div() do
     fornacontainer_index_example.source_code,
     fornacontainer_index_example.layout,
 
-    html_a(html_h3("Ideogram"), href="#"),
+    html_a(html_h3("Ideogram"), href="dash_bio/ideogram"),
 
     dcc_markdown("A visual representation and analysis tool for chromosome bands."),
 
     ideogram_index_example.source_code,
     ideogram_index_example.layout,
 
-    html_a(html_h3("Igv"), href="#"),
+    html_a(html_h3("Igv"), href="dash_bio/igv"),
 
     dcc_markdown("A high performance genomics visualization tool for real-time exploration 
     of large scale genomic data features."),
@@ -86,21 +86,21 @@ app.layout = html_div() do
     igv_index_example.source_code,
     igv_index_example.layout,
 
-    html_a(html_h3("Molecule2dViewer"), href="#"),
+    html_a(html_h3("Molecule2dViewer"), href="/dash_bio/molecule2dviewer"),
 
     dcc_markdown("A 2D rendering of molecular structures."),
 
     molecule2dviewer_index_example.source_code,
     molecule2dviewer_index_example.layout,
 
-    html_a(html_h3("Molecule3dViewer"), href="#"),
+    html_a(html_h3("Molecule3dViewer"), href="dash_bio/molecule3dviewer"),
 
     dcc_markdown("A 3D visualization of biomolecular structures."),
 
     molecule3dviewer_index_example.source_code,
     molecule3dviewer_index_example.layout,
 
-    html_a(html_h3("NeedlePlot"), href="#"),
+    html_a(html_h3("NeedlePlot"), href="dash_bio/needle_plot"),
 
     dcc_markdown("A combination of a bar chart and a scatter plot, for data that 
     are both categorical and continuous."),
@@ -108,7 +108,7 @@ app.layout = html_div() do
     needleplot_index_example.source_code,
     needleplot_index_example.layout,
     
-    html_a(html_h3("NglMoleculeViewer"), href="#"),
+    html_a(html_h3("NglMoleculeViewer"), href="dash_bio/ngl_molecule_viewer"),
 
     dcc_markdown("A comprehensive 3D molecule visualizer for visualizing multiple 
     molecules and chains in a variety of representations."),
@@ -116,7 +116,7 @@ app.layout = html_div() do
     nglmoleculeviewer_index_example.source_code,
     nglmoleculeviewer_index_example.layout,
 
-    html_a(html_h3("OncoPrint"), href="#"),
+    html_a(html_h3("OncoPrint"), href="dash_bio/onco_print"),
 
     dcc_markdown("A chart that can be used to visualize 
     multiple genomic alternations with an interactive heatmap."),
@@ -124,14 +124,14 @@ app.layout = html_div() do
     oncoprint_index_example.source_code,
     oncoprint_index_example.layout,
 
-    html_a(html_h3("SequenceViewer"), href="#"),
+    html_a(html_h3("SequenceViewer"), href="dash_bio/sequence_viewer"),
 
     dcc_markdown("A sequence viewer."),
 
     sequenceviewer_index_example.source_code,
     sequenceviewer_index_example.layout,
 
-    html_a(html_h3("Speck"), href="#"),
+    html_a(html_h3("Speck"), href="dash_bio/speck"),
 
     dcc_markdown("A 3D WebGL molecule viewer."),
 

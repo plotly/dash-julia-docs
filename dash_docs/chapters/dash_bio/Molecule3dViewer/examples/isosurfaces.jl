@@ -21,8 +21,8 @@ app.layout = dashbio_molecule3dviewer(
     "iso_val" => 0.1,
     "opacity" => 1.0,
     "positiveVolumetricColor" => "red",
-    "negativeVolumetricColor" => "blue",
-  )
-);    
+    "negativeVolumetricColor" => "blue"
+  ),
+)
 
 run_server(app, "0.0.0.0", debug=true)

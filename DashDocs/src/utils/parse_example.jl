@@ -10,11 +10,13 @@ function top_level_popout!(e::Expr)
     return result
 end
 
+#parse if it is  DataFrame(urldownload(url)) expression, returns url
 function check_is_download(right::Expr)
     (right.head != :call || right.args[1] != :DataFrame || !isa(right.args[2], Expr)) && return nothing
     (right.args[2].head != :call || right.args[2].args[1] != :urldownload) && return nothing
     return string(right.args[2].args[2])
 end
+#parse if it is  dataset(type, dataset) expression, returns "$type|$dataset"
 function check_is_rdataset(right::Expr)
     (right.head != :call || right.args[1] != :dataset) && return nothing
     return join(string.(right.args[2:end]), "|")

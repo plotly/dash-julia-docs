@@ -4,10 +4,6 @@ macro eval_toplevel()
     return esc(result)
 end
 
-function source_formatted(source)
-
-end
-
 macro source_str(name)
     source_str = "```julia\n$(EXAMPLES_REGISTRY[name].source)\n```"
     return :(

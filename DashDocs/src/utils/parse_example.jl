@@ -48,7 +48,17 @@ function is_callback(expr)
   (expr.head == :do && is_callbackcall(expr.args[1])) && return true #do syntax
   return false
 end
-
+function remove_callbacks!(expr::Expr)
+  filter!(expr.args) do arg
+      !isa(arg, Expr) && return true
+      return !is_callback(arg)
+  end
+  for arg in expr.args
+    if arg isa Expr
+      remove_callbacks!(arg)
+    end
+  end
+end
 #make the function that return layout of example
 function make_layout_function(e::Expr)
     fbody = Expr(:block)
@@ -81,6 +91,7 @@ function make_layout_function(e::Expr)
             )
             continue
           end
+          remove_callbacks!(arg)
       end
       push!(fbody.args, arg)
     end

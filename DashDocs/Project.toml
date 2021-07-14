@@ -1,4 +1,10 @@
+name = "DashDocs"
+uuid = "3ff4e7a0-4b43-48cc-8faa-634f7f222ac1"
+authors = ["Alexandr Romanenko <waralex@gmail.com>"]
+version = "0.1.0"
+
 [deps]
+Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 Chain = "8be319e6-bccf-4806-a6f7-6fae938471bc"
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"
@@ -6,7 +12,6 @@ DashBio = "1b08a953-4be3-4667-9a23-39d4b6b31131"
 DashBioUtils = "adab0d11-1453-4a42-9046-4ba7b121fa95"
 DashCoreComponents = "1b08a953-4be3-4667-9a23-9da06441d987"
 DashDaq = "1b08a953-4be3-4667-9a23-a540cca008f6"
-DashDocs = "3ff4e7a0-4b43-48cc-8faa-634f7f222ac1"
 DashHtmlComponents = "1b08a953-4be3-4667-9a23-24100242a84a"
 DashTable = "1b08a953-4be3-4667-9a23-f0e2ba4deb9a"
 DashUserGuideComponents = "1b08a953-4be3-4667-9a23-e667f8ac7b1d"

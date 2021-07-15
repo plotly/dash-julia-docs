@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/basefont" begin
 
-    @example docs "docs.jl"
+    @example docsbasefont "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docsbasefont"
 
 end
 

@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/title" begin
 
-    @example docs "docs.jl"
+    @example docstitle "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docstitle"
 
 end
 

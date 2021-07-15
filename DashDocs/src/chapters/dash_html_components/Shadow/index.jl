@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/shadow" begin
 
-    @example docs "docs.jl"
+    @example docsshadow "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docsshadow"
 
 end
 

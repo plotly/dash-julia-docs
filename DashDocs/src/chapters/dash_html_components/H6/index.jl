@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/h6" begin
 
-    @example docs "docs.jl"
+    @example docsh6 "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docsh6"
 
 end
 

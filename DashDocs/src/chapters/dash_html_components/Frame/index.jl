@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/frame" begin
 
-    @example docs "docs.jl"
+    @example docsframe "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docsframe"
 
 end
 

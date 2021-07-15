@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/form" begin
 
-    @example docs "docs.jl"
+    @example docsform "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docsform"
 
 end
 

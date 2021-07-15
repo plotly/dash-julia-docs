@@ -1,13 +1,13 @@
 @doc_chapter "/dash_html_components/time" begin
 
-    @example docs "docs.jl"
+    @example docstime "docs.jl"
     
     
     @layout html_div() do
 
     html_h1("Examples and References"),
 
-    layout"docs"
+    layout"docstime"
 
 end
 

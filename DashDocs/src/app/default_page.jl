@@ -88,6 +88,11 @@ function default_page()
                     "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                 ),
                 Chapter(
+                    "Dash DataTable",
+                    "/dash_data_table",
+                    "The Dash Data Table library is used to generate interactive tables."
+                ),
+                Chapter(
                             "Dash Bio",
                             "/dash_bio",
                             "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."

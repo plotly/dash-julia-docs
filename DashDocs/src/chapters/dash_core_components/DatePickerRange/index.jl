@@ -1,42 +1,22 @@
-module chapters_dash_core_components_datepickerrange
+@doc_chapter "/dash_core_components/datepickerrange" begin
 
-using Dash, DashHtmlComponents, DashCoreComponents
-
-include("../../../utils.jl")
-
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-simple_datepickerrange = LoadExampleCode(string(examples_path, "/simple_datepickerrange.jl"))
-
-datepickerrange_MMM_format = LoadExampleCode(string(examples_path, "/datepickerrange_MMM_format.jl"))
-
-datepickerrange_MDYQ_format = LoadExampleCode(string(examples_path, "/datepickerrange_MDYQ_format.jl"))
-
-datepickerrange_MMMMYDD_format = LoadExampleCode(string(examples_path, "/datepickerrange_MMMMYDD_format.jl"))
-
-datepickerrange_x_format = LoadExampleCode(string(examples_path, "/datepickerrange_x_format.jl"))
-
-datepickerrange_MMM_format_month = LoadExampleCode(string(examples_path, "/datepickerrange_MMM_format_month.jl"))
-
-datepickerrange_MDYQ_format_month = LoadExampleCode(string(examples_path, "/datepickerrange_MDYQ_format_month.jl"))
-
-datepickerrange_MMMMYDD_format_month = LoadExampleCode(string(examples_path, "/datepickerrange_MMMMYDD_format_month.jl"))
-
-datepickerrange_x_format_month = LoadExampleCode(string(examples_path, "/datepickerrange_x_format_month.jl"))
-
-datepickerrange_vertical = LoadExampleCode(string(examples_path, "/datepickerrange_vertical.jl"))
-
-datepickerrange_clearable = LoadExampleCode(string(examples_path, "/datepickerrange_clearable.jl"))
-
-datepickerrange_rtl = LoadExampleCode(string(examples_path, "/datepickerrange_rtl.jl"))
-
-examples = [simple_datepickerrange]
-
-app =  dash()
-
-app.layout = html_div() do
+    @example simple_datepickerrange "simple_datepickerrange.jl"
+    @example datepickerrange_MMM_format "datepickerrange_MMM_format.jl"
+    @example datepickerrange_MDYQ_format "datepickerrange_MDYQ_format.jl"
+    @example datepickerrange_MMMMYDD_format "datepickerrange_MMMMYDD_format.jl"
+    @example datepickerrange_x_format "datepickerrange_x_format.jl"
+    @example datepickerrange_MMM_format_month "datepickerrange_MMM_format_month.jl"
+    @example datepickerrange_MDYQ_format_month "datepickerrange_MDYQ_format_month.jl"
+    @example datepickerrange_MMMMYDD_format_month "datepickerrange_MMMMYDD_format_month.jl"
+    @example datepickerrange_x_format_month "datepickerrange_x_format_month.jl"
+    @example datepickerrange_vertical "datepickerrange_vertical.jl"
+    @example datepickerrange_clearable "datepickerrange_clearable.jl"
+    @example datepickerrange_rtl "datepickerrange_rtl.jl"
+    
+    
+    
+    
+    @layout html_div() do
 
     html_h1("DatePickerRange Examples and Reference"),
 
@@ -46,8 +26,8 @@ app.layout = html_div() do
     If you are using date objects, we recommend using `Date()` so there is no time part. DatePickerRange will accept dates with a time part, but this can be confusing, particularly for the initial call of a callback. After the user chooses a new date there will be no time part, only the date.
     If you already have a `DateTime` object, you can easily convert it with `Date()`. The `min_date_allowed` and `max_date_allowed` properties define the minimum and maximum selectable dates on the calendar while `initial_visible_month` defines the calendar month that is first displayed when the `DatePickerRange` component is opened."""),
 
-    simple_datepickerrange.source_code,
-    simple_datepickerrange.layout,
+    source"simple_datepickerrange",
+    layout"simple_datepickerrange",
 
     html_h3("Month and Display Format"),
 
@@ -146,31 +126,31 @@ app.layout = html_div() do
 
     dcc_markdown("You can utilize any permutation of the string tokens shown in the table above to change how selected dates are displayed in the DatePickerRange component."),
 
-    datepickerrange_MMM_format.source_code,
-    datepickerrange_MMM_format.layout,
+    source"datepickerrange_MMM_format",
+    layout"datepickerrange_MMM_format",
 
-    datepickerrange_MDYQ_format.source_code,
-    datepickerrange_MDYQ_format.layout, 
+    source"datepickerrange_MDYQ_format",
+    layout"datepickerrange_MDYQ_format", 
 
-    datepickerrange_MMMMYDD_format.source_code,
-    datepickerrange_MMMMYDD_format.layout,
+    source"datepickerrange_MMMMYDD_format",
+    layout"datepickerrange_MMMMYDD_format",
 
-    datepickerrange_x_format.source_code,
-    datepickerrange_x_format.layout,
+    source"datepickerrange_x_format",
+    layout"datepickerrange_x_format",
 
     html_h3("Month Format Examples"),
 
-    datepickerrange_MMM_format_month.source_code,
-    datepickerrange_MMM_format_month.layout,
+    source"datepickerrange_MMM_format_month",
+    layout"datepickerrange_MMM_format_month",
 
-    datepickerrange_MDYQ_format_month.source_code,
-    datepickerrange_MDYQ_format_month.layout,
+    source"datepickerrange_MDYQ_format_month",
+    layout"datepickerrange_MDYQ_format_month",
 
-    datepickerrange_MMMMYDD_format_month.source_code,
-    datepickerrange_MMMMYDD_format_month.layout,
+    source"datepickerrange_MMMMYDD_format_month",
+    layout"datepickerrange_MMMMYDD_format_month",
 
-    datepickerrange_x_format_month.source_code,
-    datepickerrange_x_format_month.layout,
+    source"datepickerrange_x_format_month",
+    layout"datepickerrange_x_format_month",
 
     html_h3("Vertical Calendar and Placeholder Text"),
 
@@ -178,8 +158,8 @@ app.layout = html_div() do
     If calendar_orientation is set to `vertical`, it will be rendered vertically and will default to `horizontal` if not defined.
     The `start_date_placeholder_text` and `end_date_placeholder_text` define the grey default text defined in the calendar input boxes when no date is selected."""),
 
-    datepickerrange_vertical.source_code,
-    datepickerrange_vertical.layout,
+    source"datepickerrange_vertical",
+    layout"datepickerrange_vertical",
 
     html_h3("Minimum Nights, Calendar Clear, and Portals"),
 
@@ -195,8 +175,8 @@ app.layout = html_div() do
     
     """),
 
-    datepickerrange_clearable.source_code,
-    datepickerrange_clearable.layout,
+    source"datepickerrange_clearable",
+    layout"datepickerrange_clearable",
 
     html_h3("Right to Left Calendars and First Day of Week"),
 
@@ -205,8 +185,8 @@ app.layout = html_div() do
     The `first_day_of_week` property allows you to define which day of the week will be set as 
     the first day of the week. In the example below, Tuesday is the first day of the week."""),
 
-    datepickerrange_rtl.source_code,
-    datepickerrange_rtl.layout
+    source"datepickerrange_rtl",
+    layout"datepickerrange_rtl"
 
 end
 

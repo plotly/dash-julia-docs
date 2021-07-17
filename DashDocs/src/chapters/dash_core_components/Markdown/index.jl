@@ -1,66 +1,45 @@
-module chapters_dash_core_components_markdown
+@doc_chapter "/dash_core_components/markdown" begin
 
-using Dash, DashHtmlComponents, DashCoreComponents
-
-include("../../../utils.jl")
-
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-headers = LoadExampleCode(string(examples_path, "/headers.jl"))
-
-emphasis = LoadExampleCode(string(examples_path, "/emphasis.jl"))
-
-block = LoadExampleCode(string(examples_path, "/block.jl"))
-
-lists = LoadExampleCode(string(examples_path, "/lists.jl"))
-
-links = LoadExampleCode(string(examples_path, "/links.jl"))
-
-inline = LoadExampleCode(string(examples_path, "/inline.jl"))
-
-examples = []
-
-app =  dash()
-
-# default.callback!(app)
-
-# dynamic_options.callback!(app)
-
-app.layout = html_div() do
+    @example headers "headers.jl"
+    @example emphasis "emphasis.jl"
+    @example block "block.jl"
+    @example lists "lists.jl"
+    @example links "links.jl"
+    @example inline "inline.jl"
+  
+    @layout html_div() do
 
     html_h1("Markdown Examples and Reference"),
 
     html_h3("Headers"),
 
-    headers.source_code,
-    headers.layout,
+    source"headers",
+    layout"headers",
 
     html_h3("Emphasis"),
 
-    emphasis.source_code,
-    emphasis.layout,
+    source"emphasis",
+    layout"emphasis",
 
     html_h3("Lists"),
 
-    lists.source_code,
-    lists.layout,
+    source"lists",
+    layout"lists",
 
     html_h3("Block Quotes"),
 
-    block.source_code,
-    block.layout,
+    source"block",
+    layout"block",
 
     html_h3("Links"),
 
-    links.source_code,
-    links.layout,
+    source"links",
+    layout"links",
 
     html_h3("Inline Code"),
 
-    inline.source_code,
-    inline.layout
+    source"inline",
+    layout"inline"
 
 end
 

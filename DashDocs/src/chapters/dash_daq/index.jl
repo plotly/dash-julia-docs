@@ -1,3 +1,20 @@
+include("BooleanSwitch/index.jl");
+include("ColorPicker/index.jl");
+include("DarkThemeProvider/index.jl");
+include("Gauge/index.jl");
+include("GraduatedBar/index.jl");
+include("Indicator/index.jl");
+include("Joystick/index.jl");
+include("Knob/index.jl");
+include("LEDDisplay/index.jl");
+include("NumericInput/index.jl");
+include("PowerButton/index.jl");
+include("PrecisionInput/index.jl");
+include("Slider/index.jl");
+include("StopButton/index.jl");
+include("Tank/index.jl");
+include("Thermometer/index.jl");
+include("ToggleSwitch/index.jl");
 @doc_chapter "/dash_daq" begin
 
 
@@ -30,77 +47,77 @@
     The source is on GitHub at [plotly/dash-daq](https://github.com/plotly/dash-daq).
     These docs are using version $(pkgver"DashDaq")."),
 
-    html_a(html_h3("BooleanSwitch"), href="#"),
+    html_a(html_h3("BooleanSwitch"), href="/dash_daq/boolean_switch"),
 
     dcc_markdown("A switch component that toggles between on and off."),
 
     source"booleanswitch_index_example",
     layout"booleanswitch_index_example",
 
-    html_a(html_h3("ColorPicker"), href="#"),
+    html_a(html_h3("ColorPicker"), href="/dash_daq/color_picker"),
 
     dcc_markdown("A color picker."),
 
     source"colorpicker_index_example",
     layout"colorpicker_index_example",
 
-    html_a(html_h3("Gauge"), href="#"),
+    html_a(html_h3("Gauge"), href="/dash_daq/gauge"),
 
     dcc_markdown("A gauge component that points to some value between some range."),
 
     source"gauge_index_example",
     layout"gauge_index_example",
 
-    html_a(html_h3("GraduatedBar"), href="#"),
+    html_a(html_h3("GraduatedBar"), href="/dash_daq/graduated_bar"),
 
     dcc_markdown("A graduated bar component that displays a value within some range as a percentage."),
 
     source"graduatedbar_index_example",
     layout"graduatedbar_index_example",
 
-    html_a(html_h3("Indicator"), href="#"),
+    html_a(html_h3("Indicator"), href="/dash_daq/indicator"),
 
     dcc_markdown("A boolean indicator LED."),
 
     source"indicator_index_example",
     layout"indicator_index_example",
 
-    html_a(html_h3("Joystick"), href="#"),
+    html_a(html_h3("Joystick"), href="/dash_daq/joystick"),
 
     dcc_markdown("A joystick that can be used to apply direction and force."),
 
     source"joystick_index_example",
     layout"joystick_index_example",
 
-    html_a(html_h3("Knob"), href="#"),
+    html_a(html_h3("Knob"), href="/dash_daq/knob"),
 
     dcc_markdown("A knob component that can be turned to a value between some range."),
 
     source"knob_index_example",
     layout"knob_index_example",
 
-    html_a(html_h3("LEDDisplay"), href="#"),
+    html_a(html_h3("LEDDisplay"), href="/dash_daq/leddisplay"),
 
     dcc_markdown("A 7-segment LED display component."),
 
     source"leddisplay_index_example",
     layout"leddisplay_index_example",
 
-    html_a(html_h3("NumericInput"), href="#"),
+    html_a(html_h3("NumericInput"), href="/dash_daq/numeric_input"),
 
     dcc_markdown("A numeric input component that can be set to a value between some range."),
 
     source"numericinput_index_example",
     layout"numericinput_index_example",
 
-    html_a(html_h3("PowerButton"), href="#"),
+    html_a(html_h3("PowerButton"), href="/dash_daq/power_button"),
 
     dcc_markdown("A power button component that can be turned on or off."),
 
     source"powerbutton_index_example",
     layout"powerbutton_index_example",
 
-    html_a(html_h3("PrecisionInput"), href="#"),
+    html_a(html_h3("PrecisionInput"), href="/dash_daq/precision_input"),
 
     dcc_markdown("A numeric input component that converts an input value to the desired precision.
     "),
@@ -108,7 +125,7 @@
     source"precisioninput_index_example",
     layout"precisioninput_index_example",
 
-    html_a(html_h3("Slider"), href="#"),
+    html_a(html_h3("Slider"), href="/dash_daq/slider"),
 
     dcc_markdown("A slider component with support for a target value.
     "),
@@ -116,35 +133,35 @@
     source"slider_index_example",
     layout"slider_index_example",
 
-    html_a(html_h3("StopButton"), href="#"),
+    html_a(html_h3("StopButton"), href="/dash_daq/stop_button"),
 
     dcc_markdown("A stop button."),
 
     source"stopbutton_index_example",
     layout"stopbutton_index_example",
 
-    html_a(html_h3("Tank"), href="#"),
+    html_a(html_h3("Tank"), href="/dash_daq/tank"),
 
     dcc_markdown("A tank component that fills to a value between some range."),
 
     source"tank_index_example",
     layout"tank_index_example",
 
-    html_a(html_h3("Thermometer"), href="#"),
+    html_a(html_h3("Thermometer"), href="/dash_daq/thermometer"),
 
     dcc_markdown("A thermometer component that fills to a value between some range."),
 
     source"thermometer_index_example",
     layout"thermometer_index_example",
 
-    html_a(html_h3("ToggleSwitch"), href="#"),
+    html_a(html_h3("ToggleSwitch"), href="/dash_daq/toggle_switch"),
 
     dcc_markdown("A switch component that toggles between two values."),
 
     source"toggleswitch_index_example",
     layout"toggleswitch_index_example",
 
-    html_a(html_h3("DarkThemeProvider"), href="#"),
+    html_a(html_h3("DarkThemeProvider"), href="/dash_daq/dark_theme_provider"),
 
     dcc_markdown("A component placed at the root of the component tree to
     make all components match the dark theme."),

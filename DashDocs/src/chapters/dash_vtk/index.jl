@@ -1,3 +1,5 @@
+include("IntroToVisualization/index.jl");
+
 @doc_chapter "/dash_vtk" begin
 
 
@@ -15,8 +17,34 @@
     These docs are using DashVtk version $(pkgver"DashVtk").
     To install DashVtk in your computer go to your julia terminal and perform following step: 
     ```
-    pkg> add DashVTK
+    julia> ] add DashVtk
     ```
     It will install the following dependency in your local environment. 
+
+    This section is divided in the following parts:
+    1. Intro to 3D Visualization
+    Introductory concepts about 3D visualization needed to understand how Dash VTK works.
+
+    2. Structure of Datasets
+    Understand the structure of a dataset in Dash VTK.
+
+    3. Representation components
+    Dash VTK Components needed to generate a representation.
+
+    4. Other DashVTK Components
+    Dash VTK Components that are not used for building representations.
+
+    5. Click and Hover Callbacks
+    Learn to write callbacks based on user click and hovers.
+
+    6. Advanced Demos
+    Demos of more advanced usage of Dash VTK.
+
+    7. Reference
+    Comprehensive reference of all Dash VTK components.
     ")
+
+
+end
+
 end

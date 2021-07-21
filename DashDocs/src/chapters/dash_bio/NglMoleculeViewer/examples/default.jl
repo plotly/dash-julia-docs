@@ -29,7 +29,7 @@ app.layout = html_div([
     id="default-ngl"
   ),
   dcc_dropdown(id="default-dropdown", options=dropdown_options, placeholder="Select a molecule", value = "1BNA")
-]);
+])
 
 callback!(app,
     [Output("default-ngl", "data"),
@@ -47,6 +47,6 @@ callback!(app,
     )
     data = DashBioUtils.get_data(data_path, value, "red", reset_view=true, loc=false);
     return data, molStyles
-end;
+end
 run_server(app, "0.0.0.0", debug=true)
 

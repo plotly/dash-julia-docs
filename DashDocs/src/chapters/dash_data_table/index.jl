@@ -1,3 +1,5 @@
+include("Reference/index.jl");
+
 @doc_chapter "/dash_data_table" begin
 
 @example quick_start "quick_start.jl"
@@ -23,9 +25,10 @@
 
     source"quick_start",
     layout"quick_start",
+    html_h1("User Guide"),
+    html_a(html_h3("Reference"), href="/dash_data_table/reference"),
     dcc_markdown(
-      "# User Guide
-### Reference
+      """
 A comprehensive list of all of the DataTable properties with examples.
 
 ### DataTable Height
@@ -85,7 +88,7 @@ Examples using DataTable virtualization.
 
 ### Filtering Syntax
 An explanation and examples of filtering syntax for both frontend and backend filtering in the DataTable.
-  "
+  """
     )
     
     

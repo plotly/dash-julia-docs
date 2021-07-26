@@ -11,13 +11,13 @@
     The view is a 3D View that can do Geometry rendering for meshes or Volume rendering for 3D images. The view can be configured to act as a 2D one when using parallel projection and preventing rotation when interacting with it. The *View* component can be configured with the following set of properties.
 
     ```
-    dash_vtk.View(
-      id='vtk-view',
+    vtk_view(
+      id="vtk_view",
       background=[0, 0, 0],           # RGB array of floating point values between 0 and 1.
-      interactorSettings=[...],       # Binding of mouse events to camera action (Rotate, Pan, Zoom...)
-      cameraPosition=[x,y,z],         # Where the camera should be initially placed in 3D world
-      cameraViewUp=[dx, dy, dz],      # Vector to use as your view up for your initial camera
-      cameraParallelProjection=False, # Should we see our 3D work with perspective or flat with no depth perception
+      interactorSettings=[],       # Binding of mouse events to camera action (Rotate, Pan, Zoom...)
+      cameraPosition=[0, 0, 0],         # Where the camera should be initially placed in 3D world
+      cameraViewUp=[0, 0, 0],      # Vector to use as your view up for your initial camera
+      cameraParallelProjection=false, # Should we see our 3D work with perspective or flat with no depth perception
       triggerRender=0,                # Timestamp meant to trigger a render when different
       triggerResetCamera=0,           # Timestamp meant to trigger a reset camera when different
       # clickInfo,                    # Read-only property to retrieve picked representation id and picking information
@@ -61,11 +61,11 @@
 
     A mouse event can be identified with the following set of properties:
     - *button*: 1/2/3 # Which button should be down
-    - *shift*: True/False # Is the `Shift` key down
-    - alt: True/False # Is the `Alt` key down
-    - control: True/False # Is the `Ctrl` key down
-    - scrollEnabled: True/False # Some action could also be triggered by scroll
-    - dragEnabled: True/False # Mostly used to disable default drag behavior
+    - *shift*: true/false # Is the `Shift` key down
+    - alt: true/false # Is the `Alt` key down
+    - control: true/false # Is the `Ctrl` key down
+    - scrollEnabled: true/false # Some action could also be triggered by scroll
+    - dragEnabled: true/false # Mostly used to disable default drag behavior
 
     And the `action` could be one of the following:
     - Pan: Will pan the object on the plane normal to the camera

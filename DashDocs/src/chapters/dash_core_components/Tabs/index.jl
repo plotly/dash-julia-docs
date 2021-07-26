@@ -1,33 +1,11 @@
-module chapters_dash_core_components_tabs
-using Dash, DashHtmlComponents, DashCoreComponents
+@doc_chapter "/dash_core_components/tabs" begin
 
-include("../../../utils.jl")
-
-export examples
-
-examples_path = joinpath(@__DIR__, "examples")
-
-method1 = LoadExampleCode(string(examples_path, "/method1.jl"))
-
-method2 = LoadExampleCode(string(examples_path, "/method2.jl"))
-
-styling_tabs = LoadExampleCode(string(examples_path, "/styling_tabs.jl"))
-
-styling_tabs_inline = LoadExampleCode(string(examples_path, "/styling_tabs_inline.jl"))
-
-
-examples = [method1, styling_tabs, styling_tabs_inline]
-
-app =  dash()
-
-# default.callback!(app)
-
-method1.callback!(app)
-styling_tabs.callback!(app)
-styling_tabs_inline.callback!(app)
-
-
-app.layout = html_div() do
+    @example method1 "method1.jl"
+    @example method2 "method2.jl"
+    @example styling_tabs "styling_tabs.jl"
+    @example styling_tabs_inline "styling_tabs_inline.jl"
+  
+    @layout html_div() do
 
     html_h1("Tabs Examples and Reference"),
 
@@ -39,16 +17,16 @@ app.layout = html_div() do
 
     dcc_markdown("Attach a callback to the Tabs `value` prop and update a container's `children` property in your callback."),
 
-    method1.source_code,
-    method1.layout,
+    source"method1",
+    layout"method1",
 
     html_h3("Method 2. Content as Tab Children"),
 
     dcc_markdown("Instead of displaying the content through a callback, 
     you can embed the content directly as the `children` property in the Tab component:"),
 
-    method2.source_code,
-    method2.layout,
+    source"method2",
+    layout"method2",
 
     dcc_markdown("Note that this method has a drawback: it requires that you compute the 
     children property for each individual tab upfront and send all of the tab's content over 
@@ -60,8 +38,8 @@ app.layout = html_div() do
     dcc_markdown("Styling the Tabs (and Tab) component can either be done using CSS classes by 
     providing your own to the `className` property:"),
 
-    styling_tabs.source_code,
-    styling_tabs.layout,
+    source"styling_tabs",
+    layout"styling_tabs",
 
     dcc_markdown("""
     Notice how the container of the Tabs can be styled as well by supplying a class to the `parent_className` prop, 
@@ -112,8 +90,8 @@ app.layout = html_div() do
 
     html_div("An alternative to providing CSS classes is to provide style dictionaries directly:"),
 
-    styling_tabs_inline.source_code,
-    styling_tabs_inline.layout
+    source"styling_tabs_inline",
+    layout"styling_tabs_inline"
 
 
 end

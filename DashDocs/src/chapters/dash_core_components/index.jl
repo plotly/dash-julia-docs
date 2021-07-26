@@ -1,3 +1,21 @@
+include("Dropdown/index.jl");
+include("Slider/index.jl");
+include("RangeSlider/index.jl");
+include("Input/index.jl");
+include("Textarea/index.jl");
+include("Checklist/index.jl");
+include("RadioItems/index.jl");
+include("DatePickerSingle/index.jl");
+include("DatePickerRange/index.jl");
+include("Markdown/index.jl");
+include("Tabs/index.jl");
+include("Upload/index.jl");
+include("Download/index.jl");
+include("Graph/index.jl");
+include("ConfirmDialog/index.jl");
+include("ConfirmDialogProvider/index.jl");
+include("Store/index.jl");
+
 @doc_chapter "/dash_core_components" begin
     @example dropdown_index_example "dropdown_index_example.jl"
     @example slider_index_example "slider_index_example.jl"
@@ -118,7 +136,7 @@
         layout"markdown_index_example",
 
         #upload
-        html_a(html_h3("Upload"), href="#"),
+        html_a(html_h3("Upload"), href="/dash_core_components/upload"),
 
         dcc_markdown("
         The `dcc_upload` component allows users to upload
@@ -128,7 +146,7 @@
         layout"upload_index_example",
 
         #download
-        html_a(html_h3("Download"), href="#"),
+        html_a(html_h3("Download"), href="/dash_core_components/download"),
 
         dcc_markdown(
             "The `dcc_download` component allows users to download
@@ -151,7 +169,7 @@
         layout"graph_index_example",
 
         #confirm_dialog
-        html_a(html_h3("ConfirmDialog"), href="#"),
+        html_a(html_h3("ConfirmDialog"), href="/dash_core_components/graph"),
 
         dcc_markdown("
         The `dcc_confirmdialog` component send a dialog to the browser
@@ -169,7 +187,7 @@
         layout"confirm_dialog_clicked_index_example",
 
         #store
-        html_a(html_h3("Store"), href="#"),
+        html_a(html_h3("Store"), href="/dash_core_components/store"),
 
         dcc_markdown(
             "The store component can be used to keep data in the visitor's browser. The data is scoped to the user accessing the page.

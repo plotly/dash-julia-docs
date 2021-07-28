@@ -1,4 +1,5 @@
 include("StructureOfDatasets/image_data.jl");
+include("StructureOfDatasets/point_data.jl");
 
 @doc_chapter "/dash_vtk/structure_of_datasets" begin 
 
@@ -65,7 +66,67 @@ include("StructureOfDatasets/image_data.jl");
         ```
 
         You can see a concrete example in the image below:
+        "),
+
+        source"poly_data",
+        layout"poly_data",
+
+        html_a(html_h3("Fields"), href=""),
+
+        dcc_markdown("
+        Having a grid is a good start, but mosst likely you would want to attach a field to a given mesh so you can start looking at it in a 3D context.
+
+        Fields are arrays that map to either *Points* or *Cells*. They couls be scalars or vectors of different size. 
+
+        The diagram below tries to difference between fields located on points vs cells in term of rendering, but it also truly has a different meaning based on the type of data that you have.
+
+        The example below shows how to attach fields to a dataset (`vtk_polydata` and/or `vtk_imagedata`).
+
+        Caution: By convention we always attach data to points in `vtk_imagedata` for doind `vtk_volumerendering` and the array must be registered as scalars. 
+
+        ```
+        vtk_imagedata(
+            dimensions = [5, 5, 5],
+            origin = [-2, -2, -2],
+            spacing = [1, 1, 1],
+            children = [
+                vtk_pointdata([
+                    vtk_dataarray(
+                        registration="setScalars",
+                        values=[5, 5, 5],
+                    )
+                ])
+            ],
+        )
+
+        vtk_polydata(
+            points=[
+                0, 0, 0,
+                1, 0, 0,
+                0, 1, 0,
+                1, 1, 0,
+            ],
+            lines = [3, 1, 3, 2],
+            polys = [3, 0, 1, 2],
+            children=[
+                vtk_pointdata([
+                    vtk_dataarray(
+                        name="onPoints",
+                        values=[0, 0.33, 0.66, 1]
+                    )
+                ]),
+                vtk_celldata([
+                    vtk_dataarray(
+                        name="onCells",
+                        values=[0, 1],
+                    )
+                ])
+            ],
+        )
+        ```
         ")
+
+          
         
     
     end

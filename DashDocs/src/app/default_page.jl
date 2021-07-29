@@ -88,6 +88,11 @@ function default_page()
                     "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                 ),
                 Chapter(
+                    "Dash DataTable",
+                    "/dash_data_table",
+                    "The Dash Data Table library is used to generate interactive tables."
+                ),
+                Chapter(
                     "Dash VTK",
                     "/dash_vtk",
                     "Dash VTK enables its user to use VTK on the server side for any data processing and provides the infrastructure to push the visualization to the client side for a better experience."

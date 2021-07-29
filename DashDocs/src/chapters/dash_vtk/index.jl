@@ -1,4 +1,7 @@
 include("IntroToVisualization/index.jl");
+include("StructureOfDatasets/index.jl");
+include("RepresentationComponents/index.jl");
+include("advanced_demos/index.jl");
 
 @doc_chapter "/dash_vtk" begin
 
@@ -28,7 +31,7 @@ include("IntroToVisualization/index.jl");
     2. Structure of Datasets
     Understand the structure of a dataset in Dash VTK.
 
-    3. Representation components
+    3. Representation Components
     Dash VTK Components needed to generate a representation.
 
     4. Other DashVTK Components

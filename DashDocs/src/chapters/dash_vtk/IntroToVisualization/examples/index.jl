@@ -29,32 +29,32 @@
     ```
     interactorSettings=Dict(
       (
-        button => 1,
-        action => "Rotate",
+        "button" => 1,
+        "action" => "Rotate",
       ), (
-        button => 2,
-        action => "Pan",
+        "button" => 2,
+        "action" => "Pan",
       ), (
-        button => 3,
-        action => "Zoom",
-        scrollEnabled => true,
+        "button" => 3,
+        "action" => "Zoom",
+        "scrollEnabled" => true,
       ), (
-        button => 1,
-        action => "Pan",
-        shift => true,
+        "button" => 1,
+        "action" => "Pan",
+        "shift" => true,
       ), (
-        button => 1,
-        action => "Zoom",
-        alt => true,
+        "button" => 1,
+        "action" => "Zoom",
+        "alt" => true,
       ), (
-        button => 1,
-        action => "ZoomToMouse",
-        control => true,
+        "button" => 1,
+        "action" => "ZoomToMouse",
+        "control" => true,
       ), (
-        button => 1,
-        action => "Roll",
-        alt => true,
-        shift => true,
+        "button" => 1,
+        "action" => "Roll",
+        "alt" => true,
+        "shift" => true,
       )
     )
     ```

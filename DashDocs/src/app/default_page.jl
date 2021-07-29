@@ -93,6 +93,11 @@ function default_page()
                     "The Dash Data Table library is used to generate interactive tables."
                 ),
                 Chapter(
+                    "Dash VTK",
+                    "/dash_vtk",
+                    "Dash VTK enables its user to use VTK on the server side for any data processing and provides the infrastructure to push the visualization to the client side for a better experience."
+                ),
+                Chapter(
                             "Dash Bio",
                             "/dash_bio",
                             "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."

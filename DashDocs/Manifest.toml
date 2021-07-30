@@ -309,9 +309,9 @@ version = "0.3.2"
 
 [[JSON3]]
 deps = ["Dates", "Mmap", "Parsers", "StructTypes", "UUIDs"]
-git-tree-sha1 = "e13a411f59a3f9ad25378b25a40ea08c2ded02e7"
+git-tree-sha1 = "b3e5984da3c6c95bcf6931760387ff2e64f508f3"
 uuid = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
-version = "1.9.0"
+version = "1.9.1"
 
 [[Kaleido_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -438,9 +438,9 @@ version = "0.12.2"
 
 [[Parsers]]
 deps = ["Dates"]
-git-tree-sha1 = "c8abc88faa3f7a3950832ac5d6e690881590d6dc"
+git-tree-sha1 = "94bf17e83a0e4b20c8d77f6af8ffe8cc3b386c0a"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "1.1.0"
+version = "1.1.1"
 
 [[Pidfile]]
 deps = ["FileWatching", "Test"]
@@ -454,9 +454,9 @@ uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 
 [[PlotlyBase]]
 deps = ["Dates", "DelimitedFiles", "DocStringExtensions", "JSON", "LaTeXStrings", "Logging", "Parameters", "Pkg", "REPL", "Requires", "Statistics", "UUIDs"]
-git-tree-sha1 = "78018b2a9d461502a20dc089425241f4cfbda342"
+git-tree-sha1 = "d5049450f7ce3a9b5ca8b9b911001dcb4f6af0ba"
 uuid = "a03496cd-edff-5a9b-9e67-9cda94a718b5"
-version = "0.8.3"
+version = "0.8.4"
 
 [[PlotlyJS]]
 deps = ["Base64", "Blink", "DelimitedFiles", "JSExpr", "JSON", "Kaleido_jll", "Markdown", "Pkg", "PlotlyBase", "REPL", "Reexport", "Requires", "WebIO"]

@@ -1,5 +1,4 @@
 using Dash, DashCoreComponents
-using RDatasets
 
 app = dash()
 

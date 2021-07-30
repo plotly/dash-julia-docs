@@ -1,7 +1,7 @@
 using Dash, DashHtmlComponents, DashCoreComponents
-using PlotlyBase
+using PlotlyJS
 
-fig = Plot(
+fig = plot(
     [
         bar(x=["giraffes", "orangutans", "monkeys"], y=[20, 14, 23], name="SF"),
         bar(x=["giraffes", "orangutans", "monkeys"], y=[12, 18, 29], name="Montreal")

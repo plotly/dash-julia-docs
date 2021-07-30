@@ -1,11 +1,10 @@
-using DataFrames, CSV, RDatasets
+using DataFrames, CSV, PlotlyJS
 using Dash, DashHtmlComponents, DashCoreComponents
-using PlotlyJS:plot
 
-iris = dataset("datasets", "iris")
+iris = dataset(DataFrame, "iris")
 
 p1 = plot(
-    iris, x=:SepalLength, y=:SepalWidth, color=:Species,
+    iris, x=:sepal_length, y=:sepal_width, color=:species,
     mode="markers", marker_size=8
 )
 

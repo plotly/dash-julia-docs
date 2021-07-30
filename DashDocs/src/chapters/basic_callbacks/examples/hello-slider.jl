@@ -1,8 +1,7 @@
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyBase, UrlDownload
+using DataFrames, CSV, PlotlyJS
+using Dash, DashHtmlComponents, DashCoreComponents
 
-
-df1 = DataFrame(urldownload("https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv"))
-
+df1 = dataset(DataFrame, "gapminder")
 years = unique(df1[!, :year])
 
 app = dash()
@@ -24,24 +23,21 @@ callback!(
     Output("graph", "figure"),
     Input("year-slider-1", "value"),
 ) do selected_year
-    return Plot(
+    return plot(
         df1[df1.year .== selected_year, :],
         Layout(
             xaxis_type = "log",
-            xaxis_title = "GDP Per Capita",
-            yaxis_title = "Life Expectancy",
+            xaxis_title_text = "GDP Per Capita",
+            yaxis_title_text = "Life Expectancy",
             legend_x = 0,
             legend_y = 1,
             hovermode = "closest",
             transition_duration = 500
         ),
-        x = :gdpPercap,
-        y = :lifeExp,
-        text = :country,
-        group = :continent,
+        x = :gdpPercap, y = :lifeExp,
+        text = :country, color = :continent,
         mode = "markers",
-        marker_size = 15,
-        marker_line_color = "white",
+        marker=attr(size = 15, line_color="white"),
     )
 end
 

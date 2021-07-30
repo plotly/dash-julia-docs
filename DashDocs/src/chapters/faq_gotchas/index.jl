@@ -39,14 +39,14 @@
         some common Dash gotchas that you might encounter as you start building out more
         complex Dash apps. If you have read through the rest of [Dash Tutorial](/) and are
         encountering unexpected behavior, this is a good section to read through. If you still have
-        residual questions, the [Dash Community forums](https://community.plotly.com/c/dash/julia/20)
+        additional questions, the [Dash Community forums](https://community.plotly.com/c/dash/julia/20)
         is a good place to ask them.
 
-        #### Callbacks require their `inputs`, `states`, and `output` to be present in the layout
+        #### Callbacks require their `Input`s, `State`s, and `Output` to be present in the layout
 
         By default, Dash applies validation to your callbacks, which performs checks such as
         validating the types of callback arguments and checking to see whether the specified `input`
-        and `output` components actually have the specified properties. For full validation, all components
+        and `Output` components actually have the specified properties. For full validation, all components
         withiin your callback must thererfore appear in the initial layout of your app, and you will see an
         error if they do not.
 
@@ -56,7 +56,7 @@
 
         `app = dash(suppress_callback_exceptions = true)`
 
-        #### Callbacks require *all* `inputs`, `states`, and `output` to be rendered on the page
+        #### Callbacks require *all* `Input`s, `State`s, and `Output` to be rendered on the page
 
         If you have disabled callback validation in order to support dynamic layouts, then you won't be
         automatically alerted to the situation where a component within a callback is not found within a
@@ -64,10 +64,10 @@
         the callback will fail to fire. For example, if you define a callback with only a subset of the
         specified `inputs` present in the current page layout, the callback will simply not fire at all.
 
-        #### A component/property pair can only be the `output` of one callback
+        #### A component/property pair can only be the `Output` of one callback
 
         For a given component/property pair, (eg `my-graph`, `figure`), it can only be registered as the
-        `output` of one callback. If you want to associate two logically separate sets of `inputs` with
+        `Output` of one callback. If you want to associate two logically separate sets of `inputs` with
         the one output component/property pair, you'll have to bundle them up into a larger callback and
         detect which of the relevant `inputs` triggered the callback inside the function. For `html_button`
         elements, detecting which one triggered the callback can be done using the `n_clicks_timestamp` property.

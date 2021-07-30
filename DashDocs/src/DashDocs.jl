@@ -1,6 +1,7 @@
 module DashDocs
 using DashUserGuideComponents
-using DashCoreComponents, DashHtmlComponents, Dash, DataFrames, CSV, UrlDownload, Pkg, RDatasets
+using DashCoreComponents, DashHtmlComponents, Dash, DataFrames, CSV, UrlDownload, Pkg, RDatasets, PlotlyBase
+using PlotlyJS:plot
 include("utils/_utils.jl")
 include("reusable_components/_reusable_components.jl")
 

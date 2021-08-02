@@ -128,12 +128,6 @@ path = "../dash-user-guide-components"
 uuid = "1b08a953-4be3-4667-9a23-e667f8ac7b1d"
 version = "0.0.4"
 
-[[DashVtk]]
-deps = ["Dash"]
-git-tree-sha1 = "bea18c813eb1d73881203736e87466c6482b294e"
-uuid = "1b08a953-4be3-4667-9a23-818b1eccd4c7"
-version = "0.0.9"
-
 [[DataAPI]]
 git-tree-sha1 = "ee400abb2298bd13bfc3df1c412ed228061a2385"
 uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"

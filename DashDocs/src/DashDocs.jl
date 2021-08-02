@@ -16,7 +16,6 @@ include("chapters/dash_html_components/index.jl")
 include("chapters/dash_daq/index.jl")
 include("chapters/dash_bio/index.jl")
 include("chapters/dash_data_table/index.jl");
-include("chapters/dash_vtk/index.jl")
 include("chapters/deployment/index.jl")
 include("app/_app.jl")
 

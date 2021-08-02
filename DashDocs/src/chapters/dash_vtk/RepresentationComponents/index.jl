@@ -4,7 +4,7 @@
     
         html_h1("Representation Components"),
     
-        dcc_markdown("
+        dcc_markdown("""
         ## vtk_geometryrepresentation
 
         The properties available on the `vtk_geometryrepresentation` let you tune the way you want to render your geometry. 
@@ -50,7 +50,7 @@
                          - `colorMode` = 0 [Available values](https://github.com/Kitware/vtk-js/blob/master/Sources/Rendering/Core/Mapper/Constants.js#L1-L5)
                          - `scalarMode` = 0 [Available values](https://github.com/Kitware/vtk-js/blob/master/Sources/Rendering/Core/Mapper/Constants.js#L7-L14)
                          - `arrayAccessMode` = 1 [Available values](https://github.com/Kitware/vtk-js/blob/master/Sources/Rendering/Core/Mapper/Constants.js#L16-L19)
-                         - `colorByArrayName`= `"`
+                         - `colorByArrayName`= "
                          - `interpolateScalarBeforeMapping` = false
                          - `useInvertibleColors` = false
                          - `fieldDataTupleID` = -1  
@@ -343,7 +343,7 @@
            - `controllerSize`: Controller size in pixels
            - `rescaleColorMap`: Use opacity range to rescale color map
 
-        "),
+        """)
 
         
     end

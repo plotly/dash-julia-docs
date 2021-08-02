@@ -1,19 +1,19 @@
-include("StructureOfDatasets/image_data.jl");
-include("StructureOfDatasets/point_data.jl");
+@doc_chapter "/dash_vtk/structure_datasets" begin 
 
-@doc_chapter "/dash_vtk/structure_of_datasets" begin 
+@example structuredatasets_image_data "image_data.jl"
+@example structuredatasets_poly_data "poly_data.jl"
 
-    @layout html_div() do 
+@layout html_div() do 
     
-        html_h1("Structure of Datasets"),
+    html_h1("Structure of Datasets"),
     
-        dcc_markdown("
+    dcc_markdown("
         In `vtk.js` because we mostly focus on Rendering we only have two types of data structures. We have a `vtk_polydata` that can be used for Geometry Rendering and `vtk_imagedata` that can be used for volume rendering. In proper `VTK` we have more types of DataSets and we have several filters that help you convert from one type to another. 
 
         Here we explain some of the foundation of those data structures so you could create them by hand if you wanted to. 
         "),
 
-        html_a(html_h3("Image Data"), href="/dash_vtk/image_data"),
+        html_h3("Image Data"),
 
         dcc_markdown("
         An Image Data is an implicit grid that is axis aligned as shown in the picture below.
@@ -35,10 +35,10 @@ include("StructureOfDatasets/point_data.jl");
         ```
         "),
 
-        source"image_data",
-        layout"image_data",
+        source"structuredatasets_image_data",
+        layout"structuredatasets_image_data",
 
-        html_a(html_h3("Poly Data"), href="/dash_vtk/poly_data"),
+        html_h3("Poly Data"),
 
         dcc_markdown("
         A Poly Data is a surface mesh composed of `points` and `cells`. The cells can be:
@@ -68,12 +68,12 @@ include("StructureOfDatasets/point_data.jl");
         You can see a concrete example in the image below:
         "),
 
-        source"poly_data",
-        layout"poly_data",
+        source"structuredatasets_poly_data",
+        layout"structuredatasets_poly_data",
 
-        html_a(html_h3("Fields"), href=""),
+        html_h3("Fields"),
 
-        dcc_markdown("
+        dcc_markdown("""
         Having a grid is a good start, but mosst likely you would want to attach a field to a given mesh so you can start looking at it in a 3D context.
 
         Fields are arrays that map to either *Points* or *Cells*. They couls be scalars or vectors of different size. 
@@ -124,7 +124,7 @@ include("StructureOfDatasets/point_data.jl");
             ],
         )
         ```
-        ")
+        """)
 
           
         

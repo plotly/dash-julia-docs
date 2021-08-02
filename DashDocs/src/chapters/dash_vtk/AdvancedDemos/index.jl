@@ -1,6 +1,6 @@
 @doc_chapter "/dash_vtk/advanced_demos" begin 
 
-@example synthetic_volume_rendering "synthetic_volume_rendering.jl"
+@example advanceddemos_synthetic_volume_rendering "synthetic_volume_rendering.jl"
 
     @layout html_div() do 
     
@@ -10,12 +10,12 @@
            `DashVtk` provides several advanced examples that should re-enforce what has been described so far. We have made some examples using `DashVTK` and `Dash` for both a CFD example and some medical ones.
         "),
 
-        html_a(html_h3("Synthetic Volume Rendering"), href="/dash_vtk/synthetic_volume_rendering"),
+        html_h3("Synthetic Volume Rendering")
 
         dcc_markdown("This example aims to show how do volume rendering of a synthetic image data by only providing the grid information and values."),
 
-        source"synthetic_volume_rendering",
-        layout"synthetic_volume_rendering"
+        source"advanceddemos_synthetic_volume_rendering",
+        layout"advanceddemos_synthetic_volume_rendering"
     
     end
     

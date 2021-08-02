@@ -109,7 +109,7 @@ uuid = "1b08a953-4be3-4667-9a23-a540cca008f6"
 version = "0.5.0"
 
 [[DashDocs]]
-deps = ["Base64", "CSV", "Chain", "Dash", "DashBio", "DashBioUtils", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DataFrames", "Dates", "HTTP", "JSON", "JSON3", "Match", "Pkg", "PlotlyBase", "Printf", "RDatasets", "StringEncodings", "UrlDownload"]
+deps = ["Base64", "CSV", "Chain", "Dash", "DashBio", "DashBioUtils", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DashVtk", "DataFrames", "Dates", "HTTP", "JSON", "JSON3", "Match", "Pkg", "PlotlyBase", "Printf", "RDatasets", "StringEncodings", "UrlDownload"]
 path = "DashDocs"
 uuid = "3ff4e7a0-4b43-48cc-8faa-634f7f222ac1"
 version = "0.1.0"
@@ -131,6 +131,12 @@ deps = ["Dash"]
 path = "dash-user-guide-components"
 uuid = "1b08a953-4be3-4667-9a23-e667f8ac7b1d"
 version = "0.0.4"
+
+[[DashVtk]]
+deps = ["Dash"]
+git-tree-sha1 = "bea18c813eb1d73881203736e87466c6482b294e"
+uuid = "1b08a953-4be3-4667-9a23-818b1eccd4c7"
+version = "0.0.9"
 
 [[DataAPI]]
 git-tree-sha1 = "ee400abb2298bd13bfc3df1c412ed228061a2385"

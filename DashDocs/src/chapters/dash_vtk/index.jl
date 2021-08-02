@@ -1,10 +1,8 @@
-include("IntroToVisualization/index.jl");
-include("StructureOfDatasets/index.jl");
+include("IntroVisualization/index.jl");
+include("StructureDatasets/index.jl");
 include("RepresentationComponents/index.jl");
-include("advanced_demos/index.jl");
-
-@doc_chapter "/dash_vtk" begin
-
+include("AdvancedDemos/index.jl");
+@doc_chapter "/dash_vtk" begin   
 
 @layout html_div() do 
 
@@ -25,28 +23,35 @@ include("advanced_demos/index.jl");
     It will install the following dependency in your local environment. 
 
     This section is divided in the following parts:
-    1. Intro to 3D Visualization
-    Introductory concepts about 3D visualization needed to understand how Dash VTK works.
-
-    2. Structure of Datasets
-    Understand the structure of a dataset in Dash VTK.
-
-    3. Representation Components
-    Dash VTK Components needed to generate a representation.
-
     4. Other DashVTK Components
     Dash VTK Components that are not used for building representations.
 
     5. Click and Hover Callbacks
-    Learn to write callbacks based on user click and hovers.
-
-    6. Advanced Demos
-    Demos of more advanced usage of Dash VTK.
+    Learn to write callbacks based on user click and hovers.    
 
     7. Reference
     Comprehensive reference of all Dash VTK components.
-    ")
+    "),
 
+
+    html_a(html_h3("Intro to 3D Visualization"), href="/dash_vtk/intro_visualization"),
+
+    dcc_markdown("Introductory concepts about 3D visualization needed to understand how Dash VTK works."),
+
+
+    html_a(html_h3("Structure of DataSets"), href="/dash_vtk/structure_datasets"),
+
+    dcc_markdown("Understand the structure of a dataset in Dash VTK."),
+
+    
+    html_a(html_h3("Representation Components"), href="/dash_vtk/representation_components"),
+
+    dcc_markdown("Dash VTK Components needed to generate a representation."),
+
+    
+    html_a(html_h3("Advanced Demos"), href="/dash_vtk/advanced_demos"),
+
+    dcc_markdown("Demos of more advanced usage of Dash VTK.")
 
 end
 

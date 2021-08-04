@@ -58,7 +58,7 @@ function to_string(filter)
     end
 end
 
-construct_filter(derived_query_structure, df; complexOperator=nothing) = (derived_query_structure, df) 
+
 function construct_filter(derived_query_structure::NamedTuple, df; complexOperator=nothing)
 
     # there is no query; return an empty filter string and the
@@ -122,6 +122,7 @@ callback!(app,
     Output("demo-table", "data"),
     Input("demo-table", "derived_filter_query_structure")
 ) do derived_query_structure
+    @show derived_query_structure
     # (pd_query_string, df_filtered) = construct_filter(derived_query_structure, df)
 
     # if pd_query_string != ""
@@ -132,3 +133,5 @@ callback!(app,
 end
 
 run_server(app, "0.0.0.0", debug=true)
+
+filter(row->(occure(row.country))

@@ -124,7 +124,7 @@ include("Speck/index.jl");
     dcc_markdown("A 3D WebGL molecule viewer."),
 
     source"speck_index_example",
-    layout"speck_index_example"
+    layout"speck_index_example"    
 
 
 end

@@ -165,6 +165,9 @@ include("Loading/index.jl");
         source"tabs_index_example",
         layout"tabs_index_example",
 
+        #tab
+        html_a(html_h3("Tab"), href="/dash_core_components/tab"),
+
         #graphs
         html_a(html_h3("Graph"), href="/dash_core_components/graph"),
 

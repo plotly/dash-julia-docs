@@ -69,23 +69,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    `id` (String; optional): The ID of this component, used to identify dash components in callbacks. The ID needs to be unique across all of the components in an app.
-
-    `className` (String; optional): className of the component div.
-
-    `genome` (String; optional): String identifier defining genome (e.g. "hg19"). See [https://github.com/igvteam/igv.js/wiki/Reference-Genome](https://github.com/igvteam/igv.js/wiki/Reference-Genome) for details and list of supported identifiers. Note: One (but only one) of either genome or reference properties must be set. If both are set, the genome property will be ignored.
-
-    `locus` (String; optional): Initial genomic location(s). Either a String or an array of Strings. If an array a viewport is created for each location.
-
-    `minimumBases` (Number; optional): Minimum window size in base pairs when zooming in.
-
-    `reference` (Dict; optional): Object defining reference genome. see [https://github.com/igvteam/igv.js/wiki/Reference-Genome](https://github.com/igvteam/igv.js/wiki/Reference-Genome) Note: One (but only one) of either genome or reference properties must be set. If both are set, the genome property will be ignored.
-
-    `style` (Dict; optional): Generic style overrides on the plot div.
-
-    `tracks` (list; optional): Array of configuration objects defining tracks initially displayed when app launches. see [https://github.com/igvteam/igv.js/wiki/Tracks-2.0](https://github.com/igvteam/igv.js/wiki/Tracks-2.0).
-    """)
+    dcc_markdown(string(@doc dashbio_igv))
 
 end
 

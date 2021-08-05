@@ -54,8 +54,8 @@ function to_string(filter)
     end
 end
 
-construct_filter(derived_query_structure, df; complexOperator=nothing) = (derived_query_structure, df) 
-function construct_filter(derived_query_structure::NamedTuple, df; complexOperator=nothing)
+
+function construct_filter(derived_query_structure, df; complexOperator=nothing)
 
     # there is no query; return an empty filter string and the
     # original dataframe
@@ -71,10 +71,8 @@ function construct_filter(derived_query_structure::NamedTuple, df; complexOperat
     operator_subtype = derived_query_structure.subType
 
     # the LHS and RHS of the query, which are both queries themselves
-    left, right = nothing, nothing
-    left = operator_type = get(derived_query_structure,:left, nothing)
-    left = operator_type = get(derived_query_structure,:rigt, nothing)
-
+    left = get(derived_query_structure,:left, nothing)
+    right = get(derived_query_structure,:right, nothing)
     # the base case
     if left isa Nothing && right isa Nothing
         return (to_string(derived_query_structure), df)
@@ -91,9 +89,9 @@ function construct_filter(derived_query_structure::NamedTuple, df; complexOperat
         right_query = right.value
         # perform the filtering to generate a new dataframe
         if complexOperator == "datestartswith"
-            return ("",right_df[startswith.(string.(right_df[:, left_query]), right_query), :])
+            return ("",right_df[startswith.(string.(right_df[:, left_query]), string(right_query)), :])
         elseif complexOperator == "contains"
-            return("",right_df[contains.(string.(df[:, left_query]), right_query), :])
+            return("",right_df[contains.(string.(right_df[:, left_query]), string(right_query)), :])
         end
     end
 
@@ -104,20 +102,21 @@ function construct_filter(derived_query_structure::NamedTuple, df; complexOperat
     # construct the query string; return it and the filtered dataframe
 
     s = "$(left_query) $((left_query != "" && right_query != "") ? 
-    string(derived_query_structure) : "") $right_query"
+    to_string(derived_query_structure) : "") $right_query"
     return (strip(s), right_df)
 end
 callback!(app,
     Output("demo-table", "data"),
     Input("demo-table", "derived_filter_query_structure")
 ) do derived_query_structure
+@show derived_query_structure
     (pd_query_string, df_filtered) = construct_filter(derived_query_structure, df)
     @show (pd_query_string)
     # if pd_query_string != ""
     #     df_filtered = df_filtered.query(pd_query_string)
     # end
 
-    return Dict.(pairs.(eachrow(df)))
+    return Dict.(pairs.(eachrow(df_filtered)))
 end
 
 run_server(app, "0.0.0.0", debug=true)

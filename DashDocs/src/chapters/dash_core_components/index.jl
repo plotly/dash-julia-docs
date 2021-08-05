@@ -8,6 +8,7 @@ include("RadioItems/index.jl");
 include("DatePickerSingle/index.jl");
 include("DatePickerRange/index.jl");
 include("Markdown/index.jl");
+include("Tab/index.jl");
 include("Tabs/index.jl");
 include("Upload/index.jl");
 include("Download/index.jl");
@@ -15,6 +16,8 @@ include("Graph/index.jl");
 include("ConfirmDialog/index.jl");
 include("ConfirmDialogProvider/index.jl");
 include("Store/index.jl");
+include("Location/index.jl");
+include("Loading/index.jl");
 
 @doc_chapter "/dash_core_components" begin
     @example dropdown_index_example "dropdown_index_example.jl"
@@ -163,7 +166,7 @@ include("Store/index.jl");
         layout"tabs_index_example",
 
         #graphs
-        html_a(html_h3("Graph"), href="#"),
+        html_a(html_h3("Graph"), href="/dash_core_components/graph"),
 
         source"graph_index_example",
         layout"graph_index_example",
@@ -206,7 +209,7 @@ include("Store/index.jl");
             "The store must be used with callbacks"
         ),
         #loading
-        html_a(html_h3("Loading"), href="#"),
+        html_a(html_h3("Loading"), href="/dash_core_components/loading"),
 
         dcc_markdown(
             "The Loading component can be used to wrap components that you want to display
@@ -218,7 +221,7 @@ include("Store/index.jl");
         layout"loading_index_example",
 
         #location
-        html_a(html_h3("Location"), href="#"),
+        html_a(html_h3("Location"), href="/dash_core_components/location"),
 
         dcc_markdown(
             "The `location` component represents the location bar in your web browser.

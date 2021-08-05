@@ -1,14 +1,12 @@
 @doc_chapter "/dash_html_components/nav" begin
 
-    @example docsnav "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_nav"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_nav))
 
-    layout"docsnav"
-
-end
+    end
 
 end

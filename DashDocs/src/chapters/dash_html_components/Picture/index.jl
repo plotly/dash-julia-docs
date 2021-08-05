@@ -1,14 +1,12 @@
 @doc_chapter "/dash_html_components/picture" begin
 
-    @example docspicture "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_picture"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_picture))
 
-    layout"docspicture"
-
-end
+    end
 
 end

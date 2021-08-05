@@ -1,14 +1,12 @@
 @doc_chapter "/dash_html_components/kbd" begin
 
-    @example docskbd "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_kbd"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_kbd))
 
-    layout"docskbd"
-
-end
+    end
 
 end

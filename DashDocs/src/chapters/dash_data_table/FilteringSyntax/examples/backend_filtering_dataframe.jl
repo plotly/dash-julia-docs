@@ -11,11 +11,7 @@ types = Dict(
     "Date_sent_to_company" =>  "datetime",
 )
 df = CSV.read(download("https://github.com/plotly/datasets/raw/master/26k-consumer-complaints.csv"), DataFrame)
-df[!,"id"] = df[!, "Column1"]
-select!(df, Not(:Column1))
-select!(df,vcat("id",(names(df))[1:end-1]))
-rename!(df,[replace(n, " " => "_") for n in names(df)])
-rename!(df,[replace(n, "-" => "_") for n in names(df)])
+rename!(df, :Column1 => :id) 
 
 app = dash(serve_locally=true)
 
@@ -36,8 +32,8 @@ app.layout = DashTable.dash_datatable(
     ]
 )
 function to_string(filter)
-    operator_type = get(filter,"type", "relational-operator")
-    operator_subtype = get(filter,"subType","=")
+    operator_type = get(filter,:type, nothing)
+    operator_subtype = get(filter,:subType,nothing)
 
     if operator_type == "relational-operator"
         if operator_subtype == "="
@@ -51,10 +47,10 @@ function to_string(filter)
         else
             return "|"
         end
-    elseif operator_type == "expression" && operator_subtype == "value" && typeof(get(filter,"value","Hello")) == String
-        return "$(string(get(filter,"value")))"
+    elseif operator_type == "expression" && operator_subtype == "value" && typeof(get(filter,:value,nothing)) == String
+        return "$(string(get(filter,:value,nothing)))"
     else
-        return get(filter,"value",123)
+        return get(filter,:value,nothing)
     end
 end
 
@@ -76,16 +72,11 @@ function construct_filter(derived_query_structure::NamedTuple, df; complexOperat
 
     # the LHS and RHS of the query, which are both queries themselves
     left, right = nothing, nothing
-    if haskey(derived_query_structure,:left) 
-        left = derived_query_structure.left
-    end
-    if haskey(derived_query_structure,:rigt) 
-        right = derived_query_structure.right
-    end
+    left = operator_type = get(derived_query_structure,:left, nothing)
+    left = operator_type = get(derived_query_structure,:rigt, nothing)
 
     # the base case
     if left isa Nothing && right isa Nothing
-        @show "here"
         return (to_string(derived_query_structure), df)
     end
     # recursively apply the filter on the LHS of the query to the
@@ -93,37 +84,35 @@ function construct_filter(derived_query_structure::NamedTuple, df; complexOperat
     (left_query, left_df) = construct_filter(left, df)
 
     # apply the filter on the RHS of the query to this new dataframe
-    # (right_query, right_df) = construct_filter(right, left_df)
+    (right_query, right_df) = construct_filter(right, left_df)
     # "datestartswith" and "contains" can"t be used within a pandas
     # filter string, so we have to do this filtering ourselves
-    # if !(complexOperator isa Nothing)
-    #     right_query = right.value
-    #     # perform the filtering to generate a new dataframe
-    #     if complexOperator == "datestartswith"
-    #         return ("", right_df[right_df[left_query].astype(str).str.startswith(right_query)])
-    #     elseif complexOperator == "contains":
-    #         return ("", right_df[right_df[left_query].astype(str).str.contains(right_query)])
-    #     else
-    #     end
-    # end
+    if !(complexOperator isa Nothing)
+        right_query = right.value
+        # perform the filtering to generate a new dataframe
+        if complexOperator == "datestartswith"
+            return ("",right_df[startswith.(string.(right_df[:, left_query]), right_query), :])
+        elseif complexOperator == "contains"
+            return("",right_df[contains.(string.(df[:, left_query]), right_query), :])
+        end
+    end
 
-    # if operator_type == "relational-operator" and operator_subtype in ["contains", "datestartswith"]:
-    #     return construct_filter(derived_query_structure, df, complexOperator=operator_subtype)
+    if operator_type == "relational-operator" && operator_subtype in ["contains", "datestartswith"]
+        return construct_filter(derived_query_structure, df, complexOperator=operator_subtype)
+    end
 
-    # # construct the query string; return it and the filtered dataframe
-    # return ("{} {} {}".format(
-    #     left_query,
-    #     to_string(derived_query_structure) if left_query != "" and right_query != "" else "",
-    #     right_query
-    # ).strip(), right_df)
-    return left_query, right_query
+    # construct the query string; return it and the filtered dataframe
+
+    s = "$(left_query) $((left_query != "" && right_query != "") ? 
+    string(derived_query_structure) : "") $right_query"
+    return (strip(s), right_df)
 end
 callback!(app,
     Output("demo-table", "data"),
     Input("demo-table", "derived_filter_query_structure")
 ) do derived_query_structure
-    # (pd_query_string, df_filtered) = construct_filter(derived_query_structure, df)
-
+    (pd_query_string, df_filtered) = construct_filter(derived_query_structure, df)
+    @show (pd_query_string)
     # if pd_query_string != ""
     #     df_filtered = df_filtered.query(pd_query_string)
     # end

@@ -1,14 +1,12 @@
 @doc_chapter "/dash_html_components/h2" begin
 
-    @example docsh2 "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_h2"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_h2))
 
-    layout"docsh2"
-
-end
+    end
 
 end

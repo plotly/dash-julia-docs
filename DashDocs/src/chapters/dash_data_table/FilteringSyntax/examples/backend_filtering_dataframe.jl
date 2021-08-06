@@ -110,8 +110,8 @@ callback!(app,
     Input("demo-table", "derived_filter_query_structure")
 ) do derived_query_structure
 @show derived_query_structure
-    (pd_query_string, df_filtered) = construct_filter(derived_query_structure, df)
-    @show (pd_query_string)
+    # (pd_query_string, df_filtered) = construct_filter(derived_query_structure, df)
+    
     # if pd_query_string != ""
     #     df_filtered = df_filtered.query(pd_query_string)
     # end

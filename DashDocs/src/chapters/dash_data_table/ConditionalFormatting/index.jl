@@ -126,7 +126,7 @@
                 * {my_column} is nil will match nothing values
                 * {my_column} is blank will match None values and empty strings
                 * {my_column} = "" will match empty strings
-        """)
+        """),
         source"highlight_empty",
         layout"highlight_empty",
         # html_h4("Displaying special values for NaN or None values"),
@@ -149,7 +149,7 @@
         html_h4("Highlighting cells by value with a colorscale like a heatmap"),
         dcc_markdown("""
         This recipe shades cells with style_data_conditional and creates a legend with HTML components. You'll need to Pkg.add("Color") to get the colorscales.
-        """)
+        """),
         source"highlight_color_scale",
         layout"highlight_color_scale",
         html_h4("Highlighting with a colorscale on a single column"),

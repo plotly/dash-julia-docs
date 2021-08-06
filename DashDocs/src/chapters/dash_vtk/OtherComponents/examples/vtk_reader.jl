@@ -1,7 +1,7 @@
 using Dash, DashHtmlComponents
 using DashVtk
 
-txt_content = read("DashDocs//src//chapters//dash_vtk//OtherComponents//examples//cow-nonormals.obj", String)
+txt_content = read("cow-nonormals.obj", String)
 
 content = vtk_view([
     vtk_geometryrepresentation([

@@ -2,6 +2,7 @@ include("IntroVisualization/index.jl");
 include("StructureDatasets/index.jl");
 include("RepresentationComponents/index.jl");
 include("OtherComponents/index.jl");
+include("ClickHover/index.jl");
 include("AdvancedDemos/index.jl");
 @doc_chapter "/dash_vtk" begin   
 
@@ -24,10 +25,6 @@ include("AdvancedDemos/index.jl");
     It will install the following dependency in your local environment. 
 
     This section is divided in the following parts:
-
-    5. Click and Hover Callbacks
-    Learn to write callbacks based on user click and hovers.    
-
     7. Reference
     Comprehensive reference of all Dash VTK components.
     "),
@@ -51,6 +48,11 @@ include("AdvancedDemos/index.jl");
     html_a(html_h3("Other DashVtk Components"), href="/dash_vtk/other_components"),
 
     dcc_markdown("Dash VTK Components that are not used for building representations."),
+
+
+    html_a(html_h3("Click and Hover Callbacks"), href="dash_vtk/click_hover"),
+
+    dcc_markdown("Learn to write callbacks based on user click and hovers."),
 
     
     html_a(html_h3("Advanced Demos"), href="/dash_vtk/advanced_demos"),

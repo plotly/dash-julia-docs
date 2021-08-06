@@ -259,19 +259,19 @@
         ```
         function vtk_pointcloudrepresentation(; kwargs...) 
                  return vtk_geometryrepresentation(
-                     id=kwargs.get("id"),
-                     colorMapPreset=kwargs.get("colorMapPreset"),
-                     colorDataRange=kwargs.get("colorDataRange"),
-                     property=kwargs.get("property"),
+                     id=kwargs[:id],
+                     colorMapPreset=kwargs[:colorMapPreset],
+                     colorDataRange=kwargs[:colorDataRange],
+                     property=kwargs[:property],
                      children=[
                          vtk_polydata(
-                             points=kwargs.get("xyz"),
+                             points=kwargs[:xyz],
                              connectivity="points",
                              children=[
                                  vtk_pointdata([
                                      vtk_dataarray(
                                          registration="setScalars",
-                                         values{kwargs.get("scalars")}
+                                         values{kwargs[:scalars]]}
                                      )
                                  ])
                              ],
@@ -297,26 +297,26 @@
         ```
         function vtk_volumedatarepresentation(; kwargs...) 
                  return vtk_volumerepresentation(
-                     id=kwargs.get("id"),
-                     colorMapPreset=kwargs.get("colorMapPreset"),
-                     colorDataRange=kwargs.get("colorDataRange"),
-                     property=kwargs.get("property"),
-                     mapper=kwargs.get("mapper"),
-                     volume=kwargs.get("volume"),
+                     id=kwargs[:id].get("id"),
+                     colorMapPreset=kwargs[:colorMapPreset],
+                     colorDataRange=kwargs[:colorDataRange],
+                     property=kwargs[:property],
+                     mapper=kwargs[:mapper],
+                     volume=kwargs[:volume],
                      children=[
                          vtk_volumecontroller(
-                             rescaleColorMap=kwargs.get("rescaleColorMap"),
-                             size=kwargs.get("size"),
+                             rescaleColorMap=kwargs[:rescaleColorMap],
+                             size=kwargs[:size],
                          ),
                          vtk_imagedata(
-                             dimensions=kwargs.get("dimensions"),
-                             origin=kwargs.get("origin"),
-                             spacing=kwargs.get("spacing"),
+                             dimensions=kwargs[:dimensions],
+                             origin=kwargs[:origin],
+                             spacing=kwargs[:spacing],
                              children=[
                                  vtk_pointdata([
                                      vtk_dataarray(
                                          registration="setScalars",
-                                         values=kwargs.get("scalars"),
+                                         values=kwargs[:scalars],
                                      )
                                  ])
                              ],

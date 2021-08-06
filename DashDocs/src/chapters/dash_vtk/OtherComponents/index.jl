@@ -55,11 +55,11 @@
         ```
         function vtk_volume(; kwargs...) 
                  return vtk_imagedata(
-                     **kwargs.get('state').get('image'),
+                     kwargs[:state, :image],
                      children=[
                          vtk_pointdata([
                              vtk_dataarray(
-                                 **kwargs.get('state').get('field'),
+                                 kwargs[:state, :field],
                              )
                          ])
                      ]

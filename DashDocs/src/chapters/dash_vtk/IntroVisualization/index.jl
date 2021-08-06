@@ -27,7 +27,7 @@
     
       For the *interactorSettings* we expect a list of mouse event type linked to an action. The example below is what is used as default:
       ```
-      interactorSettings=Dict(
+      interactorSettings=[
         (
           "button" => 1,
           "action" => "Rotate",
@@ -56,7 +56,7 @@
           "alt" => true,
           "shift" => true,
         )
-      )
+      ]
       ```
     
       A mouse event can be identified with the following set of properties:

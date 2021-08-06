@@ -61,31 +61,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * `id` (String; optional): The ID used to identify the display in Dash callbacks.
- 
-    * `backgroundColor` (String; default '#fff'): Color of the display's background.
-    
-    * `className` (String; optional): Class to apply to the root component element.
-    
-    * `color` (String; default colors.PRIMARY): Color of the display.
-    
-    * `label` (Dict; optional): Description to be displayed alongside the control. To control styling, pass an object with label and style properties. `label` is a String | Dict with keys:
-    
-        * `label` (String; optional)
-
-        * `style` (Dict; optional)
-    
-    * `labelPosition` (a value equal to: 'top', 'bottom'; default 'top'): Where the display label is positioned.
-    
-    * `size` (Number; default 42): Size of the display.
-    
-    * `style` (Dict; optional): Style to apply to the root component element.
-    
-    * `theme` (Dict; default light): Theme configuration to be set by a ThemeProvider.
-    
-    * `value` (Number | String; optional): Value to be displayed. A Number or a String containing only digits (0-9), periods, and colons, and possibly starting with a minus sign.
-    """)
+    dcc_markdown(string(@doc daq_leddisplay))
 
 end
 

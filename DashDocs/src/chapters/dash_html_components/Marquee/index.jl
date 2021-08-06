@@ -1,14 +1,12 @@
 @doc_chapter "/dash_html_components/marquee" begin
 
-    @example docsmarquee "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_marquee"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_marquee))
 
-    layout"docsmarquee"
-
-end
+    end
 
 end

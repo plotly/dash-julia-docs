@@ -1,14 +1,12 @@
 @doc_chapter "/dash_html_components/title" begin
 
-    @example docstitle "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_title"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_title))
 
-    layout"docstitle"
-
-end
+    end
 
 end

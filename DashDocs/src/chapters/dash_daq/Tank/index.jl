@@ -72,55 +72,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * `id` (String; optional): The ID used to identify this component in Dash callbacks.
- 
-    * `base` (Number; default 10): Base to be used in logarithmic scale.
-    
-    * `className` (String; optional): Class to apply to the root component element.
-    
-    * `color` (String; optional): The color of tank fill.
-    
-    * `height` (Number; default 192): The height of the tank in pixels.
-    
-    * `label` (Dict; optional): Description to be displayed alongside the control. To control styling, pass an object with label and style properties. `label` is a String | Dict with keys:
-    
-        * `label` (String; optional)
-
-        * `style` (Dict; optional)
-    
-    * `labelPosition` (a value equal to: 'top', 'bottom'; default 'top'): Where the component label is positioned.
-    
-    * `logarithmic` (Bool; optional): If set to true, a logarithmic scale will be used.
-    
-    * `max` (Number; default 10): The maximum value of the tank. If logarithmic, represents the maximum exponent.
-    
-    * `min` (Number; default 0): The minimum value of the tank. If logarithmic, represents minimum exponent.
-    
-    * `scale` (Dict; optional): Configuration for the component scale. scale is a Dict with keys:
-    
-        * `custom` (Dict; optional): Custom scale marks. The key determines the position and the value determines what will show. If you want to set the style of a specific mark point, the value should be an object which contains style and label properties.`custom` is a Number Or Dict with keys:
-
-            * `label` (String; optional)
-
-            * `style` (String; optional)
-    
-        * `interval` (Number; optional): Interval by which the scale goes up. Attempts to dynamically divide min-max range by default.
-
-        * `labelInterval` (Number; optional): Interval by which labels are added to scale marks. Defaults to 2 (every other mark has a label).
-
-        * `start` (Number; optional): Value to start the scale from. Defaults to min.
-    
-    * `showCurrentValue` (Bool; optional): If true, the current value of the tank will be displayed.
-    
-    * `style` (Dict; optional): Style to apply to the root component element.
-    
-    * `units` (String; optional): Label for the current value.
-    
-    * `value` (Number; optional): The value of tank. If logarithmic, the displayed value will be the logarithm of the inputted value.
-    
-    * `width` (Number; default 112): The width of the tank in pixels.
-    """)
+    dcc_markdown(string(@doc daq_tank))
 
 end
 

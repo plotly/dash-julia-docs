@@ -102,68 +102,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * `id` (String; optional): The ID used to identify this compnent in Dash callbacks.
- 
-    * `base` (Number; default 10): Base to be used in logarithmic scale.
-    
-    * `className` (String; optional): Class to apply to the root component element.
-    
-    * `color` (Dict; optional): Color configuration for the gauge's track.
-    
-    * `color` is a String | Dict with keys:
-    
-        * `default` (String; optional): Color used for current value text and other minor accents.
-
-        * `gradient` (Boolean; optional): Display ranges as a gradient between given colors.
-
-        * `ranges` (Dict; optional): Define multiple color ranges on the gauge's track. The key determines the color of the range and the value is the start,end of the range itself. Ranges must be contiguous along the entirety of the gauge's range of values.
-
-        * `ranges` is a Dict with keys:
-
-            * `color` (list of numbers; optional)
-    * `label` (Dict; optional): Description to be displayed alongside the control. To control styling, pass an object with label and style properties.
-    
-    * `label` is a String | Dict with keys:
-    
-        * `label` (String; optional)
-
-        * `style` (Dict; optional)
-    
-    * `labelPosition` (a value equal to: 'top', 'bottom'; default 'top'): Where the component label is positioned.
-    
-    * `logarithmic` (Boolean; optional): If set to True, a logarithmic scale will be used.
-    
-    * `max` (Number; default 10): The maximum value of the gauge. If logarithmic, represents the maximum exponent.
-    
-    * `min` (Number; default 0): The minimum value of the gauge. If logarithmic, represents the minimum exponent.
-    
-    * `scale` (Dict; optional): Configuration for the component scale. scale is a Dict with keys:
-    * `custom` (Dict; optional): Custom scale marks. The key determines the position and the value determines what will show. If you want to set the style of a specific mark point, the value should be an object which contains style and label properties.`custom` is a Number Or Dict with keys:
-
-        * `label` (String; optional)
-
-        * `style` (String; optional)
-
-    * `interval` (Number; optional): Interval by which the scale goes up. Attempts to dynamically divide min-max range by default.
-
-    * `labelInterval` (Number; optional): Interval by which labels are added to scale marks. Defaults to 2 (every other mark has a label).
-
-    * `start` (Number; optional): Value to start the scale from. Defaults to min.
-    
-
-    * `showCurrentValue` (Boolean; optional): If True, the current value of the gauge will be displayed.
-    
-    * `size` (Number; optional): The size (diameter) of the gauge in pixels.
-    
-    * `style` (Dict; optional): Style to apply to the root component element.
-    
-    * `theme` (Dict; default light): Theme configuration to be set by a ThemeProvider.
-    
-    * `units` (String; optional): Label for the current value.
-    
-    * `value` (Number; optional): The value of gauge. If logarithmic, the displayed value will be the logarithm of the inputted value.
-    """)
+    dcc_markdown(string(@doc daq_gauge))
 
 end
 

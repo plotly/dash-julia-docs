@@ -111,7 +111,7 @@
         html_h4("Highlighting values above average and below average"),
         dcc_markdown("""
         Here, the highlighting is done per column
-        """)
+        """),
         source"higlight_above_below_avg",
         layout"higlight_above_below_avg",
         dcc_markdown("""

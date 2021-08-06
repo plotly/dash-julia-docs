@@ -3,6 +3,7 @@ using DashTable
 
 using CSV, DataFrames   
 
+df = CSV.read(download("https://raw.githubusercontent.com/plotly/dash-julia-docs/mf/dashtable_ex/datasets/firm_none_table.csv"), DataFrame)
 df = CSV.read("datasets/firm_none_table.csv", DataFrame)
 app = dash()
 

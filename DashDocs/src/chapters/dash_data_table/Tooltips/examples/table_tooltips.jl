@@ -1,16 +1,15 @@
 using Dash
 using DashTable
 
-using CSV, DataFrames 
-
 app = dash()
 
 markdown_table = """
-| City       | Value     | Return     |
-|  => ------------- |  => ---------- =>  | ----------- =>  |
-|  Montreal   | 41,531    | 431.245 |
-| Seattle   | 53,153 | 12.431 |
+| City      | Value     | Return     |
+|-----------|-----------|------------|
+|  Montreal | 41,531    | 431.245    |
+| Seattle   | 53,153    | 12.431     |
 """
+
 
 app.layout =  DashTable.dash_datatable(
   data=[

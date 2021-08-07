@@ -45,7 +45,7 @@ include("AdvancedDemos/index.jl");
     dcc_markdown("Dash VTK Components needed to generate a representation."),
 
 
-    html_a(html_h3("Other DashVtk Components"), href="/dash_vtk/other_components"),
+    html_a(html_h3("Other Dash VTK Components"), href="/dash_vtk/other_components"),
 
     dcc_markdown("Dash VTK Components that are not used for building representations."),
 

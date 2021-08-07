@@ -1,7 +1,8 @@
 using Dash, DashHtmlComponents
 using DashVtk
 
-txt_content = read("cow-nonormals.obj", String)
+path_to_file = joinpath(@__DIR__, "cow-nonormals.obj")
+txt_content = read(path_to_file, String)
 
 content = vtk_view([
     vtk_geometryrepresentation([

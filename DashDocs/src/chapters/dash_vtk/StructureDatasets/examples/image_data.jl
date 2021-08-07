@@ -16,7 +16,7 @@ content = vtk_view([
                     vtk_pointdata([
                         vtk_dataarray(
                         registration="setScalars",
-                        values= [5, 5, 5],
+                        values= collect(0:124),
                     )
                 ])
             ],

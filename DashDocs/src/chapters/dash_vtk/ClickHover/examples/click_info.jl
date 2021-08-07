@@ -2,7 +2,8 @@ using Dash, DashHtmlComponents
 using DashVtk
 using JSON2
 
-txt_content = read("cow-nonormals.obj", String)
+path_to_file = joinpath(@__DIR__, "cow-nonormals.obj")
+txt_content = read(path_to_file, String)
 
 view = vtk_view(
     id="click-info-view",

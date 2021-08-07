@@ -21,11 +21,11 @@
             * connectivity=manual # manual, points, triangles, strips
 
     * `field`: (Contains the properties of `vtk_dataarray`)
-                * location: `vtk_pointdata`/`vtk_celldata`
-                * name: Name of the field (optional)
-                * values: Array of values for the field
-                * numberOfComponents: Number of components per unit/cell
-                * type: Name of TypedArray to use (Unit8Array, Int8Array, Float32Array, Float64Array...)
+        * location: `vtk_pointdata`/`vtk_celldata`
+        * name: Name of the field (optional)
+        * values: Array of values for the field
+        * numberOfComponents: Number of components per unit/cell
+        * type: Name of TypedArray to use (Unit8Array, Int8Array, Float32Array, Float64Array...)
     """),
 
     html_h3("Volume"),

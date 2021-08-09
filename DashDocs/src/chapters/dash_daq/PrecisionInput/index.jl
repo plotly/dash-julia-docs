@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/precision_input" begin
+@doc_chapter "/dash-daq/precisioninput" begin
 
 @example precisioninput_default "default.jl"
 @example precisioninput_disabled "disabled.jl"

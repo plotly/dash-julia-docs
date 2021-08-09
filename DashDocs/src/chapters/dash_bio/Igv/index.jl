@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/igv" begin
+@doc_chapter "/dash-bio/igv" begin
 
 @example igv_default "default.jl"
 @example igv_genome "genome.jl"

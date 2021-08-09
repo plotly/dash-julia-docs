@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/thermometer" begin
+@doc_chapter "/dash-daq/thermometer" begin
 
 @example thermometer_default "default.jl"
 @example thermometer_customscales "custom_scales.jl"

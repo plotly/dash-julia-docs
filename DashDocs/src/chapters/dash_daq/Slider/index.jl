@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/slider" begin
+@doc_chapter "/dash-daq/slider" begin
 
 @example slider_default "default.jl"
 @example slider_handlelabel "handle_label.jl"

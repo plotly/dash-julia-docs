@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/sequence_viewer" begin
+@doc_chapter "/dash-bio/sequenceviewer" begin
 
 @example sequenceviewer_default "default.jl"
 @example sequenceviewer_lengthnumber "length_number.jl"

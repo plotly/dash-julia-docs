@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/frameset" begin
+@doc_chapter "/dash-html-components/frameset" begin
 
     @layout html_div() do
 

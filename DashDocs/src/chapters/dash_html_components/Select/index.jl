@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/select" begin
+@doc_chapter "/dash-html-components/select" begin
 
     @layout html_div() do
 

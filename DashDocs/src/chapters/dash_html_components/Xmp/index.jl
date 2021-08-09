@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/xmp" begin
+@doc_chapter "/dash-html-components/xmp" begin
 
     @layout html_div() do
 

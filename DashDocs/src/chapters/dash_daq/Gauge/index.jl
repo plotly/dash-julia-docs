@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/gauge" begin
+@doc_chapter "/dash-daq/gauge" begin
 
 @example gauge_default "default.jl"
 @example gauge_colorgrad "color_grad.jl"

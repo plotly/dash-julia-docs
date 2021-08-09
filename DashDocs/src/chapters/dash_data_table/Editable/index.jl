@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/editable" begin
+@doc_chapter "/datatable/editable" begin
     @example add_remove_col "add_remove_col.jl"
     @example add_remove_rows "add_remove_rows.jl"
     @example export_datatable "export_datatable.jl"

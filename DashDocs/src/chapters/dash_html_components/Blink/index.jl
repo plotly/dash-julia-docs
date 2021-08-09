@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/blink" begin
+@doc_chapter "/dash-html-components/blink" begin
 
     @layout html_div() do
 

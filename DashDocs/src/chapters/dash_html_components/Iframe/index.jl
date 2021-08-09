@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/iframe" begin
+@doc_chapter "/dash-html-components/iframe" begin
 
     @layout html_div() do
 

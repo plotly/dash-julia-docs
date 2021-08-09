@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/julia_filtering" begin
+@doc_chapter "/datatable/callbacks" begin
     @example backend_multicol_sorting "backend_multicol_sorting.jl"
     @example backend_paging_filtering "backend_paging_filtering.jl"
     @example backend_paging_graph "backend_paging_graph.jl"

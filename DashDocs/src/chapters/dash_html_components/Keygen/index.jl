@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/keygen" begin
+@doc_chapter "/dash-html-components/keygen" begin
 
     @layout html_div() do
 

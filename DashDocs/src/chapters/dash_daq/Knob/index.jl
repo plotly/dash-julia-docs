@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/knob" begin
+@doc_chapter "/dash-daq/knob" begin
 
 @example knob_default "default.jl"
 @example knob_colorgradient "color_gradient.jl"

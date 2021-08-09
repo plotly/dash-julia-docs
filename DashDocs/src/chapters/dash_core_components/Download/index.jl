@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/download" begin
+@doc_chapter "/dash-core-components/download" begin
 
   @example download_text "download_text.jl"
 

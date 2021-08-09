@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/color_picker" begin
+@doc_chapter "/dash-daq/colorpicker" begin
 
 @example colorpicker_default "default.jl"
 @example colorpicker_disabled "disabled.jl"

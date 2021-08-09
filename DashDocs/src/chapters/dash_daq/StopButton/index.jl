@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/stop_button" begin
+@doc_chapter "/dash-daq/stopbutton" begin
 
 @example stopbutton_default "default.jl"
 @example stopbutton_buttontext "button_text.jl"

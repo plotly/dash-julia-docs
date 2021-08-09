@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/power_button" begin
+@doc_chapter "/dash-daq/powerbutton" begin
 
 @example powerbutton_default "default.jl"
 @example powerbutton_color "color.jl"

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/boolean_switch" begin
+@doc_chapter "/dash-daq/booleanswitch" begin
 
 @example booleanswitch_default "default.jl"
 @example booleanswitch_label "label.jl"

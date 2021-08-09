@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/wbr" begin
+@doc_chapter "/dash-html-components/wbr" begin
 
     @layout html_div() do
 

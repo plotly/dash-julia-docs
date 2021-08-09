@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/legend" begin
+@doc_chapter "/dash-html-components/legend" begin
 
     @layout html_div() do
 

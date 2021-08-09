@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/markdown" begin
+@doc_chapter "/dash-core-components/markdown" begin
 
     @example headers "headers.jl"
     @example emphasis "emphasis.jl"

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/checklist" begin
+@doc_chapter "/dash-core-components/checklist" begin
 
 @example checkbox_vertical "checklist_vertical.jl"
 @example checkbox_horizontal "checklist_horizontal.jl"

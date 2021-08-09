@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/cite" begin
+@doc_chapter "/dash-html-components/cite" begin
 
     @layout html_div() do
 

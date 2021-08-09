@@ -74,27 +74,27 @@ function default_page()
             (
                 Chapter(
                     "Dash Core Components",
-                    "/dash_core_components",
+                    "/dash-core-components",
                     "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
                 ),
                 Chapter(
                     "Dash HTML Components",
-                    "/dash_html_components",
+                    "/dash-html-components",
                     "The Dash HTML Components library contains a set of components like button, div, form and more."
                 ),
                 Chapter(
                     "Dash DAQ",
-                    "/dash_daq",
+                    "/dash-daq",
                     "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                 ),
                 Chapter(
                     "Dash DataTable",
-                    "/dash_data_table",
+                    "/datatable",
                     "The Dash Data Table library is used to generate interactive tables."
                 ),
                 Chapter(
                             "Dash Bio",
-                            "/dash_bio",
+                            "/dash-bio",
                             "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."
                         )
             )

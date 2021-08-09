@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/strike" begin
+@doc_chapter "/dash-html-components/strike" begin
 
     @layout html_div() do
 

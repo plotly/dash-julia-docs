@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/molecule2dviewer" begin
+@doc_chapter "/dash-bio/molecule2dviewer" begin
 
 @example molecule2dviewer_default "default.jl"
 @example molecule2dviewer_modeldata "model_data.jl"

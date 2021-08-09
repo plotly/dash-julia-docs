@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/store" begin
+@doc_chapter "/dash-core-components/store" begin
 
     @example store_clicks "store_clicks.jl"
     # @example store_callbacks "store_callbacks.jl"

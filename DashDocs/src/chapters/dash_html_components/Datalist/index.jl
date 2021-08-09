@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/datalist" begin
+@doc_chapter "/dash-html-components/datalist" begin
 
     @layout html_div() do
 

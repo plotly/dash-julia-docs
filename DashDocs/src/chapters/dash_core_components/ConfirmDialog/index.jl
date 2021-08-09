@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/confirmdialog" begin
+@doc_chapter "/dash-core-components/confirmdialog" begin
 
     @example confirm "confirm.jl"
     

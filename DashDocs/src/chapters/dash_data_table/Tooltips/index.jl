@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/tooltips" begin
+@doc_chapter "/datatable/tooltips" begin
     @example conditional_tooltip "conditional_tooltip.jl"
     @example images_tooltip "images_tooltip.jl"
     @example individual_cells "individual_cells.jl"

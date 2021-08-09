@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/colgroup" begin
+@doc_chapter "/dash-html-components/colgroup" begin
 
     @layout html_div() do
 

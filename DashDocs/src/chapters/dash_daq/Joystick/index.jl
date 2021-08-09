@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/joystick" begin
+@doc_chapter "/dash-daq/joystick" begin
 
 @example joystick_default "default.jl"
 @example joystick_label "label.jl"

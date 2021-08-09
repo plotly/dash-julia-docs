@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/ngl_molecule_viewer" begin
+@doc_chapter "/dash-bio/nglmoleculeviewer" begin
 
 @example nglmoleculeviewer_default "default.jl"
 @example nglmoleculeviewer_heightwidth "height_width.jl"

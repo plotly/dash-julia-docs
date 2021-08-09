@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/datatable_height" begin
+@doc_chapter "/datatable/height" begin
   @example pagination "pagination.jl"
   @example vertical_scroll_fixed_header "vertical_scroll_fixed_header.jl"
   @example vertical_scroll_pagination "vertical_scroll_pagination.jl"

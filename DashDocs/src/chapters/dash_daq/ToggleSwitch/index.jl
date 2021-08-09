@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/toggle_switch" begin
+@doc_chapter "/dash-daq/toggleswitch" begin
 
 @example toggleswitch_default "default.jl"
 @example toggleswitch_label "label.jl"

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/indicator" begin
+@doc_chapter "/dash-daq/indicator" begin
 
 @example indicator_default "default.jl"
 @example indicator_boolindicatoroff "bool_indicator_off.jl"

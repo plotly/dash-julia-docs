@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/tabs" begin
+@doc_chapter "/dash-core-components/tabs" begin
 
     @example method1 "method1.jl"
     @example method2 "method2.jl"

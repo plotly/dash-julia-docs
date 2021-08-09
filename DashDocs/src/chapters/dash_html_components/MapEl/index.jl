@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/mapel" begin
+@doc_chapter "/dash-html-components/mapel" begin
 
     @layout html_div() do
 

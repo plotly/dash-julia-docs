@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/graph" begin
+@doc_chapter "/dash-core-components/graph" begin
 
   @example express_graph "express_graph.jl"
   @example figure_graph "figure_graph.jl"
@@ -27,7 +27,7 @@
 
     html_h3("Examples"),
 
-    html_h5("Plotly Express in Dash")
+    html_h5("Plotly Express in Dash"),
 
     dcc_markdown("
       The `fig` object is passed directly into the figure property of `dcc_graph`:

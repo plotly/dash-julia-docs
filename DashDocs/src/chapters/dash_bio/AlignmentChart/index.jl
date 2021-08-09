@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/alignment_chart" begin
+@doc_chapter "/dash-bio/alignmentchart" begin
 
 @example alignmentchart_default "default.jl"
 @example alignmentchart_colorscales "color_scales.jl"

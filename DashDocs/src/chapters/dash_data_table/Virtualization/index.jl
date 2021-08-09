@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/virtualization" begin
+@doc_chapter "/datatable/virtualization" begin
     @example default "default.jl"
     @layout html_div() do
         html_h1("Virtualization"),

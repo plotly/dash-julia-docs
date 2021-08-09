@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/rangeslider" begin
+@doc_chapter "/dash-core-components/rangeslider" begin
 
     @example rangeslider1 "simple_rangeslider.jl"
     @example rangeslider2 "rangeslider_marks_steps.jl"

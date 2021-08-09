@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/onco_print" begin
+@doc_chapter "/dash-bio/oncoprint" begin
 
 @example oncoprint_default "default.jl"
 @example oncoprint_colors "colors.jl"

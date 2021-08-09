@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/graduated_bar" begin
+@doc_chapter "/dash-daq/graduatedbar" begin
 
 @example graduatebar_default "default.jl"
 @example graduatebar_colorgradient "color_gradient.jl"

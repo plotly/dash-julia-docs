@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/video" begin
+@doc_chapter "/dash-html-components/video" begin
 
     @layout html_div() do
 

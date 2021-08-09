@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/styling" begin
+@doc_chapter "/datatable/style" begin
     @example default "default.jl"
     @example add_border "add_border.jl"
     @example column_alignment "column_alignment.jl"

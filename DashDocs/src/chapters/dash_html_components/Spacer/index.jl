@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/spacer" begin
+@doc_chapter "/dash-html-components/spacer" begin
 
     @layout html_div() do
 

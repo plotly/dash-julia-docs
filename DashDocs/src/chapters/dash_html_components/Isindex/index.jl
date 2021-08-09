@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/isindex" begin
+@doc_chapter "/dash-html-components/isindex" begin
 
     @layout html_div() do
 

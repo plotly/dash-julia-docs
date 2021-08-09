@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/typing" begin
+@doc_chapter "/datatable/typing" begin
     # @example template_formating "template_formating.jl"
     @layout html_div() do
         html_h1("DataTable - Typing"),

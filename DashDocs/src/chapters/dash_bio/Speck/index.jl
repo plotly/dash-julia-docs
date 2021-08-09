@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/speck" begin
+@doc_chapter "/dash-bio/speck" begin
 
 @example speck_default "default.jl"
 @example speck_renderingstyle "rendering_style.jl"

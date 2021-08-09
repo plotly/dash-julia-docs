@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/figcaption" begin
+@doc_chapter "/dash-html-components/figcaption" begin
 
     @layout html_div() do
 

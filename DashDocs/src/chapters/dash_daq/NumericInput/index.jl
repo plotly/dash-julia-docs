@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/numeric_input" begin
+@doc_chapter "/dash-daq/numericinput" begin
 
 @example numericinput_default "default.jl"
 @example numericinput_disable "disable.jl"

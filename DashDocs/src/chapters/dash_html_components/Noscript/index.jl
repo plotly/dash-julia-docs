@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/noscript" begin
+@doc_chapter "/dash-html-components/noscript" begin
 
     @layout html_div() do
 

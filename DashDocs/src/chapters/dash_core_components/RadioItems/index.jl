@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/radioitems" begin
+@doc_chapter "/dash-core-components/radioitems" begin
 
     @example radioitems_vertical "radioitems_vertical.jl"
     @example radioitems_horizontal "radioitems_horizontal.jl"

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/dark_theme_provider" begin
+@doc_chapter "/dash-daq/darkthemeprovider" begin
 
 @example darkthemeprovider_default "default.jl"
 

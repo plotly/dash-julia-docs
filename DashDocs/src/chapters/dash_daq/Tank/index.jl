@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/tank" begin
+@doc_chapter "/dash-daq/tank" begin
 
 @example tank_default "default.jl"
 @example tank_customscales "custom_scales.jl"

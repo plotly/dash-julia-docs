@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/dropdown" begin
+@doc_chapter "/datatable/dropdowns" begin
     @example per_column_dropdown "per_column_dropdown.jl"
     @example per_row_dropdown "per_row_dropdown.jl"
     @layout html_div() do

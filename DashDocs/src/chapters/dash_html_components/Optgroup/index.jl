@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/optgroup" begin
+@doc_chapter "/dash-html-components/optgroup" begin
 
     @layout html_div() do
 

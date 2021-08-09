@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/leddisplay" begin
+@doc_chapter "/dash-daq/leddisplay" begin
 
 @example leddisplay_default "default.jl"
 @example leddisplay_backgroundcolor "background_color.jl"

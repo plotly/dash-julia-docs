@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/filtering_syntax" begin
+@doc_chapter "/datatable/filtering" begin
     @example advanced_filter "advanced_filter.jl"
     @example backend_filtering "backend_filtering.jl"
     @example column_datatype "column_datatype.jl"

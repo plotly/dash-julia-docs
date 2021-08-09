@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/forna_container" begin
+@doc_chapter "/dash-bio/fornacontainer" begin
 
 @example fornacontainer_default "default.jl"
 @example fornacontainer_colorscheme "color_scheme.jl"

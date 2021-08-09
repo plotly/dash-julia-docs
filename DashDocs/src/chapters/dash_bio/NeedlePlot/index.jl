@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/needle_plot" begin
+@doc_chapter "/dash-bio/needleplot" begin
 
 @example needleplot_default "default.jl"
 @example needleplot_domainstyle "domain_style.jl"

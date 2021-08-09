@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/input" begin
+@doc_chapter "/dash-core-components/input" begin
 
     @example input_types "input_types.jl"
     @example debounce "debounce.jl"

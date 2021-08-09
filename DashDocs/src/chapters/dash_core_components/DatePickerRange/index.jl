@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/datepickerrange" begin
+@doc_chapter "/dash-core-components/datepickerrange" begin
 
     @example simple_datepickerrange "simple_datepickerrange.jl"
     @example datepickerrange_MMM_format "datepickerrange_MMM_format.jl"

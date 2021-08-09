@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/footer" begin
+@doc_chapter "/dash-html-components/footer" begin
 
     @layout html_div() do
 

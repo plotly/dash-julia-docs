@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/molecule3dviewer" begin
+@doc_chapter "/dash-bio/molecule3dviewer" begin
 
 @example molecule3dviewer_default "default.jl"
 @example molecule3dviewer_backgroundcolor "background_color.jl"

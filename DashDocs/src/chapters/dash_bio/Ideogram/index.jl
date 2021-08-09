@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/ideogram" begin
+@doc_chapter "/dash-bio/ideogram" begin
 
 @example ideogram_default "default.jl"
 @example ideogram_annotations "annotations.jl"

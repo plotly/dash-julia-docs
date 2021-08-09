@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/dropdown" begin
+@doc_chapter "/dash-core-components/dropdown" begin
 
     @example default "default.jl"
     @example multi "multi.jl"

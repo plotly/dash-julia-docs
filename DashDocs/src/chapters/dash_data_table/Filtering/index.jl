@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/interactivity" begin
+@doc_chapter "/datatable/interactivity" begin
     @example default "default.jl"
     @example row_ids "row_ids.jl"
     @layout html_div() do

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/loading" begin
+@doc_chapter "/dash-core-components/loading" begin
 
     @layout html_div() do
 

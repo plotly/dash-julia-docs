@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/button" begin
+@doc_chapter "/dash-html-components/button" begin
 
     @example button_basic "button_basic.jl"
     @example button_ctx "button_ctx.jl"

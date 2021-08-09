@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/upload" begin
+@doc_chapter "/dash-core-components/upload" begin
 
   @example upload_datafile "upload_datafile.jl"
   @example upload_image "upload_image.jl"

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/textarea" begin
+@doc_chapter "/dash-core-components/textarea" begin
 
     @example simple_textarea "simple_textarea.jl"
     @example button_press "button_press.jl"

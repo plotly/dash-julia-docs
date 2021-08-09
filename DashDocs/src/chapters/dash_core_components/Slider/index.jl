@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/slider" begin
+@doc_chapter "/dash-core-components/slider" begin
 
     @example slider1 "basic_slider.jl"
     @example slider2 "marks_steps.jl"

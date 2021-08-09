@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/conditional_formatting" begin
+@doc_chapter "/datatable/conditional-formatting" begin
     @example default "default.jl"
     @example alternative "alternative.jl"
     @example databar_wo_text "databar_wo_text.jl"

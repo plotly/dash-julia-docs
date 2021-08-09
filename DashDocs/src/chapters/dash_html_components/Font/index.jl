@@ -1,4 +1,4 @@
-@doc_chapter "/dash_html_components/font" begin
+@doc_chapter "/dash-html-components/font" begin
 
     @layout html_div() do
 

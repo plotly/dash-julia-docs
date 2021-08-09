@@ -1,4 +1,4 @@
-@doc_chapter "/dash_data_table/column_width" begin
+@doc_chapter "/datatable/width" begin
     @example default "default.jl"
     @example denser_multi_line "denser_multi_line.jl"
     @example ellipses_tooltips "ellipses_tooltips.jl"

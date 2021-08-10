@@ -108,7 +108,7 @@
 
     html_h3("Volume Rendering"),
     dcc_markdown("""
-    The previous example was using a 3D image and extracting its mesh to render. Let's keep the same data but show it as Volume Rendering.
+    A 3D image can be represented as a Volume Rendering as follows.
     """),
 
     source"introvisualization_volume_rendering",

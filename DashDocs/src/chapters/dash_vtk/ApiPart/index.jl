@@ -1,4 +1,4 @@
-@doc_chapter "dash_vtk/api_part" begin 
+@doc_chapter "/dash_vtk/api_part" begin 
 
 @layout html_div() do 
 
@@ -39,6 +39,7 @@
     html_h3("CellData"),
     dcc_markdown("""
     A CellData component exposes a vtkCellData to a downstream element.
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     """),
@@ -64,6 +65,7 @@
     html_h3("FieldData"),
     dcc_markdown("""
     A FieldData component exposes a FieldData to a downstream element
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     """),
@@ -77,6 +79,7 @@
     * property: Properties to assign to the vtkProperty (actor.getProperty())
     * colorMapPreset: Name of the preset to use for controlling the color mapping
     * colorDataRange: Range to use for the color scale
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
@@ -101,6 +104,7 @@
             0, 1, 0,
             0, 0, 1
         ]
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
@@ -116,6 +120,7 @@
     A `vtk_meshdata` component exposes a vtkPolyData to a downstream filter.
     It takes the following set of properties:
     * state: { mesh: { ...polydata-props }, field: { ...dataArray } }
+
     Keyword arguments:
     * `id` (String; optional): The ID used to identify this component.
     * `port` (Real; optional): downstream connection port
@@ -129,6 +134,7 @@
     * rgb: [...]
     * rgba: [...]
     * scalars: [...]
+
     Keyword arguments:
     * `colorDataRange` (Array of Reals; optional): Data range use for the colorMap
     * `colorMapPreset` (String; optional): Preset name for the lookup table color map
@@ -142,6 +148,7 @@
     html_h3("PointData"),
     dcc_markdown("""
     A `vtk_pointdata` component exposes a vtkPointData to a downstream element.
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     """),
@@ -157,6 +164,7 @@
     * strips: [cellSize, pointId0, pointId1, ..., cellSize, pointId0, ...]
     Cell connectivity helper property:
     * connectivity: 'manual', // [manual, points, triangles, strips]
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
@@ -177,6 +185,7 @@
     * url: string
     * parseAsText: string
     * parseAsArrayBuffer: base64String
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
@@ -193,6 +202,7 @@
     dcc_markdown("""
     A `vtk_sharedataset` component captures a dataset or a source and allow it to use it in another
     pipeline or representation.
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
@@ -207,6 +217,7 @@
     * colorBy: ['POINTS', ''],
     * pointSize: 1,
     * color: [1,1,1],
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
@@ -231,23 +242,26 @@
     * `cameraPosition`: [0, 0, 1]
     * `cameraViewUp`: [0, 1, 0]
     * `cameraParallelProjection`: false
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional): List of representation to show
     * `id` (String; optional): The ID used to identify this component.
     * `background` (Array; optional): The color of the view background using 3 floating numbers
-    between 0-1 of Red, Green, Blue component.
+       between 0-1 of Red, Green, Blue component.
     * `cameraParallelProjection` (Bool; optional): Use parallel projection (default: false)
     * `cameraPosition` (Array; optional): Initial camera position from an object in [0,0,0]
     * `cameraViewUp` (Array; optional): Initial camera position from an object in [0,0,0]
     * `className` (String; optional): Allow user to provide custom className associated to root element
     * `clickInfo` (Dict; optional): Read-only prop. To use this, make sure that `pickingModes` contains `click`.
-    This prop is updated when an element in the map is clicked. This contains
-    the picking info describing the object being clicked on.
+
+    This prop is updated when an element in the map is clicked. This contains the picking info describing the object being clicked on.
+
     * `hoverInfo` (Dict; optional): Read-only prop. To use this, make sure that `pickingModes` contains `hover`.
-    This prop is updated when an element in the map is hovered. This contains
-    the picking info describing the object being hovered.
+
+    This prop is updated when an element in the map is hovered. This contains the picking info describing the object being hovered.
+
     * `interactorSettings` (Array; optional): Configure the interactions
-    * `pickingModes` (Array of Strings; optional): List of picking listeners to bind. The supported values are `click` and `hover`. By default it is disabled (empty array).
+    * `pickingModes` (Array of Strings; optional): List of picking listeners to bind. The supported values are `click` and        `hover`. By default it is disabled (empty array).
     * `style` (Dict; optional): Allow user to override the default View style { width: '100%', height: '100%' }
     * `triggerRender` (Real; optional): Property use to trigger a render when changing.
     * `triggerResetCamera` (Real; optional): Property use to trigger a resetCamera when changing.
@@ -258,6 +272,7 @@
     A `vtk_volume` component exposes a vtkImageData to a downstream filter.
     It takes the following set of properties:
     * state: { image: { ...imagedata-props }, field: { ...dataArray } }
+
     Keyword arguments:
     * `id` (String; optional): The ID used to identify this component.
     * `port` (Real; optional): downstream connection port
@@ -267,6 +282,7 @@
     html_h3("Volume Controller"),
     dcc_markdown("""
     A `vtk_volumecontroller` component is a GUI to control the piecewise function.
+
     Keyword arguments:
     * `id` (String; optional): The ID used to identify this component.
     * `rescaleColorMap` (Bool; optional): Use opacity range to rescale color map
@@ -283,6 +299,7 @@
     * rgba: [...]
     * scalars: [...]
     * scalarsType: Float32Array
+
     Keyword arguments:
     * `id` (String; optional): The ID used to identify this component.
     * `colorDataRange` (Array of Reals | String; optional): Data range use for the colorMap
@@ -309,6 +326,7 @@
     * colorBy: ['POINTS', ''],
     * pointSize: 1,
     * color: [1,1,1],
+    
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.

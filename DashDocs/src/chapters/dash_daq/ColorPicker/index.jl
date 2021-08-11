@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/color_picker" begin
+@doc_chapter "/dash-daq/colorpicker" begin
 
 @example colorpicker_default "default.jl"
 @example colorpicker_disabled "disabled.jl"
@@ -71,53 +71,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * id (String; optional): The ID used to identify the color picker in Dash callbacks.
- 
-    * className (String; optional): Class to apply to the root component element.
-    
-    * `disabled` (Boolean; optional): If True, color cannot be picked.
-    
-    * `label` (Dict; optional): Description to be displayed alongside the control. To control styling, pass an object with label and style properties.
-    
-    * `label` is a String | Dict with keys:
-    
-    * `label` (String; optional)
-    
-    * `style` (Dict; optional)
-    
-    * `labelPosition` (a value equal to: 'top', 'bottom'; default 'top'): Where the indicator label is positioned.
-    
-    * `persisted_props` (list of a value equal to: 'value's; default 'value'): Properties whose user interactions will persist after refreshing the component or the page. Since only value is allowed this prop can normally be ignored.
-    
-    * `persistence` (Boolean | String | Number; optional): Used to allow user interactions in this component to be persisted when the component - or the page - is refreshed. If persisted is truthy and hasn't changed from its previous value, a value that the user has changed while using the app will keep that change, as long as the new value also matches what was given originally. Used in conjunction with persistence_type.
-    
-    * `persistence_type` (a value equal to: 'local', 'session', 'memory'; default 'local'): Where persisted user changes will be stored: memory: only kept in memory, reset on page refresh. local: window.localStorage, data is kept after the browser quit. session: window.sessionStorage, data is cleared once the browser quit.
-    
-    * `size` (Number; default 225): Size (width) of the component in pixels.
-    
-    * `style` (Dict; optional): Style to apply to the root component element.
-    
-    * `theme` (Dict; default light): Theme configuration to be set by a ThemeProvider.
-    
-    * `value` (Dict; optional): Color value of the picker.
-
-    * `value` is a Dict with keys:
-    
-        * `hex` (String; optional): Hex String.
-        
-        * `rbg` (Dict; optional): RGB/RGBA object.
-        
-        * `rbg` is a Dict with keys:
-        
-            * `a` (Number; optional)
-            * 
-            * `b` (Number; optional)
-            * 
-            * `g` (Number; optional)
-            * 
-            * `r` (Number; optional)
-    """)
+    dcc_markdown(string(@doc daq_colorpicker))
 
 end
 

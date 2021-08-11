@@ -1,4 +1,4 @@
-@doc_chapter "/dash_bio/molecule2dviewer" begin
+@doc_chapter "/dash-bio/molecule2dviewer" begin
 
 @example molecule2dviewer_default "default.jl"
 @example molecule2dviewer_modeldata "model_data.jl"
@@ -46,40 +46,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    `id` (String; optional): The ID used to identify this component in callbacks.
-
-    `height` (Number; default 500): The height of the SVG element.
-
-    `modelData` (dict; default Dict( nodes: [], links: [],)): Description of the molecule to display.
-
-    `modelData` is a dict with keys:
-
-    * `links` (list of dicts; optional)
-    `links` is a list of dicts with keys:
-    
-        * `bond` (Number; optional)
-
-        * `distance` (Number; optional)
-
-        * `id` (Number; optional)
-
-        * `source` (optional)
-
-        * `strength` (Number; optional)
-
-        * `target` (optional)
-
-    * `nodes` (list of dicts; optional)
-    `nodes` is a list of dicts with keys:
-        * `atom` (String; optional)
-
-        * `id` (Number; optional)
-
-    `selectedAtomIds` (list of Numbers; optional): The selected atom IDs.
-
-    `width` (Number; default `500`): The width of the SVG element.
-    """)
+    dcc_markdown(string(@doc dashbio_molecule2dviewer))
 
 end
 

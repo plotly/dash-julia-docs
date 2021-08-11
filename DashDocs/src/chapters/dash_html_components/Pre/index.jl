@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/pre" begin
+@doc_chapter "/dash-html-components/pre" begin
 
-    @example docspre "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_pre"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_pre))
 
-    layout"docspre"
-
-end
+    end
 
 end

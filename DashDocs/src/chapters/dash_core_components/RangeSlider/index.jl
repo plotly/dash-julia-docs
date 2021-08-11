@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/rangeslider" begin
+@doc_chapter "/dash-core-components/rangeslider" begin
 
     @example rangeslider1 "simple_rangeslider.jl"
     @example rangeslider2 "rangeslider_marks_steps.jl"
@@ -63,7 +63,19 @@
     dcc_markdown("Create a logarithmic slider by setting `marks` to be logarithmic and adjusting the slider's output `value` in the callbacks. The `updatemode` property allows us to determine when we want a callback to be triggered. The following example has `updatemode='drag'` which means a callback is triggered everytime the handle is moved. Contrast the callback output with the first example on this page to see the difference."),
 
     source"rangeslider8",
-    layout"rangeslider8"
+    layout"rangeslider8",
+
+    html_h3("dcc_rangeslider Reference"),
+    dcc_markdown("""
+        ```
+            Access this documentation in your Julia REPL with:
+
+            ?help dcc_rangeslider
+
+            Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash Component Properties. Find out if your company is using Dash Enterprise.
+        ```
+    """),
+    dcc_markdown(string(@doc dcc_rangeslider))
 
 
 end

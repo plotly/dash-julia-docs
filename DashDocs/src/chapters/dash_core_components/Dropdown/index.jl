@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/dropdown" begin
+@doc_chapter "/dash-core-components/dropdown" begin
 
     @example default "default.jl"
     @example multi "multi.jl"
@@ -71,7 +71,18 @@
     dcc_markdown("This is an example on how to update the options on the server depending on the search terms the user types. For example purpose the options are empty on first load, as soon as you start typing they will be loaded with the corresponding values."),
 
     source"dynamic_options",
-    layout"dynamic_options"
+    layout"dynamic_options",
+    html_h3("dcc_dropdown Reference"),
+    dcc_markdown("""
+        ```
+            Access this documentation in your Julia REPL with:
+
+            ?help dcc_dropdown
+
+            Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash Component Properties. Find out if your company is using Dash Enterprise.
+        ```
+    """),
+    dcc_markdown(string(@doc dcc_dropdown)) 
 
 end
 

@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/tabs" begin
+@doc_chapter "/dash-core-components/tabs" begin
 
     @example method1 "method1.jl"
     @example method2 "method2.jl"
@@ -91,7 +91,19 @@
     html_div("An alternative to providing CSS classes is to provide style dictionaries directly:"),
 
     source"styling_tabs_inline",
-    layout"styling_tabs_inline"
+    layout"styling_tabs_inline",
+
+    html_h3("dcc_tabs Reference"),
+    dcc_markdown("""
+        ```
+            Access this documentation in your Julia REPL with:
+
+            ?help dcc_tabs
+
+            Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash Component Properties. Find out if your company is using Dash Enterprise.
+        ```
+    """),
+    dcc_markdown(string(@doc dcc_tabs))
 
 
 end

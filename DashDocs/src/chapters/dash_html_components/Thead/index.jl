@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/thead" begin
+@doc_chapter "/dash-html-components/thead" begin
 
-    @example docsthead "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_thead"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_thead))
 
-    layout"docsthead"
-
-end
+    end
 
 end

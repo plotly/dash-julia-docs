@@ -1,15 +1,14 @@
-@doc_chapter "/dash_html_components/aside" begin
+@doc_chapter "/dash-html-components/aside" begin
 
-    @example docsaside "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_aside"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_aside))
 
-    layout"docsaside"
+    end
 
-end
 
 end
 

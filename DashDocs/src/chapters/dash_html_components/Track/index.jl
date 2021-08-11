@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/track" begin
+@doc_chapter "/dash-html-components/track" begin
 
-    @example docstrack "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_track"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_track))
 
-    layout"docstrack"
-
-end
+    end
 
 end

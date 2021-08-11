@@ -1,16 +1,17 @@
-include("IntroToVisualization/index.jl");
-include("StructureOfDatasets/index.jl");
+include("IntroVisualization/index.jl");
+include("StructureDatasets/index.jl");
 include("RepresentationComponents/index.jl");
-include("advanced_demos/index.jl");
-
-@doc_chapter "/dash_vtk" begin
-
+include("OtherComponents/index.jl");
+include("ClickHover/index.jl");
+include("AdvancedDemos/index.jl");
+include("ApiPart/index.jl");
+@doc_chapter "/dash_vtk" begin   
 
 @layout html_div() do 
 
     html_h1("Dash VTK"),
 
-    dcc_markdown("
+    dcc_markdown("""
     Dash is a web application framework that provides pure julia abstraction around HTML, CSS, and JavaScript. So here Dash VTK aims to integrate `VTK/vtk.js` visualization into the Dash framework. [VTK](https://vtk.org/) stands for Visualization Toolkit and is popular library written in C++ which is also available in Julia for doing data processing and visualization in the scientific and medical fields. Typically VTK is used to visualize 3D geometries from simulatuions or sensors such as LIDAR scanner. For the medical world, VTK is used to render 3D images (i.e. CT, MRI, ...) by doing volume rendering and/or slicing. 
 
     [Vtk.js](https://kitware.github.io/vtk-js/) on the other hand is a subset of VTK that focuses on the rendering aspect of it but in t JavaScript world. Vtk.js takes the same architecture and object decomposition as its big brother VTK/C++ but makes it friendly to use inside your browser. 
@@ -25,28 +26,42 @@ include("advanced_demos/index.jl");
     It will install the following dependency in your local environment. 
 
     This section is divided in the following parts:
-    1. Intro to 3D Visualization
-    Introductory concepts about 3D visualization needed to understand how Dash VTK works.
+    """),
 
-    2. Structure of Datasets
-    Understand the structure of a dataset in Dash VTK.
 
-    3. Representation Components
-    Dash VTK Components needed to generate a representation.
+    html_a(html_h3("Intro to 3D Visualization"), href="/dash_vtk/intro_visualization"),
 
-    4. Other DashVTK Components
-    Dash VTK Components that are not used for building representations.
+    dcc_markdown("Introductory concepts about 3D visualization needed to understand how Dash VTK works."),
 
-    5. Click and Hover Callbacks
-    Learn to write callbacks based on user click and hovers.
 
-    6. Advanced Demos
-    Demos of more advanced usage of Dash VTK.
+    html_a(html_h3("Structure of DataSets"), href="/dash_vtk/structure_datasets"),
 
-    7. Reference
-    Comprehensive reference of all Dash VTK components.
-    ")
+    dcc_markdown("Understand the structure of a dataset in Dash VTK."),
 
+    
+    html_a(html_h3("Representation Components"), href="/dash_vtk/representation_components"),
+
+    dcc_markdown("Dash VTK Components needed to generate a representation."),
+
+
+    html_a(html_h3("Other Dash VTK Components"), href="/dash_vtk/other_components"),
+
+    dcc_markdown("Dash VTK Components that are not used for building representations."),
+
+
+    html_a(html_h3("Click and Hover Callbacks"), href="dash_vtk/click_hover"),
+
+    dcc_markdown("Learn to write callbacks based on user click and hovers."),
+
+    
+    html_a(html_h3("Advanced Demos"), href="/dash_vtk/advanced_demos"),
+
+    dcc_markdown("Demos of more advanced usage of Dash VTK."),
+
+
+    html_a(html_h3("Reference"), href="/dash_vtk/api_part"),
+
+    dcc_markdown("Comprehensive reference of all Dash VTK components.")
 
 end
 

@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/iframe" begin
+@doc_chapter "/dash-html-components/iframe" begin
 
-    @example docsiframe "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_iframe"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_iframe))
 
-    layout"docsiframe"
-
-end
+    end
 
 end

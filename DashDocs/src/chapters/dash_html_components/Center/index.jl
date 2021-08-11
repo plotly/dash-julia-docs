@@ -1,16 +1,13 @@
-@doc_chapter "/dash_html_components/center" begin
+@doc_chapter "/dash-html-components/center" begin
 
-    @example docscenter "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_center"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_center))
 
-    layout"docscenter"
-
-end
-
+    end
 end
 
 

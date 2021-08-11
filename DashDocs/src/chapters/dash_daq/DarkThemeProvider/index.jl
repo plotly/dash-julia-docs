@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/dark_theme_provider" begin
+@doc_chapter "/dash-daq/darkthemeprovider" begin
 
 @example darkthemeprovider_default "default.jl"
 
@@ -23,21 +23,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * `children` (list of a list of or a singular dash component, string or numbers | a list of or a singular dash component, String or Number; optional): The children of this component.
- 
-    * `theme` (Dict; optional): Theme object to override with a custom theme.
-
-    * `theme` is a Dict with keys:
-
-        * `dark` (Boolean; optional): True for Dark mode, False for Light.
-
-        * `detail` (String; optional): Color used for UI details, like borders.
-
-        * `primary` (String; optional): Highlight color.
-
-        * `secondary` (String; optional): Supporting color.
-    """)
+    dcc_markdown(string(@doc daq_darkthemeprovider))
 
 end
 

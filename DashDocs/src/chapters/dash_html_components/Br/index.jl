@@ -1,15 +1,13 @@
-@doc_chapter "/dash_html_components/br" begin
+@doc_chapter "/dash-html-components/br" begin
 
-    @example docsbr "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_br"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_br))
 
-    layout"docsbr"
-
-end
+    end
 
 end
 

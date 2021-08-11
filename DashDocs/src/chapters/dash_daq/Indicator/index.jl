@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/indicator" begin
+@doc_chapter "/dash-daq/indicator" begin
 
 @example indicator_default "default.jl"
 @example indicator_boolindicatoroff "bool_indicator_off.jl"
@@ -61,35 +61,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    `id` (String; optional): The ID used to identify the indicator in Dash callbacks.
-
-    `className` (String; optional): Class to apply to the root component element.
-
-    `color` (String; default colors.DARKER_PRIMARY): Color of the indicator.
-
-    `height` (Number; optional): Height of the component. Set both width and height for a rectangular indicator.
-
-    `label` (Dict; optional): Description to be displayed alongside the control. To control styling, pass an object with label and style properties.
-
-    `label` is a String | Dict with keys:
-
-      * `label` (String; optional)
-
-      * `style` (Dict; optional)
-
-    `labelPosition` (a value equal to: 'top', 'bottom', 'right', 'left'; default 'top'): Where the indicator label is positioned.
-
-    `size` (Number; default 15): Size of the component. Either use this or width and height.
-
-    `style` (Dict; optional): Style to apply to the root component element.
-
-    `theme` (Dict; default light): Theme configuration to be set by a ThemeProvider.
-
-    `value` (Bool; optional): If true, indicator is illuminated.
-
-    `width` (Number; optional): Width of the component. Set both width and height for a rectangular indicator.
-    """)
+    dcc_markdown(string(@doc daq_indicator))
 
 end
 

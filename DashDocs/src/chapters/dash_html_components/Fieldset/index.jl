@@ -1,15 +1,13 @@
-@doc_chapter "/dash_html_components/fieldset" begin
+@doc_chapter "/dash-html-components/fieldset" begin
 
-    @example docsfieldset "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_fieldset"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_fieldset))
 
-    layout"docsfieldset"
-
-end
+    end
 
 end
 

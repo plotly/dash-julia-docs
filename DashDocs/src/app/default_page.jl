@@ -74,32 +74,32 @@ function default_page()
             (
                 Chapter(
                     "Dash Core Components",
-                    "/dash_core_components",
+                    "/dash-core-components",
                     "The Dash Core Component library contains a set of higher-level components like sliders, graphs, dropdowns, tables, and more."
                 ),
                 Chapter(
                     "Dash HTML Components",
-                    "/dash_html_components",
+                    "/dash-html-components",
                     "The Dash HTML Components library contains a set of components like button, div, form and more."
                 ),
                 Chapter(
                     "Dash DAQ",
-                    "/dash_daq",
+                    "/dash-daq",
                     "The Dash DAQ library contains a set of higher-level components like boolean switch, color picker, gauge and more."
                 ),
                 Chapter(
                     "Dash DataTable",
-                    "/dash_data_table",
+                    "/datatable",
                     "The Dash Data Table library is used to generate interactive tables."
                 ),
                 Chapter(
                     "Dash VTK",
                     "/dash_vtk",
-                    "Dash VTK enables its user to use VTK on the server side for any data processing and provides the infrastructure to push the visualization to the client side for a better experience."
+                    "Dash VTK aims to integrate VTK/vtk.js visualization into the Dash framework."
                 ),
                 Chapter(
                             "Dash Bio",
-                            "/dash_bio",
+                            "/dash-bio",
                             "The Dash Bio library contains a set of higher-level components like alignment chart, circos, clustergram and more."
                         )
             )

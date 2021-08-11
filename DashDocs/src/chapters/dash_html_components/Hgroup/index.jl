@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/hgroup" begin
+@doc_chapter "/dash-html-components/hgroup" begin
 
-    @example docshgroup "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_hgroup"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_hgroup))
 
-    layout"docshgroup"
-
-end
+    end
 
 end

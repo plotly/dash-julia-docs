@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/graph" begin
+@doc_chapter "/dash-core-components/graph" begin
 
   @example express_graph "express_graph.jl"
   @example figure_graph "figure_graph.jl"
@@ -26,7 +26,6 @@
     ),
 
     html_h3("Examples"),
-
     dcc_markdown("
       The `fig` object is passed directly into the figure property of `dcc_graph`:
     "),
@@ -98,8 +97,6 @@
     """),
     html_h5("Graph Properties"),
 
-
-
     dcc_markdown("""Access this documentation in Julia with:
 ```
 help?> dcc_graph
@@ -108,6 +105,7 @@ help?> dcc_graph
 Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash [Component Properties](https://plotly.com/dash/workspaces/). Find out if your company is using [Dash Enterprise](https://go.plotly.com/company-lookup).
 """),
     dcc_markdown(string(@doc dcc_graph))
+
 end
 
 

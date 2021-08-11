@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/datepickersingle" begin
+@doc_chapter "/dash-core-components/datepickersingle" begin
 
     @example simple_datepicker "simple_datepicker.jl"
     @example datepicker_MMM_format "datepicker_MMM_format.jl"
@@ -177,7 +177,19 @@
     The `first_day_of_week` property allows you to define which day of the week will be set as the first day of the week. In the example below, Tuesday is the first day of the week.."""),
 
     source"datepicker_rtl",
-    layout"datepicker_rtl"
+    layout"datepicker_rtl",
+    
+    html_h3("dcc_datepickersingle Reference"),
+    dcc_markdown("""
+        ```
+            Access this documentation in your Julia REPL with:
+
+            ?help dcc_datepickersingle
+
+            Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash Component Properties. Find out if your company is using Dash Enterprise.
+        ```
+    """),
+    dcc_markdown(string(@doc dcc_datepickersingle)) 
 
 
 end

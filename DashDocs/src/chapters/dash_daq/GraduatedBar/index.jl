@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/graduated_bar" begin
+@doc_chapter "/dash-daq/graduatedbar" begin
 
 @example graduatebar_default "default.jl"
 @example graduatebar_colorgradient "color_gradient.jl"
@@ -93,52 +93,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * `id` (String; optional): The ID used to identify this compnent in Dash callbacks.
-
-    * `className` (String; optional): Class to apply to the root component element.
-    
-    * `color` (Dict; default light.primary): Color configuration for the graduated bar's progress blocks.
-    
-    * `color` is a String | Dict with keys:
-
-        * `default` (String; optional): Fallback color to use when color.ranges has gaps.
-        
-        * `gradient` (Boolean; optional): Display ranges as a gradient between given colors. Requires color.ranges to be contiguous along the entirety of the graduated bar's range of values.
-        
-        * `ranges` (Dict; optional): Define multiple color ranges on the graduated bar's track. The key determines the color of the range and the value is the start,end of the range itself.
-        
-        * `ranges` is a Dict with keys:
-        
-            * `color` (list of Numbers; optional)
-    * `label` (Dict; optional): Description to be displayed alongside the control. To control styling, pass an object with label and style properties.
-    
-    * `label` is a String | Dict with keys:
-    
-    * `label` (String; optional)
-    
-    * `style` (Dict; optional)
-    
-    * `labelPosition` (a value equal to: 'top', 'bottom'; default 'top'): Where the component label is positioned.
-    
-    * `max` (Number; default 10): The maximum value of the graduated bar.
-
-    * `min` (Number; default 0): The minimum value of the graduated bar.
-    
-    * `showCurrentValue` (Boolean; optional): If true, the current percentage of the bar will be displayed.
-    
-    * `size` (Number; default 250): The size (length) of the graduated bar in pixels.
-
-    * `step` (Number; default 0.5): Value by which progress blocks appear.
-    
-    * `style` (Dict; optional): Style to apply to the root component element.
-    
-    * `theme` (Dict; default light): Theme configuration to be set by a ThemeProvider.
-    
-    * `value` (Number; optional): The value of the graduated bar.
-
-    * `vertical` (Boolean; optional): If true, will display bar vertically instead of horizontally.
-    """)
+    dcc_markdown(string(@doc daq_graduatedbar))
 
 end
 

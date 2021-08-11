@@ -1,4 +1,4 @@
-@doc_chapter "/dash_daq/stop_button" begin
+@doc_chapter "/dash-daq/stopbutton" begin
 
 @example stopbutton_default "default.jl"
 @example stopbutton_buttontext "button_text.jl"
@@ -61,33 +61,7 @@
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
     """),
-    dcc_markdown("""
-    * `children` (a list of or a singular dash component, String or Number; optional): The children of the button.
- 
-    * `id` (String; optional): The ID used to identify this compnent in Dash callbacks.
-    
-    * `buttonText` (String; default 'Stop'): Text displayed in the button.
-    
-    * `className` (String; optional): Class to apply to the root component element.
-    
-    * `disabled` (Bool; optional): If true, button cannot be pressesd.
-    
-    * `label` (Dict; optional): Description to be displayed alongside the button. To control styling, pass an object with label and style properties. `label` is a String | Dict with keys:
-    
-        * `label` (String; optional)
-
-        * `style` (Dict; optional)
-    
-    * `labelPosition` (a value equal to: 'top', 'bottom'; default 'top'): Where the label is positioned.
-    
-    * `n_clicks` (Number; default 0): Number of times the button was clicked.
-    
-    * `size` (Number; default 92): The size (width) of the stop button in pixels.
-    
-    * `style` (Dict; optional): Style to apply to the root component element.
-    
-    * `theme` (Dict; optional): Theme configuration to be set by a ThemeProvider.
-    """)
+    dcc_markdown(string(@doc daq_stopbutton))
 
 end
 

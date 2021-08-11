@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/script" begin
+@doc_chapter "/dash-html-components/script" begin
 
-    @example docsscript "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_script"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_script))
 
-    layout"docsscript"
-
-end
+    end
 
 end

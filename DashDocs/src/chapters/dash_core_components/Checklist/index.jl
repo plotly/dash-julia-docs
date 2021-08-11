@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/checklist" begin
+@doc_chapter "/dash-core-components/checklist" begin
 
 @example checkbox_vertical "checklist_vertical.jl"
 @example checkbox_horizontal "checklist_horizontal.jl"
@@ -26,7 +26,9 @@
     Our recommended IDE for writing Dash apps is Dash
       Enterprise's [Data Science Workspaces](https://plotly.com/dash/workspaces/),
        which has typeahead support for Dash Component Properties. [Find out if your company is using Dash Enterprise](https://go.plotly.com/company-lookup).
-    """)
+    """),
+        
+    dcc_markdown(string(@doc dcc_checklist))
 
 end
 

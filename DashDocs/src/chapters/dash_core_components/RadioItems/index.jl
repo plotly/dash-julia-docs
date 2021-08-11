@@ -1,4 +1,4 @@
-@doc_chapter "/dash_core_components/radioitems" begin
+@doc_chapter "/dash-core-components/radioitems" begin
 
     @example radioitems_vertical "radioitems_vertical.jl"
     @example radioitems_horizontal "radioitems_horizontal.jl"
@@ -13,7 +13,19 @@
     layout"radioitems_vertical",
 
     source"radioitems_horizontal",
-    layout"radioitems_horizontal"
+    layout"radioitems_horizontal",
+
+    html_h3("dcc_radioitems Reference"),
+    dcc_markdown("""
+        ```
+            Access this documentation in your Julia REPL with:
+
+            ?help dcc_radioitems
+
+            Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash Component Properties. Find out if your company is using Dash Enterprise.
+        ```
+    """),
+    dcc_markdown(string(@doc dcc_radioitems)) 
 
 end
 

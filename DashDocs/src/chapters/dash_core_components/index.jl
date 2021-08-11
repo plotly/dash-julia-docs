@@ -8,6 +8,7 @@ include("RadioItems/index.jl");
 include("DatePickerSingle/index.jl");
 include("DatePickerRange/index.jl");
 include("Markdown/index.jl");
+include("Tab/index.jl");
 include("Tabs/index.jl");
 include("Upload/index.jl");
 include("Download/index.jl");
@@ -15,8 +16,10 @@ include("Graph/index.jl");
 include("ConfirmDialog/index.jl");
 include("ConfirmDialogProvider/index.jl");
 include("Store/index.jl");
+include("Location/index.jl");
+include("Loading/index.jl");
 
-@doc_chapter "/dash_core_components" begin
+@doc_chapter "/dash-core-components" begin
     @example dropdown_index_example "dropdown_index_example.jl"
     @example slider_index_example "slider_index_example.jl"
     @example slider_with_marks "slider_with_marks.jl"
@@ -55,12 +58,12 @@ include("Store/index.jl");
 
         These docs are using version $(pkgver"DashCoreComponents")."),
 
-        html_a(html_h3("Dropdown"), href="/dash_core_components/dropdown"),
+        html_a(html_h3("Dropdown"), href="/dash-core-components/dropdown"),
 
         source"dropdown_index_example",
         layout"dropdown_index_example",
 
-        html_a(html_h3("Slider"), href="/dash_core_components/slider"),
+        html_a(html_h3("Slider"), href="/dash-core-components/slider"),
 
         source"slider_index_example",
         layout"slider_index_example",
@@ -68,7 +71,7 @@ include("Store/index.jl");
         source"slider_with_marks",
         layout"slider_with_marks",
 
-        html_a(html_h3("RangeSlider"), href="/dash_core_components/rangeslider"),
+        html_a(html_h3("RangeSlider"), href="/dash-core-components/rangeslider"),
 
         source"rangeslider_index_example",
         layout"rangeslider_index_example",
@@ -77,19 +80,19 @@ include("Store/index.jl");
         layout"rangeslider_with_marks",
 
         #Input
-        html_a(html_h3("Input"), href="/dash_core_components/input"),
+        html_a(html_h3("Input"), href="/dash-core-components/input"),
 
         source"input_index_example",
         layout"input_index_example",
 
         #TextArea
-        html_a(html_h3("TextArea"), href="/dash_core_components/textarea"),
+        html_a(html_h3("TextArea"), href="/dash-core-components/textarea"),
 
         source"textarea_index_example",
         layout"textarea_index_example",
 
         #checkboxes
-        html_a(html_h3("CheckBoxes"), href="/dash_core_components/checklist"),
+        html_a(html_h3("CheckBoxes"), href="/dash-core-components/checklist"),
 
         source"checkboxes_index_example",
         layout"checkboxes_index_example",
@@ -98,7 +101,7 @@ include("Store/index.jl");
         layout"checkboxes_inline_index_example",
 
         #radioitems
-        html_a(html_h3("RadioItems"), href="/dash_core_components/radioitems"),
+        html_a(html_h3("RadioItems"), href="/dash-core-components/radioitems"),
 
         source"radioitems_index_example",
         layout"radioitems_index_example",
@@ -107,7 +110,7 @@ include("Store/index.jl");
         layout"radioitems_inline_index_example",
 
         #button
-        html_a(html_h3("Button"), href="#"),
+        html_a(html_h3("Button"), href="/dash-html-components/button"),
 
         dcc_markdown(
             "There actually is no `Button` component in `DashCoreComponents`.
@@ -118,25 +121,25 @@ include("Store/index.jl");
         layout"button_index_example",
 
         #datepickersingle
-        html_a(html_h3("DatePickerSingle"), href="/dash_core_components/datepickersingle"),
+        html_a(html_h3("DatePickerSingle"), href="/dash-core-components/datepickersingle"),
 
         source"datepickersingle_index_example",
         layout"datepickersingle_index_example",
 
         #datepickerrange
-        html_a(html_h3("DatePickerRange"), href="/dash_core_components/datepickerrange"),
+        html_a(html_h3("DatePickerRange"), href="/dash-core-components/datepickerrange"),
 
         source"datepickerrange_index_example",
         layout"datepickerrange_index_example",
 
         #markdown
-        html_a(html_h3("Markdown"), href="/dash_core_components/markdown"),
+        html_a(html_h3("Markdown"), href="/dash-core-components/markdown"),
 
         source"markdown_index_example",
         layout"markdown_index_example",
 
         #upload
-        html_a(html_h3("Upload"), href="/dash_core_components/upload"),
+        html_a(html_h3("Upload"), href="/dash-core-components/upload"),
 
         dcc_markdown("
         The `dcc_upload` component allows users to upload
@@ -146,7 +149,7 @@ include("Store/index.jl");
         layout"upload_index_example",
 
         #download
-        html_a(html_h3("Download"), href="/dash_core_components/download"),
+        html_a(html_h3("Download"), href="/dash-core-components/download"),
 
         dcc_markdown(
             "The `dcc_download` component allows users to download
@@ -156,11 +159,14 @@ include("Store/index.jl");
         layout"download_index_example",
 
         #tabs
-        html_a(html_h3("Tabs"), href="/dash_core_components/tabs"),
+        html_a(html_h3("Tabs"), href="/dash-core-components/tabs"),
 
         dcc_markdown("The Tabs and Tab components can be used to create tabbed sections in your app."),
         source"tabs_index_example",
         layout"tabs_index_example",
+
+        #tab
+        html_a(html_h3("Tab"), href="/dash-core-components/tab"),
 
         #graphs
         html_a(html_h3("Graph"), href="/dash_core_components/graph"),
@@ -187,7 +193,7 @@ include("Store/index.jl");
         layout"confirm_dialog_clicked_index_example",
 
         #store
-        html_a(html_h3("Store"), href="/dash_core_components/store"),
+        html_a(html_h3("Store"), href="/dash-core-components/store"),
 
         dcc_markdown(
             "The store component can be used to keep data in the visitor's browser. The data is scoped to the user accessing the page.
@@ -206,7 +212,7 @@ include("Store/index.jl");
             "The store must be used with callbacks"
         ),
         #loading
-        html_a(html_h3("Loading"), href="#"),
+        html_a(html_h3("Loading"), href="/dash-core-components/loading"),
 
         dcc_markdown(
             "The Loading component can be used to wrap components that you want to display
@@ -218,7 +224,7 @@ include("Store/index.jl");
         layout"loading_index_example",
 
         #location
-        html_a(html_h3("Location"), href="#"),
+        html_a(html_h3("Location"), href="/dash-core-components/location"),
 
         dcc_markdown(
             "The `location` component represents the location bar in your web browser.

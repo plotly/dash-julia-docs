@@ -1,14 +1,12 @@
-@doc_chapter "/dash_html_components/rp" begin
+@doc_chapter "/dash-html-components/rp" begin
 
-    @example docsrp "docs.jl"
-    
-    
     @layout html_div() do
 
-    html_h1("Examples and References"),
+        html_h1("html_rp"),
+        html_h3("Reference & Documentation"),
+        
+        dcc_markdown(string(@doc html_rp))
 
-    layout"docsrp"
-
-end
+    end
 
 end

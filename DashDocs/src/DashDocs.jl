@@ -21,6 +21,8 @@ include("chapters/dash_data_table/index.jl");
 include("chapters/deployment/index.jl")
 include("app/_app.jl")
 
+include("chapters/advanced_callbacks/index.jl")
+
 @eval_toplevel
 
 function make_app()

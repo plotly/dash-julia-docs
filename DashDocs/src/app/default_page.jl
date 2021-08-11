@@ -68,7 +68,21 @@ function default_page()
                 )
             )
         ),
-
+        Section(
+            "Dash Callbacks",
+            (
+                Chapter(
+                    "Basic Callbacks",
+                    "/basic-callbacks",
+                    "Go through this introductory chapter to learn the foundations of the Dash callback."
+                ),
+                Chapter(
+                    "Advanced Callbacks",
+                    "/advanced-callbacks",
+                    "Now that you've gotten through the basics, take a look at the other things you can do with callbacks - from performance improvements to callback contexts."
+                ),
+            )
+        ),
         Section(
             "Open Source Component Libraries",
             (

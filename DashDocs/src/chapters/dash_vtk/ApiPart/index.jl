@@ -23,7 +23,7 @@
     A Calculator component exposes a source or filter to a downstream filter. It takes the following set of properties:
     * name: 'scalars'    // name of the generated field
     * location: 'POINT'  // POINT/CELL
-    * arrays: []         // Name of array to have access in formula
+    * arrays: \\[ \\]         // Name of array to have access in formula
     * formula: fn
 
     Keyword arguments:
@@ -31,7 +31,7 @@
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.
     * `arrays` (Array of Strings; optional): List of fields you want available for your formula
-    * `location` (String; optional): Field location [POINT, CELL, COORDINATE, SCALARS, ]
+    * `location` (String; optional): Field location \\[POINT, CELL, COORDINATE, SCALARS, \\]
     * `name` (String; optional): Field name
     * `port` (Real; optional): downstream connection port
     """),
@@ -49,7 +49,7 @@
     A DataArray component creates a vtkDataArray for the container fields.
     It takes the following set of properties:
     * type: 'Float32Array', 'Float64Array', 'Uint16Array', ...
-    * values: [number, number, ...]
+    * values: \\[number, number, ... \\]
     * numberOfComponents: 1,
     * registration: 'addArray', 'setScalars', ...
 
@@ -96,14 +96,14 @@
     dcc_markdown("""
     A `vtk_imagedata` component exposes a vtkImageData to a downstream filter
     It takes the following set of properties:
-    * dimensions: [nx, ny, nz],
-    * origin: [0, 0, 0]
-    * spacing: [1, 1, 1]
-    * direction: [
+    * dimensions: \\[nx, ny, nz \\],
+    * origin: \\[0, 0, 0 \\]
+    * spacing: \\[1, 1, 1 \\]
+    * direction: \\[
             1, 0, 0,
             0, 1, 0,
             0, 0, 1
-        ]
+        \\]
 
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
@@ -130,10 +130,10 @@
     html_h3("PointCloudRepresentation"),
     dcc_markdown("""
     A `vtk_pointcloudrepresentation` component expects the following set of properties.
-    * xyz: [x0, y0, z0, x1, ..., zn]
-    * rgb: [...]
-    * rgba: [...]
-    * scalars: [...]
+    * xyz: \\[x0, y0, z0, x1, ..., zn \\]
+    * rgb: \\[... \\]
+    * rgba: \\[... \\]
+    * scalars: \\[... \\]
 
     Keyword arguments:
     * `colorDataRange` (Array of Reals; optional): Data range use for the colorMap
@@ -157,13 +157,13 @@
     dcc_markdown("""
     A `vtk_polydata` component exposes a vtkPolyData to a downstream filter.
     It takes the following set of properties:
-    * points: [x, y, z, x, y, z, ...],
-    * verts: [cellSize, pointId0, pointId1, ..., cellSize, pointId0, ...]
-    * lines: [cellSize, pointId0, pointId1, ..., cellSize, pointId0, ...]
-    * polys: [cellSize, pointId0, pointId1, ..., cellSize, pointId0, ...]
-    * strips: [cellSize, pointId0, pointId1, ..., cellSize, pointId0, ...]
+    * points: \\[x, y, z, x, y, z, ... \\],
+    * verts: \\[cellSize, pointId0, pointId1, ..., cellSize, pointId0, ... \\]
+    * lines: \\[cellSize, pointId0, pointId1, ..., cellSize, pointId0, ... \\]
+    * polys: \\[cellSize, pointId0, pointId1, ..., cellSize, pointId0, ... \\]
+    * strips: \\[cellSize, pointId0, pointId1, ..., cellSize, pointId0, ... \\]
     Cell connectivity helper property:
-    * connectivity: 'manual', // [manual, points, triangles, strips]
+    * connectivity: 'manual', \\[manual, points, triangles, strips \\]
 
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
@@ -214,9 +214,9 @@
     dcc_markdown("""
     A `vtk_slicerepresentation` commponent is responsible to convert a vtkPolyData into rendering.
     It takes the following set of properties:
-    * colorBy: ['POINTS', ''],
+    * colorBy: \\['POINTS', '' \\],
     * pointSize: 1,
-    * color: [1,1,1],
+    * color: \\[1,1,1 \\],
 
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
@@ -238,9 +238,9 @@
     dcc_markdown("""
     A `vtk_view` component is responsible to render vtk.js data.
     It takes the following set of properties:
-    * `background`: [0.2, 0.3, 0.4]
-    * `cameraPosition`: [0, 0, 1]
-    * `cameraViewUp`: [0, 1, 0]
+    * `background`: \\[0.2, 0.3, 0.4 \\]
+    * `cameraPosition`: \\[0, 0, 1 \\]
+    * `cameraViewUp`: \\[0, 1, 0 \\]
     * `cameraParallelProjection`: false
 
     Keyword arguments:
@@ -249,8 +249,8 @@
     * `background` (Array; optional): The color of the view background using 3 floating numbers
        between 0-1 of Red, Green, Blue component.
     * `cameraParallelProjection` (Bool; optional): Use parallel projection (default: false)
-    * `cameraPosition` (Array; optional): Initial camera position from an object in [0,0,0]
-    * `cameraViewUp` (Array; optional): Initial camera position from an object in [0,0,0]
+    * `cameraPosition` (Array; optional): Initial camera position from an object in \\[0,0,0 \\]
+    * `cameraViewUp` (Array; optional): Initial camera position from an object in \\[0,0,0 \\]
     * `className` (String; optional): Allow user to provide custom className associated to root element
     * `clickInfo` (Dict; optional): Read-only prop. To use this, make sure that `pickingModes` contains `click`.
 
@@ -292,12 +292,12 @@
     html_h3("VolumeDataRepresentation"),
     dcc_markdown("""
     A `vtk_volumedatarepresentation` component expects the following set of properties:
-    * dimensions: [10, 20, 5]
-    * spacing: [1, 1, 1]
-    * origin: [0, 0, 0]
-    * rgb: [...]
-    * rgba: [...]
-    * scalars: [...]
+    * dimensions: \\[10, 20, 5 \\]
+    * spacing: \\[1, 1, 1 \\]
+    * origin: \\[0, 0, 0 \\]
+    * rgb: \\[... \\]
+    * rgba: \\[... \\]
+    * scalars: \\[... \\]
     * scalarsType: Float32Array
 
     Keyword arguments:
@@ -323,10 +323,10 @@
     dcc_markdown("""
     A `vtk_volumerepresentation` component is responsible to convert a vtkPolyData into rendering.
     It takes the following set of properties:
-    * colorBy: ['POINTS', ''],
+    * colorBy: \\['POINTS', '' \\],
     * pointSize: 1,
-    * color: [1,1,1],
-    
+    * color: \\[1,1,1 \\],
+
     Keyword arguments:
     * `children` (Array of a list of or a singular dash component, string or numbers | a list of or a singular dash component, string or number; optional)
     * `id` (String; optional): The ID used to identify this component.

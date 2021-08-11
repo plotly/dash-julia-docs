@@ -58,9 +58,9 @@ uuid = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 version = "0.8.5"
 
 [[Chain]]
-git-tree-sha1 = "c72673739e02d65990e5e068264df5afaa0b3273"
+git-tree-sha1 = "cac464e71767e8a04ceee82a889ca56502795705"
 uuid = "8be319e6-bccf-4806-a6f7-6fae938471bc"
-version = "0.4.7"
+version = "0.4.8"
 
 [[CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
@@ -98,9 +98,9 @@ version = "4.0.4"
 
 [[Dash]]
 deps = ["CodecZlib", "DashBase", "DashCoreComponents", "DashHtmlComponents", "DashTable", "DataStructures", "HTTP", "JSON", "JSON2", "MD5", "PlotlyBase", "Sockets", "Test", "UUIDs"]
-git-tree-sha1 = "431285689f1ad67c6fec6576a8ecbf287dad9f7c"
+git-tree-sha1 = "d5afc7e1816c535b9023d3ae0154c6af3def6d7b"
 uuid = "1b08a953-4be3-4667-9a23-3db579824955"
-version = "0.1.5"
+version = "0.1.6"
 
 [[DashBase]]
 deps = ["JSON2", "Test"]
@@ -165,15 +165,15 @@ version = "1.7.0"
 
 [[DataFrames]]
 deps = ["Compat", "DataAPI", "Future", "InvertedIndices", "IteratorInterfaceExtensions", "LinearAlgebra", "Markdown", "Missings", "PooledArrays", "PrettyTables", "Printf", "REPL", "Reexport", "SortingAlgorithms", "Statistics", "TableTraits", "Tables", "Unicode"]
-git-tree-sha1 = "a19645616f37a2c2c3077a44bc0d3e73e13441d7"
+git-tree-sha1 = "d785f42445b63fc86caa08bb9a9351008be9b765"
 uuid = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-version = "1.2.1"
+version = "1.2.2"
 
 [[DataStructures]]
 deps = ["Compat", "InteractiveUtils", "OrderedCollections"]
-git-tree-sha1 = "4437b64df1e0adccc3e5d1adbc3ac741095e4677"
+git-tree-sha1 = "7d9d316f04214f7efdbb6398d545446e246eff02"
 uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
-version = "0.18.9"
+version = "0.18.10"
 
 [[DataValueInterfaces]]
 git-tree-sha1 = "bfc1187b79289637fa0ef6d4436ebdfe6905cbd6"
@@ -246,9 +246,9 @@ version = "1.3.0"
 
 [[HTTP]]
 deps = ["Base64", "Dates", "IniFile", "Logging", "MbedTLS", "NetworkOptions", "Sockets", "URIs"]
-git-tree-sha1 = "c6a1fff2fd4b1da29d3dccaffb1e1001244d844e"
+git-tree-sha1 = "44e3b40da000eab4ccb1aecdc4801c040026aeb5"
 uuid = "cd3eb016-35fb-5094-929b-558a96fad6f3"
-version = "0.9.12"
+version = "0.9.13"
 
 [[Hiccup]]
 deps = ["MacroTools", "Test"]
@@ -297,9 +297,9 @@ version = "0.5.3"
 
 [[JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
-git-tree-sha1 = "81690084b6198a2e1da36fcfda16eeca9f9f24e4"
+git-tree-sha1 = "8076680b162ada2a031f707ac7b4953e30667a37"
 uuid = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
-version = "0.21.1"
+version = "0.21.2"
 
 [[JSON2]]
 deps = ["Dates", "Parsers", "Test"]
@@ -370,9 +370,9 @@ version = "0.2.1"
 
 [[MacroTools]]
 deps = ["Markdown", "Random"]
-git-tree-sha1 = "6a8a2a625ab0dea913aba95c11370589e0239ff0"
+git-tree-sha1 = "0fb723cd8c45858c22169b2e42269e53271a6df7"
 uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
-version = "0.5.6"
+version = "0.5.7"
 
 [[Markdown]]
 deps = ["Base64"]
@@ -438,9 +438,9 @@ version = "0.12.2"
 
 [[Parsers]]
 deps = ["Dates"]
-git-tree-sha1 = "94bf17e83a0e4b20c8d77f6af8ffe8cc3b386c0a"
+git-tree-sha1 = "bfd7d8c7fd87f04543810d9cbd3995972236ba1b"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "1.1.1"
+version = "1.1.2"
 
 [[Pidfile]]
 deps = ["FileWatching", "Test"]
@@ -454,9 +454,9 @@ uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 
 [[PlotlyBase]]
 deps = ["Dates", "DelimitedFiles", "DocStringExtensions", "JSON", "LaTeXStrings", "Logging", "Parameters", "Pkg", "REPL", "Requires", "Statistics", "UUIDs"]
-git-tree-sha1 = "d5049450f7ce3a9b5ca8b9b911001dcb4f6af0ba"
+git-tree-sha1 = "7f7dc47383d2e84dd670360acee818caa84688c8"
 uuid = "a03496cd-edff-5a9b-9e67-9cda94a718b5"
-version = "0.8.4"
+version = "0.8.7"
 
 [[PlotlyJS]]
 deps = ["Base64", "Blink", "DelimitedFiles", "JSExpr", "JSON", "Kaleido_jll", "Markdown", "Pkg", "PlotlyBase", "REPL", "Reexport", "Requires", "WebIO"]
@@ -527,9 +527,9 @@ version = "0.3.0"
 
 [[SentinelArrays]]
 deps = ["Dates", "Random"]
-git-tree-sha1 = "35927c2c11da0a86bcd482464b93dadd09ce420f"
+git-tree-sha1 = "a3a337914a035b2d59c9cbe7f1a38aaba1265b02"
 uuid = "91c51154-3ec4-41a3-a24f-3f23e20d615c"
-version = "1.3.5"
+version = "1.3.6"
 
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
@@ -596,9 +596,9 @@ version = "1.0.1"
 
 [[Tables]]
 deps = ["DataAPI", "DataValueInterfaces", "IteratorInterfaceExtensions", "LinearAlgebra", "TableTraits", "Test"]
-git-tree-sha1 = "8ed4a3ea724dac32670b062be3ef1c1de6773ae8"
+git-tree-sha1 = "d0c690d37c73aeb5ca063056283fde5585a41710"
 uuid = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
-version = "1.4.4"
+version = "1.5.0"
 
 [[Tar]]
 deps = ["ArgTools", "SHA"]
@@ -610,9 +610,9 @@ uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[TranscodingStreams]]
 deps = ["Random", "Test"]
-git-tree-sha1 = "7c53c35547de1c5b9d46a4797cf6d8253807108c"
+git-tree-sha1 = "216b95ea110b5972db65aa90f88d8d89dcb8851c"
 uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
-version = "0.9.5"
+version = "0.9.6"
 
 [[Twiddle]]
 git-tree-sha1 = "29509c4862bfb5da9e76eb6937125ab93986270a"

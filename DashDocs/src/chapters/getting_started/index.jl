@@ -35,12 +35,12 @@
     dcc_markdown("""
 
     Run the app with
-    ```
+    ```julia
     \$ julia app.jl
     ```
 
     In the `julia` REPL you can run the following code, assuming that `app.jl` is in your current working directory.
-    ```
+    ```julia
     julia> include("app.jl")
     ```
 

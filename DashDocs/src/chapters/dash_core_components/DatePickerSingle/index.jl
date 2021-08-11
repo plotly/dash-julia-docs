@@ -181,7 +181,7 @@
     
     html_h3("dcc_datepickersingle Reference"),
     dcc_markdown("""
-        ```
+        ```julia
             Access this documentation in your Julia REPL with:
 
             ?help dcc_datepickersingle

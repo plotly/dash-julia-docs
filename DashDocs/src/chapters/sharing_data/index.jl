@@ -105,7 +105,7 @@
     """),
     dcc_markdown("""
 
-    ```
+    ```julia
     global_df = DataFrame(CSV.File("..."))
 
     app.layout = html_div() do
@@ -164,7 +164,7 @@
     """),
     dcc_markdown("""
 
-    ```
+    ```julia
     callback!(
         app,
         Output("intermediate-value", "children"),

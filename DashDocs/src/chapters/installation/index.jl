@@ -8,13 +8,13 @@
 
     To install the most recent version:
 
-    ```
+    ```julia
         pkg> add Dash DashCoreComponents DashHtmlComponents DashTable
     ```
 
     To install the latest (stable) development version of Dash instead:
 
-    ```
+    ```jullia
         using Pkg;
         Pkg.add(PackageSpec(url="https://github.com/plotly/DashBase.jl.git"))
         Pkg.add(PackageSpec(url="https://github.com/plotly/dash-html-components.git", rev="master"))
@@ -30,7 +30,7 @@
     be the latest versions available.
     To check which version that you have installed, you can run:
 
-    ```
+    ```julia
     Pkg.status("Dash")
     Pkg.status("DashHtmlComponents")
     Pkg.status("DashCoreComponents")

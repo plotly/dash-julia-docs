@@ -108,7 +108,7 @@
 
     html_h3("dcc_graph Reference"),
     dcc_markdown("""
-        ```
+        ```julia
             Access this documentation in your Julia REPL with:
 
             ?help dcc_graph

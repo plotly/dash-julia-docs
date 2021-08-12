@@ -122,6 +122,12 @@ git-tree-sha1 = "edb0ba263d535e371c40144058c4214836f05867"
 uuid = "adab0d11-1453-4a42-9046-4ba7b121fa95"
 version = "0.1.0"
 
+[[DashBootstrapComponents]]
+deps = ["Dash"]
+git-tree-sha1 = "aa73dba477207314bbd39e0eddc7c6d6c34a8219"
+uuid = "1b08a953-4be3-4667-9a23-fa6d05876a1e"
+version = "0.13.0"
+
 [[DashCoreComponents]]
 deps = ["DashBase"]
 git-tree-sha1 = "8af600ca3179b193698472376a133c1caf3f2adc"
@@ -216,12 +222,6 @@ version = "1.2.0"
 
 [[FileWatching]]
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
-
-[[FixedPointNumbers]]
-deps = ["Statistics"]
-git-tree-sha1 = "335bfdceacc84c5cdf16aadc768aa5ddfc5383cc"
-uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
-version = "0.8.4"
 
 [[FixedPointNumbers]]
 deps = ["Statistics"]

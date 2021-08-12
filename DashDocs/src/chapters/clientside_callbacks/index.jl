@@ -109,8 +109,29 @@
         figures. We can rework the example above to use Plotly Express.
         """),
         source"graph_update_fe_be_plotlyjs",
-        layout"graph_update_fe_be_plotlyjs"
+        layout"graph_update_fe_be_plotlyjs",
+        dcc_markdown("""
 
+        Again, you can expand the "Contents of figure storage" section
+        above to see what gets generated. You may notice that this is
+        quite a bit more extensive than the previous example; in
+        particular, a `layout` is already defined. So, instead of creating
+        a `layout` as we did previously, we have to mutate the existing
+        layout in our JavaScript code.
+
+        ***
+
+        **Note**: There are a few limitations to keep in mind:
+
+        1. Clientside callbacks execute on the browser's main thread and will block
+        rendering and events processing while being executed.
+        2. Dash does not currently support asynchronous clientside callbacks and will
+        fail if a `Promise` is returned.
+        3. Clientside callbacks are not possible if you need to refer to global
+        variables on the server or a DB call is required.
+
+
+        """)
     end
 end
 

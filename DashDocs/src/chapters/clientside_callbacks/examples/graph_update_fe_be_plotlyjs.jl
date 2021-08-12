@@ -1,5 +1,5 @@
 using Dash, DashHtmlComponents, DashCoreComponents
-using HTTP, PlotlyJS, CSV, DataFrames, JSON2
+using HTTP, PlotlyJS, CSV, DataFrames, JSON
 
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
@@ -14,12 +14,6 @@ app.layout = html_div() do
     dcc_graph(id="clientside-graph-plotlyjs"),
     dcc_store(
         id="clientside-figure-store-plotlyjs",
-        data=[
-            Dict(
-                :x => df[df.country .== "Canada", "year"],
-                :y => df[df.country .== "Canada", "pop"],
-            )
-        ]
     ),
     "Indicator",
     dcc_dropdown(
@@ -48,7 +42,7 @@ app.layout = html_div() do
     html_hr(),
     html_details([
         html_summary("Contents of figure storage"),
-        dcc_markdown(id="clientside-figure-json"),
+        dcc_markdown(id="clientside-figure-json-plotlyjs"),
     ])
 end
 
@@ -60,8 +54,7 @@ callback!(
     Input("clientside-graph-indicator-plotlyjs", "value"),
     Input("clientside-graph-country-plotlyjs", "value"),
 ) do indicator, country
-    dff = df[df.country .== country, :]
-    plot(df, x=:year, y=Symbol(indicator), mode="markers")
+    plot(df[df.country .== country, :], x=:year, y=Symbol(indicator), mode="markers")
 end
 
 callback!(
@@ -93,10 +86,10 @@ callback!(
     Input("clientside-figure-store-plotlyjs", "data"),
 ) do data
     buf = IOBuffer()
-    JSON2.pretty(buf, JSON2.write(data))
+    JSON.print(buf, data, 2)
     js = String(take!(buf))
     """
-    ```
+    ```json
     $(js)
     ```
     """

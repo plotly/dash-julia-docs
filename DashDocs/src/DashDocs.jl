@@ -23,6 +23,9 @@ include("app/_app.jl")
 
 include("chapters/advanced_callbacks/index.jl")
 include("chapters/clientside_callbacks/index.jl")
+include("chapters/pattern_matching_callbacks/index.jl")
+include("chapters/callback_gotchas/index.jl")
+
 
 @eval_toplevel
 

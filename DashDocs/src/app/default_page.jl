@@ -81,6 +81,11 @@ function default_page()
                     "/advanced-callbacks",
                     "Now that you've gotten through the basics, take a look at the other things you can do with callbacks - from performance improvements to callback contexts."
                 ),
+                Chapter(
+                    "Clientside Callbacks",
+                    "/clientside-callbacks",
+                    "You might want to execute a callback in the frontend as opposed to the backend if you want to avoid the extra time that it takes to make a roundtrip to the server. Clientside callbacks allow you to write your callbacks in JavaScript that runs in the browser."
+                ),
             )
         ),
         Section(

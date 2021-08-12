@@ -7,17 +7,17 @@
 
     html_h1("Graph Examples and Reference"),
 
-    dcc_markdown("
+    dcc_markdown("""
       The `dcc_graph` component can be used to render any plotly-powered
        data visualization, passed as the figure argument.
-    "),
+    """),
 
     html_h3("Primer on Plotly Graphing Library"),
 
     dcc_markdown(
       "
-      * The Plotly Graphing Library, known as the package package plotly, generates 'figures'. 
-      These are used in `dcc_graph` with e.g. dcc_graph(figure=fig) with fig a plotly figure.    
+      * The Plotly Graphing Library, known as the package package plotly, generates 'figures'.
+      These are used in `dcc_graph` with e.g. dcc_graph(figure=fig) with fig a plotly figure.
       * Plotly supports 40-50 different chart types. Learn more by navigating https://plot.ly/julia/
       * In development, you can create figures by running Dash apps or in other environments like Jupyter,
        your console, and more. If you are using the interface outside of Dash, then calling `fig` will always
@@ -26,9 +26,6 @@
     ),
 
     html_h3("Examples"),
-
-    html_h5("Plotly Express in Dash"),
-
     dcc_markdown("
       The `fig` object is passed directly into the figure property of `dcc_graph`:
     "),
@@ -36,12 +33,6 @@
 
     source"express_graph",
     layout"express_graph",
-
-    html_h5("Using the Low-Level Interface with Dicts & Lists"),
-
-    dcc_markdown("Read through (1) above to learn more about the difference between fig and dicts & lists.")
-    source"figure_graph",
-    layout"figure_graph",
 
     dcc_markdown("
     ### Interactive Graphing with Callbacks
@@ -80,9 +71,9 @@
     There are quite a few options that you can take advantage of if you want the size of your graph to be reactive.
 
       The default `plotly.js` behavior dictates that the graph should resize upon window resize. However, in some cases, you might want to resize the graph based on the size of its parent container instead. (You can set the size of the parent container with the `style.height` and `style.width` properties.)
-      
+
       The responsive property of the dcc_graph component allows you to define your desired behavior. In short, it accepts as a value `true`, `false`, or `auto`
-      
+
       * `true` forces the graph to be responsive to window and parent resize, regardless of any other specifications in `figure.layout` or `config`
       * `false` forces the graph to be non-responsive to window and parent resize, regardless of any other specifications in figure.layout or config
       * `auto` preserves the legacy behavior (size and resizability are determined by values specified in figure.layout and config.responsive)
@@ -106,20 +97,17 @@
     """),
     html_h5("Graph Properties"),
 
-    html_h3("dcc_graph Reference"),
-    dcc_markdown("""
-        ```
-            Access this documentation in your Julia REPL with:
+    dcc_markdown("""Access this documentation in Julia with:
+```
+help?> dcc_graph
+```
 
-            ?help dcc_graph
-
-            Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash Component Properties. Find out if your company is using Dash Enterprise.
-        ```
-    """),
-    dcc_markdown(string(@doc dcc_graph)) 
-end
-    
-
+Our recommended IDE for writing Dash apps is Dash Enterprise's Data Science Workspaces, which has typeahead support for Dash [Component Properties](https://plotly.com/dash/workspaces/). Find out if your company is using [Dash Enterprise](https://go.plotly.com/company-lookup).
+"""),
+    dcc_markdown(string(@doc dcc_graph))
 
 end
 
+
+
+end

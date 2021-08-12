@@ -1,38 +1,17 @@
+using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyJS
 
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyBase
-
-
-df4 = DataFrame(Dict(("Col $(i)" => rand(30)) for i = 1:6))
+df4 = DataFrame(rand(30, 6), :auto)
 
 function create_figure(df4, x_col, y_col, selectedpoints, selectedpoints_local)
-    if selectedpoints_local != nothing
-        ranges = selectedpoints_local[:range]
-        selection_bounds = Dict(
-            "x0" => ranges[:x][1],
-            "x1" => ranges[:x][2],
-            "y0" => ranges[:y][1],
-            "x0" => ranges[:y][2],
-        )
-    else
-        selection_bounds = Dict(
-            "x0" => minimum(df4[:, x_col][1]),
-            "x1" => minimum(df4[:, x_col][2]),
-            "y0" => minimum(df4[:, y_col][1]),
-            "x0" => minimum(df4[:, x_col][2]),
-        )
-    end
-
-    return Plot(
-        df4,
-        x = df4[:, x_col],
-        y = y_col,
-        mode = "markers+text",
-        marker_size = 20,
-        text = 1:size(df4)[1],
-        customdata = 1:size(df4)[1],
-        selectedpoints = selectedpoints,
-        unselected = (
-            marker = (opacity = 0.3, textfont = (color = "rgba(0,0,0,0)"))
+    return plot(
+        df4, x=x_col, y=y_col,
+        mode="markers+text",
+        marker_size=20,
+        text=1:size(df4)[1],
+        customdata=1:size(df4)[1],
+        selectedpoints=selectedpoints,
+        unselected=(
+            marker=(opacity=0.3, textfont_color = "rgba(0,0,0,0)")
         )
     )
 end
@@ -71,9 +50,9 @@ callback!(
         end
     end
 
-    return create_figure(df4, "Col 1", "Col 2", selectedpoints, selection1),
-           create_figure(df4, "Col 3", "Col 4", selectedpoints, selection2),
-           create_figure(df4, "Col 5", "Col 6", selectedpoints, selection3)
+    return create_figure(df4, :x1, :x2, selectedpoints, selection1),
+           create_figure(df4, :x3, :x4, selectedpoints, selection2),
+           create_figure(df4, :x5, :x6, selectedpoints, selection3)
 end
 
 run_server(app, "0.0.0.0", debug=true)

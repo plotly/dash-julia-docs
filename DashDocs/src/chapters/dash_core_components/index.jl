@@ -169,13 +169,13 @@ include("Loading/index.jl");
         html_a(html_h3("Tab"), href="/dash-core-components/tab"),
 
         #graphs
-        html_a(html_h3("Graph"), href="/dash-core-components/graph"),
+        html_a(html_h3("Graph"), href="/dash_core_components/graph"),
 
         source"graph_index_example",
         layout"graph_index_example",
 
         #confirm_dialog
-        html_a(html_h3("ConfirmDialog"), href="/dash-core-components/confirmdialog"),
+        html_a(html_h3("ConfirmDialog"), href="/dash_core_components/confirmdialog"),
 
         dcc_markdown("
         The `dcc_confirmdialog` component send a dialog to the browser

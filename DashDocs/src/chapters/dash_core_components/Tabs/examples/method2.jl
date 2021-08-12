@@ -1,51 +1,36 @@
-using Dash, DashHtmlComponents, DashCoreComponents
+using Dash, DashHtmlComponents, DashCoreComponents, PlotlyJS
 
 app = dash()
+
+function make_plot()
+    plot(
+        [
+            bar(x=["giraffes", "orangutans", "monkeys"], y=rand(1:20, 3), name="SF"),
+            bar(x=["giraffes", "orangutans", "monkeys"], y=rand(3:20, 3), name="Montreal")
+        ],
+        Layout(
+            title="Dash Data Visualization",
+            barmode="group",
+        )
+    )
+end
+
+
 
 app.layout = html_div() do
     dcc_tabs(
         [
             dcc_tab(
-                label="Tab one", 
-                children=[
-                    dcc_graph(
-                        figure = (
-                            data = [
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [20, 14, 23], type = "bar", name = "SF"),
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [12, 18, 29], type = "bar", name = "Montreal"),
-                            ],
-                            layout = (title = "Dash Data Visualization", barmode="group")
-                        )
-                    )
-                ]
+                label="Tab one",
+                children=[dcc_graph(figure=make_plot())]
             ),
             dcc_tab(
-                label="Tab two", 
-                children=[
-                    dcc_graph(
-                        figure = (
-                            data = [
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [2, 14, 23], type = "bar", name = "SF"),
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [12, 18, 29], type = "bar", name = "Montreal"),
-                            ],
-                            layout = (title = "Dash Data Visualization", barmode="group")
-                        )
-                    )
-                ]
+                label="Tab two",
+                children=[dcc_graph(figure=make_plot())]
             ),
             dcc_tab(
-                label="Tab three", 
-                children=[
-                    dcc_graph(
-                        figure = (
-                            data = [
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [5, 14, 2], type = "bar", name = "SF"),
-                                (x = ["giraffes", "orangutans", "monkeys"], y = [12, 18, 29], type = "bar", name = "Montreal"),
-                            ],
-                            layout = (title = "Dash Data Visualization", barmode="group")
-                        )
-                    )
-                ]
+                label="Tab three",
+                children=[dcc_graph(figure=make_plot())]
             )
         ]
     )

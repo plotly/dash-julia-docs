@@ -1,8 +1,7 @@
 using Dash, DashHtmlComponents
 using DashVtk
 
-path_to_file = joinpath(@__DIR__, "cow-nonormals.obj")
-txt_content = read(path_to_file, String)
+txt_content = read(download("https://raw.githubusercontent.com/plotly/datasets/master/vtk/cow-nonormals.obj"), String)
 
 content = vtk_view([
     vtk_geometryrepresentation([

@@ -2,8 +2,7 @@ using Dash, DashHtmlComponents
 using DashVtk
 using JSON2
 
-path_to_file = joinpath(@__DIR__, "cow-nonormals.obj")
-txt_content = read(path_to_file, String)
+txt_content = read(download("https://raw.githubusercontent.com/plotly/datasets/master/vtk/cow-nonormals.obj"), String)
 
 view = vtk_view(
     id="click-info-view",

@@ -20,7 +20,7 @@ include("ApiPart/index.jl");
 
     These docs are using DashVtk version $(pkgver"DashVtk").
     To install DashVtk in your computer go to your julia terminal and perform following step: 
-    ```
+    ```julia
     julia> ] add DashVtk
     ```
     It will install the following dependency in your local environment. 

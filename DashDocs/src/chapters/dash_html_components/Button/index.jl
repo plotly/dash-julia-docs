@@ -34,7 +34,7 @@
     dcc_markdown(
         """
         Access this documentation in your Julia REPL with:
-        ```    
+        ```julia    
             help? html_button
         ```
         Our recommended IDE for writing Dash apps is Dash Enterprise's 

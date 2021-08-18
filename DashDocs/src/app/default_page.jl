@@ -68,7 +68,37 @@ function default_page()
                 )
             )
         ),
+        Section(
+            "Dash Callbacks",
+            (
+                Chapter(
+                    "Basic Callbacks",
+                    "/basic-callbacks",
+                    "Go through this introductory chapter to learn the foundations of the Dash callback."
+                ),
+                Chapter(
+                    "Advanced Callbacks",
+                    "/advanced-callbacks",
+                    "Now that you've gotten through the basics, take a look at the other things you can do with callbacks - from performance improvements to callback contexts."
+                ),
+                Chapter(
+                    "Clientside Callbacks",
+                    "/clientside-callbacks",
+                    "You might want to execute a callback in the frontend as opposed to the backend if you want to avoid the extra time that it takes to make a roundtrip to the server. Clientside callbacks allow you to write your callbacks in JavaScript that runs in the browser."
+                ),
+                Chapter(
+                    "Pattern-Matching Callbacks",
+                    "/pattern-matching-callbacks",
+                    "The pattern-matching callback selectors MATCH, ALL, & ALLSMALLER allow you to write callbacks that respond to or update an arbitrary or dynamic number of components."
+                ),
+                Chapter(
+                    "Callback Gotchas",
+                    "/callback-gotchas",
+                    "Dash callbacks have some idiosyncrasies that should be taken into consideration when building a Dash app. If you're running into unexpected callback behavior, and the rest of the documentation hasn't shed any light on the situation, try taking a look in this section."
+                ),
+            )
 
+        ),
         Section(
             "Open Source Component Libraries",
             (

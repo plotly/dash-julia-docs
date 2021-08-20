@@ -1,6 +1,15 @@
 using Dash, DashCytoscape
 using DashHtmlComponents, DashCoreComponents
+
 app = dash()
+
+styles = Dict(
+    "pre" =>  Dict(
+        "border" =>  "thin lightgrey solid",
+        "overflowX" =>  "scroll"
+    )
+)
+
 
 nodes = [
     Dict(
@@ -35,38 +44,41 @@ edges = [
     )
 ]
 
-elements = vcat(nodes, edges)
+
+default_stylesheet = [
+    Dict(
+        "selector" =>  "node",
+        "style" =>  Dict(
+            "background-color" =>  "#BFD7B5",
+            "label" =>  "data(label)"
+        )
+    )
+]
 
 
 app.layout = html_div([
     cyto_cytoscape(
-        id="cytoscape-callbacks-1",
-        elements=elements,
-        style=Dict("width" =>  "100%", "height" =>  "400px"),
-        layout=Dict(
-            "name" =>  "grid"
-        )
+        id="cytoscape-event-callbacks-3",
+        layout=Dict("name" => "preset"),
+        elements=vcat(edges,nodes),
+        stylesheet=default_stylesheet,
+        style=Dict("width" => "100%", "height" => "450px")
     ),
-    dcc_dropdown(
-        id="dropdown-callbacks-1",
-        value="grid",
-        clearable=false,
-        options=[
-            Dict("label" =>  uppercase(name), "value" =>  name)
-            for name in ["grid", "random", "circle", "cose", "concentric"]
-        ]
-    )
-
+    dcc_markdown(id="cytoscape-selectedNodeData-markdown")
 ])
 
-callback!(app,
-    Output("cytoscape-callbacks-1", "layout"),
-    Input("dropdown-callbacks-1", "value")
-) do layout
-    return Dict(
-        "name" =>  layout,
-        "animate" =>  true
-    )
-end
 
+callback!(app,
+    Output("cytoscape-selectedNodeData-markdown", "children"),
+    Input("cytoscape-event-callbacks-3", "selectedNodeData")
+) do data_list
+    if (data_list isa Nothing)
+        return
+    end
+
+    cities_list = [data[:label] for data in data_list]
+    return """
+        You selected the following cities:\n $(join(cities_list,"\n"))
+        """
+end
 run_server(app, "0.0.0.0", debug=true)

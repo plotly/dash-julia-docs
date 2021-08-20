@@ -1,6 +1,16 @@
 using Dash, DashCytoscape
 using DashHtmlComponents, DashCoreComponents
+using JSON
+
 app = dash()
+
+styles = Dict(
+    "pre" =>  Dict(
+        "border" =>  "thin lightgrey solid",
+        "overflowX" =>  "scroll"
+    )
+)
+
 
 nodes = [
     Dict(
@@ -35,38 +45,35 @@ edges = [
     )
 ]
 
-elements = vcat(nodes, edges)
+
+default_stylesheet = [
+    Dict(
+        "selector" =>  "node",
+        "style" =>  Dict(
+            "background-color" =>  "#BFD7B5",
+            "label" =>  "data(label)"
+        )
+    )
+]
 
 
 app.layout = html_div([
     cyto_cytoscape(
-        id="cytoscape-callbacks-1",
-        elements=elements,
-        style=Dict("width" =>  "100%", "height" =>  "400px"),
-        layout=Dict(
-            "name" =>  "grid"
-        )
+        id="cytoscape-event-callbacks-1",
+        layout=Dict("name" =>  "preset"),
+        elements=vcat(edges,nodes),
+        stylesheet=default_stylesheet,
+        style=Dict("width" =>  "100%", "height" =>  "450px")
     ),
-    dcc_dropdown(
-        id="dropdown-callbacks-1",
-        value="grid",
-        clearable=false,
-        options=[
-            Dict("label" =>  uppercase(name), "value" =>  name)
-            for name in ["grid", "random", "circle", "cose", "concentric"]
-        ]
-    )
-
+    html_pre(id="cytoscape-tapNodeData-json", style=styles["pre"])
 ])
 
+
 callback!(app,
-    Output("cytoscape-callbacks-1", "layout"),
-    Input("dropdown-callbacks-1", "value")
-) do layout
-    return Dict(
-        "name" =>  layout,
-        "animate" =>  true
-    )
+    Output("cytoscape-tapNodeData-json", "children"),
+    Input("cytoscape-event-callbacks-1", "tapNodeData")
+) do data
+    return JSON.json(data)
 end
 
 run_server(app, "0.0.0.0", debug=true)

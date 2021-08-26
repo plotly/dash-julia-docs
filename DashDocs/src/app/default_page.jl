@@ -93,6 +93,11 @@ function default_page()
                     "The Dash Data Table library is used to generate interactive tables."
                 ),
                 Chapter(
+                    "Dash Cytoscape",
+                    "/cytoscape",
+                    "Dash Cytoscape is a graph visualization component for creating easily customizable, high-performance, interactive, and web-based networks."
+                ),
+                Chapter(
                     "Dash VTK",
                     "/dash_vtk",
                     "Dash VTK aims to integrate VTK/vtk.js visualization into the Dash framework."

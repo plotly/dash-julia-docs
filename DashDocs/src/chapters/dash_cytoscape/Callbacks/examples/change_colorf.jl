@@ -1,5 +1,5 @@
 using Dash, DashCytoscape
-using DashHtmlComponents, DashCoreComponents
+using DashCoreComponents
 app = dash()
 
 nodes = [
@@ -37,36 +37,32 @@ edges = [
 
 elements = vcat(nodes, edges)
 
-
-app.layout = html_div([
-    dcc_dropdown(
-        id="dropdown-update-layout",
-        value="grid",
-        clearable=false,
-        options=[
-            Dict("label" =>  uppercase(name), "value" =>  name)
-            for name in ["grid", "random", "circle", "cose", "concentric"]
-        ]
-    ),
-    cyto_cytoscape(
-        id="cytoscape-update-layout",
-        elements=elements,
-        style=Dict("width" =>  "100%", "height" =>  "450px"),
-        layout=Dict(
-            "name" =>  "grid"
+default_stylesheet = [
+    Dict(
+        "selector" =>  "node",
+        "style" =>  Dict(
+            "background-color" =>  "#BFD7B5",
+            "label" =>  "data(label)"
         )
-    )    
-
-])
-
-callback!(app,
-    Output("cytoscape-update-layout", "layout"),
-    Input("dropdown-update-layout", "value")
-) do layout
-    return Dict(
-        "name" =>  layout,
-        "animate" =>  true
+    ),
+    Dict(
+        "selector" =>  "edge",
+        "style" =>  Dict(
+            "line-color" =>  "#A3C4BC"
+        )
     )
-end
+]
+
+
+app.layout = cyto_cytoscape(
+        id="cytoscape-callbacks-2",
+        elements=elements,
+        stylesheet=default_stylesheet,
+        style=Dict("width" =>  "100%", "height" =>  "400px"),
+        layout=Dict(
+            "name" =>  "circle"
+        )
+    )
+
 
 run_server(app, "0.0.0.0", debug=true)

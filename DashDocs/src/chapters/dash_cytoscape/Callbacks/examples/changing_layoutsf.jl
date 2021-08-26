@@ -39,34 +39,15 @@ elements = vcat(nodes, edges)
 
 
 app.layout = html_div([
-    dcc_dropdown(
-        id="dropdown-update-layout",
-        value="grid",
-        clearable=false,
-        options=[
-            Dict("label" =>  uppercase(name), "value" =>  name)
-            for name in ["grid", "random", "circle", "cose", "concentric"]
-        ]
-    ),
     cyto_cytoscape(
-        id="cytoscape-update-layout",
+        id="cytoscape-callbacks-1",
         elements=elements,
-        style=Dict("width" =>  "100%", "height" =>  "450px"),
+        style=Dict("width" =>  "100%", "height" =>  "400px"),
         layout=Dict(
             "name" =>  "grid"
         )
-    )    
+    )
 
 ])
-
-callback!(app,
-    Output("cytoscape-update-layout", "layout"),
-    Input("dropdown-update-layout", "value")
-) do layout
-    return Dict(
-        "name" =>  layout,
-        "animate" =>  true
-    )
-end
 
 run_server(app, "0.0.0.0", debug=true)

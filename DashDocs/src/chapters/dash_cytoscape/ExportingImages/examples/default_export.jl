@@ -168,7 +168,7 @@ callback!(app,
     action = "store"
 
     ctx = callback_context()
-    if !(ctx.triggered isa Nothing)
+    if !isempty(ctx.triggered)
         input_id = split(ctx.triggered[1].prop_id, ".")[1]
 
         if input_id != "tabs"

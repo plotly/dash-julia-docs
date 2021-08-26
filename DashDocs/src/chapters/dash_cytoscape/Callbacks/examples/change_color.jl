@@ -55,15 +55,6 @@ default_stylesheet = [
 
 
 app.layout = html_div([
-    cyto_cytoscape(
-        id="cytoscape-callbacks-2",
-        elements=elements,
-        stylesheet=default_stylesheet,
-        style=Dict("width" =>  "100%", "height" =>  "400px"),
-        layout=Dict(
-            "name" =>  "grid"
-        )
-    ),
     html_div([
         html_div(style=Dict("width" =>  "50%", "display" =>  "inline"), children=[
             "Edge Color:  ",
@@ -73,11 +64,20 @@ app.layout = html_div([
             "Node Color:  ",
             dcc_input(id="input-bg-color", type="text")
         ])
-    ])
+    ]),
+    cyto_cytoscape(
+        id="cytoscape-stylesheet-callbacks",
+        elements=elements,
+        stylesheet=default_stylesheet,
+        style=Dict("width" =>  "100%", "height" =>  "400px"),
+        layout=Dict(
+            "name" =>  "circle"
+        )
+    )    
 ])
 
 callback!(app,
-    Output("cytoscape-callbacks-2", "stylesheet"),
+    Output("cytoscape-stylesheet-callbacks", "stylesheet"),
     Input("input-line-color", "value"),
     Input("input-bg-color", "value")
 ) do line_color, bg_color

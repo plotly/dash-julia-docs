@@ -136,9 +136,7 @@ version = "1.17.1"
 
 [[DashCytoscape]]
 deps = ["Dash"]
-git-tree-sha1 = "5e4876501a684a86bb26cc669031e9ac35f9c3e4"
-repo-rev = "master"
-repo-url = "https://github.com/plotly/dash-cytoscape"
+git-tree-sha1 = "553be75f181bf33a0816833e2244b82f3a80da4f"
 uuid = "1b08a953-4be3-4667-9a23-85cc21bfd5e9"
 version = "0.3.0"
 

@@ -134,9 +134,7 @@ version = "1.17.1"
 
 [[DashCytoscape]]
 deps = ["Dash"]
-git-tree-sha1 = "5e4876501a684a86bb26cc669031e9ac35f9c3e4"
-repo-rev = "master"
-repo-url = "https://github.com/plotly/dash-cytoscape.git"
+git-tree-sha1 = "553be75f181bf33a0816833e2244b82f3a80da4f"
 uuid = "1b08a953-4be3-4667-9a23-85cc21bfd5e9"
 version = "0.3.0"
 
@@ -147,7 +145,7 @@ uuid = "1b08a953-4be3-4667-9a23-a540cca008f6"
 version = "0.5.0"
 
 [[DashDocs]]
-deps = ["Base64", "CSV", "Chain", "Colors", "Dash", "DashBio", "DashBioUtils", "DashBootstrapComponents", "DashCoreComponents", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DashVtk", "DataFrames", "DataFramesMeta", "DataStructures", "Dates", "HTTP", "JSON", "JSON2", "JSON3", "Match", "Pkg", "PlotlyBase", "PlotlyJS", "Printf", "Random", "Statistics", "StringEncodings", "UrlDownload"]
+deps = ["Base64", "CSV", "Chain", "Colors", "Dash", "DashBio", "DashBioUtils", "DashBootstrapComponents", "DashCoreComponents", "DashCytoscape", "DashDaq", "DashHtmlComponents", "DashTable", "DashUserGuideComponents", "DashVtk", "DataFrames", "DataFramesMeta", "DataStructures", "Dates", "HTTP", "JSON", "JSON2", "JSON3", "Match", "Pkg", "PlotlyBase", "PlotlyJS", "Printf", "Random", "Statistics", "StringEncodings", "UrlDownload"]
 path = "DashDocs"
 uuid = "3ff4e7a0-4b43-48cc-8faa-634f7f222ac1"
 version = "0.1.0"

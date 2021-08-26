@@ -1,7 +1,9 @@
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, PlotlyBase, UrlDownload
+using CSV, DataFrames, HTTP, PlotlyJS
+using Dash, DashHtmlComponents, DashCoreComponents
 
+load_csv(url) = DataFrame(CSV.File(HTTP.get(url).body))
 
-df2 = DataFrame(urldownload("https://raw.githubusercontent.com/plotly/datasets/master/country_indicators.csv"))
+df2 = load_csv("https://raw.githubusercontent.com/plotly/datasets/master/country_indicators.csv")
 
 dropmissing!(df2)
 
@@ -68,26 +70,20 @@ callback!(
     Input("year-slider-2", "value"),
 ) do xaxis_column_name, yaxis_column_name, xaxis_type, yaxis_type, year_value
     df2f = df2[df2.year .== year_value, :]
-    return Plot(
-        df2f[df2f[!, Symbol("Indicator Name")] .== xaxis_column_name, :Value],
-        df2f[df2f[!, Symbol("Indicator Name")] .== yaxis_column_name, :Value],
+    x = df2f[df2f[!, Symbol("Indicator Name")] .== xaxis_column_name, :Value]
+    y = df2f[df2f[!, Symbol("Indicator Name")] .== yaxis_column_name, :Value]
+    return plot(
+        x, y,
         Layout(
-            xaxis_type = xaxis_type == "Linear" ? "linear" : "log",
-            xaxis_title = xaxis_column_name,
-            yaxis_title = yaxis_column_name,
-            yaxis_type = yaxis_type == "Linear" ? "linear" : "log",
-            hovermode = "closest",
+            xaxis=attr(type=xaxis_type, title_text=xaxis_column_name),
+            yaxis=attr(type=yaxis_type, title_text=yaxis_column_name),
         ),
-        kind = "scatter",
         text = df2f[
             df2f[!, Symbol("Indicator Name")] .== yaxis_column_name,
             Symbol("Country Name"),
         ],
         mode = "markers",
-        marker_size = 15,
-        marker_opacity = 0.5,
-        marker_line_width = 0.5,
-        marker_line_color = "white"
+        marker=attr(size = 15, opacity=0.5, line=attr(width=0.5, color="white"))
     )
 end
 

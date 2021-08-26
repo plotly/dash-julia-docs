@@ -1,19 +1,13 @@
-using Dash, DashCoreComponents
-using RDatasets
+using Dash, DashCoreComponents, PlotlyJS
 
 app = dash()
 
-
 app.layout = dcc_graph(
   id="example-graph",
-  figure=Dict(
-      "data" => [
-          Dict("x" => [1, 2, 3], "y" => [4, 1, 2], "type" => "bar", "name" => "SF"),
-          Dict("x" => [1, 2, 3], "y" => [2, 4, 5], "type" => "bar", "name" => "Montréal"),
-      ],
-      "layout" => Dict(
-          "title" => "Dash Data Visualization"
-      )
+  figure=Plot([
+      bar(x=1:3, y=[4, 1, 2], name="SF"),
+      bar(x=1:3, y=[2, 4, 5], name="Montréal"),
+  ], Layout(title="Dash Data Visualization")
   )
 )
 

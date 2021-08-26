@@ -64,6 +64,31 @@
 
     `app = dash(external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"])`
     """),
+    Header("More About Visualization"),
+    dcc_markdown("""
+    The `DashCoreComponents` package includes a component called `graph`.
+
+    `graph` renders interactive data visualizations using the open source
+    plotly.js JavaScript graphing library. Plotly.js supports over 35 chart types
+    and renders charts in both vector-quality SVG and high-performance WebGL.
+
+    The `figure` argument in the `dcc_graph` component can be any object Julia is able to
+    convert to acceptable plotly.js JSON. This includes Julia NamedTuples (as shown above),
+    but also plots constructed with the PlotlyJS.jl (or PlotlyBase.jl) library. Check out
+    https://plotly.com/julia for more detail on how PlotlyJS.jl brings the best of the plotly.js
+    javascript library to Julia.
+
+    Here's an example that creates a scatter plot from a `DataFrame`. Create a file named `app.jl`
+    with the following code:
+    """),
+    source"getting_started_layout_4",
+    Example(layout"getting_started_layout_4"),
+    dcc_markdown("""
+
+    These graphs are interactive and responsive. *Hover* over points to see their values, *click* on legend items to
+    toggle traces, *click and drag* to zoom, *hold down shift and click and drag* to pan.
+
+    """),
     Header("More About HTML"),
     dcc_markdown("""
     The `DashHtmlComponents` package contains a component class for every HTML tag as well as keyword arguments for all of the
@@ -102,29 +127,6 @@
     """),
     source"getting_started_layout_3",
     Example(layout"getting_started_layout_3"),
-    Header("More About Visualization"),
-    dcc_markdown("""
-    The `DashCoreComponents` package includes a component called `graph`.
-
-    `graph` renders interactive data visualizations using the open source
-    plotly.js JavaScript graphing library. Plotly.js supports over 35 chart types
-    and renders charts in both vector-quality SVG and high-performance WebGL.
-
-    The `figure` argument in the `dcc_graph` component is the same `figure` argument
-    that is used by `plotly.py`, Plotly's open-source Python graphing library. Check out the
-    plotly.py documentation and gallery to learn more.
-
-    Here's an example that creates a scatter plot from a `DataFrame`. Create a file named `app.jl`
-    with the following code:
-    """),
-    source"getting_started_layout_4",
-    Example(layout"getting_started_layout_4"),
-    dcc_markdown("""
-
-    These graphs are interactive and responsive. *Hover* over points to see their values, *click* on legend items to
-    toggle traces, *click and drag* to zoom, *hold down shift and click and drag* to pan.
-
-    """),
     Header("Markdown"),
     dcc_markdown("""
     While Dash exposes HTML through the `DashHtmlComponents` package, it can be tedious to write your

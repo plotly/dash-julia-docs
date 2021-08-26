@@ -77,20 +77,20 @@
 
         There are a few nice patterns in this example:
 
-        1. We're using the `CSV` and `DataFrames` libraries to import and filter datasets in memory.
+        1. After loading `CSV` and `DataFrames` we are able to load up an example dataset bundled with `PlotlyJS`. We load this into a DataFrame and filter datasets in memory.
 
-        2. We load our dataframe at the start of the app: `df = CSV.read("...")`. This dataframe `df` is in the global state of the app and can be read inside callback functions.
+        2. We load our dataframe at the start of the app: `df = dataset(Dataframe, "gapminder")`. This dataframe `df` is in the global state of the app and can be read inside callback functions.
 
-        3.Loading data into memory can be expensive. By loading data at the start of the app instead of inside callback functions, we ensure that this operation is only done with the app server starts. When a user visits the app or interacts with the app, the data (the `df`) is already in memory. If possible, expensive initialization (like downloading or querying data) should be done in the global scope of the app instead of within callback functions.
+        3. Loading data into memory can be expensive. By loading data at the start of the app instead of inside callback functions, we ensure that this operation is only done with the app server starts. When a user visits the app or interacts with the app, the data (the `df`) is already in memory. If possible, expensive initialization (like downloading or querying data) should be done in the global scope of the app instead of within callback functions.
 
-        4, The callback does not modify the original data, it just creates copies of the dataframe by filtering. This is important: *your callbacks should never mutate variables outside of their scope*. If your callbacks modify global state, then one user's session might affect the next user's session and when the app is deployed on a server with multiple processes or threads, those modifications will not be shared across sessions.
+        4. The callback does not modify the original data, it just creates copies of the dataframe by filtering. This is important: *your callbacks should never mutate variables outside of their scope*. If your callbacks modify global state, then one user's session might affect the next user's session and when the app is deployed on a server with multiple processes or threads, those modifications will not be shared across sessions.
 
         5. We are turning on transitions with `layout.transition` to give an idea of how the dataset evolves with time: transitions allow the chart to update from one state to the next smoothly, as if it were animated.
         """),
         html_h1("Dash App With Multiple Inputs"),
         dcc_markdown("""
         In Dash, any `Output` can have multiple `Input` components.
-        Here's a simple example that binds five Inputs (the `value` property of
+        Here's an example that binds five Inputs (the `value` property of
         2 `Dropdown` components, 2 `RadioItems` components, and
         1 `Slider` component) to 1 Output component (the `figure` property of the `Graph` component).
         """),

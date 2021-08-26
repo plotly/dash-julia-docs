@@ -1,6 +1,7 @@
 module DashDocs
 using DashUserGuideComponents
-using DashCoreComponents, DashHtmlComponents, Dash, DataFrames, CSV, UrlDownload, Pkg, RDatasets
+using DashCoreComponents, DashHtmlComponents, Dash, DataFrames, CSV, UrlDownload, Pkg, PlotlyBase, PlotlyJS
+
 include("utils/_utils.jl")
 include("reusable_components/_reusable_components.jl")
 
@@ -21,30 +22,36 @@ include("chapters/dash_data_table/index.jl");
 include("chapters/deployment/index.jl")
 include("app/_app.jl")
 
+include("chapters/advanced_callbacks/index.jl")
+include("chapters/clientside_callbacks/index.jl")
+include("chapters/pattern_matching_callbacks/index.jl")
+include("chapters/callback_gotchas/index.jl")
+
+
 @eval_toplevel
 
 function make_app()
     app = base_app()
     app.layout = html_div() do
-        html_div(id = "wait-for-layout"),
-        dcc_location(id = "url", refresh=false),
+        html_div(id="wait-for-layout"),
+        dcc_location(id="url", refresh=false),
         make_app_header(),
         html_div(
-            className = "content-wrapper",
-            children = (
+            className="content-wrapper",
+            children=(
                 html_div(
                     (
-                        html_div(id = "backlinks-top", className = "backlinks"),
+                        html_div(id="backlinks-top", className="backlinks"),
                         html_div(
-                            html_div(id = "chapter", className = "content"), # the children of this component is the layout of a dash app, based on URL
-                            className = "content-container",
-                            style = Dict("margin" => "70px")
+                            html_div(id="chapter", className="content"), # the children of this component is the layout of a dash app, based on URL
+                            className="content-container",
+                            style=Dict("margin" => "70px")
                         ),
-                        html_div(id = "backlinks-bottom", className = "backlinks")
+                        html_div(id="backlinks-bottom", className="backlinks")
                     ),
-                    className = "rhs-content container-width"
+                    className="rhs-content container-width"
                 ),
-                dugc_pagemenu(id = "pagemenu")
+                dugc_pagemenu(id="pagemenu")
             )
         )
     end

@@ -10,7 +10,7 @@
     The [previous chapter](/basic-callbacks) covered basic callback usage and the [next chapter](/state)
     describes how to share data between callbacks. Just getting started? Make sure to [install the necessary
     dependencies](/installation)")),
-    dcc_markdown("
+    dcc_markdown("""
     The `DashCoreComponents` package includes a component called `Graph`.exec
 
     `Graph` renders interactive visualizations using the open source [plotly.js](https://github.com/plotly/plotly.js) JavaScript
@@ -18,8 +18,8 @@
     WebGL.
 
     The `figure` argument in the `dcc_graph` component is the same `figure` argument that is used by
-    `plotlyjs.jl`, an open source Julia graphing library. Check out
-    the [plotlyjs.jl documentation](http://juliaplots.org/PlotlyJS.jl/stable/) and gallery to learn more.
+    `PlotlyJS.jl`, an open source Julia graphing library. Check out
+    the [PlotlyJS.jl documentation](http://juliaplots.org/PlotlyJS.jl/stable/) and gallery to learn more.
 
     Dash components are described declaratively by a set of attributes. All of these attributes can be updated by callback
     functions, but only a subset of these attributes are updated through user interaction, such as when you click on an
@@ -29,7 +29,7 @@
     and `relayoutData`. THese properties update when you hover over points, click on points, or select regions in a graph.
 
     Here's a simple example that prints these attributes to the screen.
-    "),
+    """),
     source"interactive_graph_1",
     layout"interactive_graph_1",
     dcc_markdown("""
@@ -37,13 +37,11 @@
 
     Let's update our world indicators example from the previous chapter by updating time series
     when we hover over points in our scatter plot.
-
     """),
 
     source"interactive_graph_2",
     layout"interactive_graph_2",
     dcc_markdown("""
-
     Try mousing over the points in the scatter plot on the left.
     Notice how the line graphs on the right update based off of the point that you are hovering over.
 
@@ -51,7 +49,6 @@
 
     Here's a slightly more generic example for crossfiltering across a six-column dataset.
     Each scatter plot's selection filters the underlying dataset.
-
     """),
     source"crossfilter_recipe",
     layout"crossfilter_recipe",
@@ -61,7 +58,6 @@
     On every selection, the three graph callbacks are fired with the latest selected regions of each plot.
     A dataframe is filtered based off of the selected points and the graphs are replotted
     with the selected points highlighted and the selected region drawn as a dashed rectangle.
-
     """),
 
     dcc_markdown("""

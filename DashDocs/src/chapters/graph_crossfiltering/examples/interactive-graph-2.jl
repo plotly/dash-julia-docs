@@ -1,7 +1,9 @@
-using DataFrames, Dash, DashHtmlComponents, DashCoreComponents, UrlDownload, PlotlyBase
+using CSV, DataFrames, HTTP, PlotlyJS
+using Dash, DashHtmlComponents, DashCoreComponents
 
+load_csv(url) = DataFrame(CSV.File(HTTP.get(url).body))
 
-df6 = DataFrame(urldownload("https://raw.githubusercontent.com/plotly/datasets/master/country_indicators.csv"))
+df6 = load_csv("https://raw.githubusercontent.com/plotly/datasets/master/country_indicators.csv")
 
 rename!(df6, Dict(:"Year" => "year"))
 
@@ -103,17 +105,14 @@ callback!(
 ) do xaxis_column_name, yaxis_column_name, xaxis_type, yaxis_type, year_slider_value
 
     df6f = df6[df6.year .== year_slider_value, :]
-
-    return Plot(
-        df6f[df6f[!, Symbol("Indicator Name")] .== xaxis_column_name, :Value],
-        df6f[df6f[!, Symbol("Indicator Name")] .== yaxis_column_name, :Value],
+    x = df6f[df6f[!, Symbol("Indicator Name")] .== xaxis_column_name, :Value]
+    y = df6f[df6f[!, Symbol("Indicator Name")] .== yaxis_column_name, :Value]
+    return plot(
+        x, y,
         Layout(
-            xaxis_type = xaxis_type == "Linear" ? "linear" : "log",
-            xaxis_title = xaxis_column_name,
-            yaxis_title = yaxis_column_name,
-            yaxis_type = yaxis_type == "Linear" ? "linear" : "log",
-            hovermode = "closest",
-            height = 450,
+            xaxis=attr(type=xaxis_type, title_text=xaxis_column_name),
+            yaxis=attr(type=yaxis_type, title_text=yaxis_column_name),
+            height=450,
         ),
         kind = "scatter",
         text = df6f[
@@ -125,31 +124,24 @@ callback!(
             Symbol("Country Name"),
         ],
         mode = "markers",
-        marker_size = 15,
-        marker_opacity = 0.5,
-        marker_line_width = 0.5,
-        marker_line_color = "white",
+        marker=attr(size = 15, opacity=0.5, line=attr(width=0.5, color="white"))
     )
 end
 
 function create_time_series(df6f, axis_type, title)
-    Plot(
-        df6f[:, :year],
-        df6f[:, :Value],
+    plot(
+        df6f, x=:year, y=:Value,
         Layout(
-            yaxis_type = axis_type == "Linear" ? "linear" : "log",
+            yaxis_type=axis_type,
             xaxis_showgrid = false,
             annotations = [attr(
-                x = 0,
-                y = 0.85,
-                xanchor = "left",
-                yanchor = "bottom",
-                xref = "paper",
-                yref = "paper",
+                x = 0, y = 0.85,
+                xanchor = "left", yanchor = "bottom",
+                xref = "paper", yref = "paper",
                 showarrow = false,
                 align = "left",
-                bgcolor = "rgba(255, 255, 255, 0.5)",
                 text = title,
+                bgcolor = "rgba(255, 255, 255, 0.5)",
             )],
             height = 225,
         ),

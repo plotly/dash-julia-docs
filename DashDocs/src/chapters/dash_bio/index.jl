@@ -31,7 +31,7 @@ include("Speck/index.jl");
 
     dcc_markdown(
       """
-      ```
+      ```julia
       pkg> add DashBio
       ```
 

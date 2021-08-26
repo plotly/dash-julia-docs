@@ -50,7 +50,7 @@
 
 
     dcc_markdown("""
-    To fix this example, simply re-assign the filtered dataset to a new variable
+    To fix this example, re-assign the filtered dataset to a new variable
     inside the callback, or follow one of the strategies outlined in the next
     part of this guide.
 
@@ -105,7 +105,7 @@
     """),
     dcc_markdown("""
 
-    ```
+    ```julia
     global_df = DataFrame(CSV.File("..."))
 
     app.layout = html_div() do
@@ -159,12 +159,12 @@
     In these cases, you could precompute your aggregations in your data processing callback and transport these
     aggregations to the remaining callbacks.
 
-    Here's a simple example of how you might transport filtered or aggregated data to multiple callbacks.
+    Here's an example of how you might transport filtered or aggregated data to multiple callbacks.
 
     """),
     dcc_markdown("""
 
-    ```
+    ```julia
     callback!(
         app,
         Output("intermediate-value", "children"),

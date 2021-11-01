@@ -169,7 +169,7 @@ include("Loading/index.jl");
         html_a(html_h3("Tab"), href="/dash-core-components/tab"),
 
         #graphs
-        html_a(html_h3("Graph"), href="/dash_core_components/graph"),
+        html_a(html_h3("Graph"), href="/dash-core-components/graph"),
 
         source"graph_index_example",
         layout"graph_index_example",
